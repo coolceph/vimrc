@@ -1,7 +1,12 @@
+#/bin/sh
+git submodule init
+git submodule update
+
 cd ~/vimrc/bundle/vimproc.vim/
 make
 cd ~
+
 unlink ~/.vimrc
 ln -s ~/vimrc/vimrc ~/.vimrc
-echo "Install OK"
+echo "Init OK"
 
