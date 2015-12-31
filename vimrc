@@ -1,4 +1,5 @@
 syntax on        "语法支持
+set nowrap
 set nocompatible "vi兼容性，貌似vim会在检测到.vimrc时自动设置 
 
 " tab length exceptions on some file types
@@ -148,7 +149,7 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
     let $LANG='en_US.UTF-8'
 
 "pathogen是Vim用来管理插件的插件
-    source ~/vimrc/bundle/vim-pathogen/autoload/pathogen.vim
+    source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
     execute pathogen#infect('bundle/{}', '~/vimrc/bundle/{}')
 
 "jellybeans配色方案配置

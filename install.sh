@@ -1,7 +1,7 @@
-cd ~/vimrc/bundle/vimproc.vim/
+cd ~/.vim/bundle/vimproc.vim/
 make
 cd ~
 unlink ~/.vimrc
-ln -s ~/vimrc/vimrc ~/.vimrc
+ln -s ~/.vim/vimrc ~/.vimrc
 echo "Install OK"
 
