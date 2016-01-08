@@ -51,12 +51,6 @@ set fillchars=diff:⣿
 " Make Vim able to edit crontab files again.
 set backupskip=/tmp/*,/private/tmp/*" 
 
-"使用F2开关粘贴模式
-set pastetoggle=<F2>
-
-"使用F6开关list字符
-noremap <F6> :set list!<CR>
-
 " Resize splits when the window is resized
 au VimResized * :wincmd =
 
@@ -69,25 +63,35 @@ augroup line_return
         \ endif
 augroup END
 
-"使用F5开关行号
-"fun! ToggleLineNumber()
-"    if !exists("s:old_linenumber")
-"        let s:old_linenumber = "1"
-"    endif
-"
-"    if s:old_linenumber == "0"
-"        set number
-"        let s:old_linenumber = "1"
-"        echo "set number"
-"    else
-"        set nonumber
-"        let s:old_linenumber = "0"
-"        echo "set nonumber"
-"    endif
-"endfunction
-"
-"noremap <silent> <F5> :call ToggleLineNumber()<CR>
-nnoremap <F5> :ToggleNumber<CR>
+"开关复制模式
+fun! TogglePasteMode()
+    if !exists("s:old_pastemode")
+        let s:old_pastemode = "1"
+    endif
+
+    if s:old_pastemode == "0"
+        set number
+        set nopaste
+        let s:old_pastemode = "1"
+        echo "set edit mode"
+    else
+        set nonumber
+        set norelativenumber
+        set paste
+        let s:old_pastemode = "0"
+        echo "set copy/paste mode"
+    endif
+endfunction
+
+"使用F2切换复制/粘帖模式和正常编辑模式
+"set pastetoggle=<F2> "old mode, deprecated
+noremap <F2> :call TogglePasteMode()<CR>
+
+"使用F5切换行号模式
+noremap <F5> :ToggleNumber<CR>
+
+"使用F6开关list字符
+noremap <F6> :set list!<CR>
 
 "使用F7更新Taghighlight
 fun! UpdateCtagsAndFileTypes()
