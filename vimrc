@@ -1,3 +1,13 @@
+"快捷键说明
+    "F2 paste模式开关
+    "F3 NerdTREE开关
+    "F4 tagbar开关
+    "F5 行号模式切换
+    "F6 是否显示特殊字符
+    "F7 更新ctags文件
+    "F8 打开undotree
+    "F12 鼠标模式切换
+
 syntax on        "语法支持
 set nowrap
 set nocompatible "vi兼容性，貌似vim会在检测到.vimrc时自动设置 
@@ -9,6 +19,7 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType make setlocal noexpandtab
 
 "set clipboard+=unnamed "use System clipboard on Mac
+set mouse-=a   "默认禁用全部鼠标控制
 set autoindent              "设置自动缩进
 set bs=2                    "在insert模式下用退格键删除
 "set expandtab     "是否在缩进和遇到 Tab 键时使用空格替代；使用 noexpandtab 取消设置
@@ -109,7 +120,7 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
     nnoremap <leader>q :qa!<CR>
 
 "搜索相关的设置
-    set gdefault   "all matches in a line a subsituted instead of one.
+    "set gdefault   "由于设置gdefault之后会导致%s/abc/abc/g最后的g参数反义，影响直觉，因此禁用
     set showmatch  " show matching brackets/parenthesis
     set incsearch  " find as you type search
     set hlsearch   " 高亮搜索结果
