@@ -18,10 +18,14 @@ F8  打开undotree
 
 F12 鼠标模式切换
 
-<Space><Space> 激活Unite插件搜索
+SpaceSpace 激活Unite插件搜索
 
 # 快捷命令
 Ctags   生成ctags文件
+
 Hex/Asc 转换文本模式/16进制模式
+
 Gotags  生成go的tags
+
 Cswp    清理*.swp文件
+
