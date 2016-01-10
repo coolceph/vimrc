@@ -88,6 +88,7 @@ fun! TogglePasteMode()
     else
         set nonumber
         set norelativenumber
+        set nolist
         set paste
         let s:old_pastemode = "0"
         echo "set copy/paste mode"
@@ -165,7 +166,7 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
 
 "pathogen是Vim用来管理插件的插件
     source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
-    execute pathogen#infect('bundle/{}', '~/vimrc/bundle/{}')
+    execute pathogen#infect('bundle/{}', '~/.vim/bundle/{}')
 
 "jellybeans配色方案配置
     colorscheme jellybeans
