@@ -399,15 +399,15 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
 
 "neosnippet
     " Plugin key-mappings.
-    imap <leader>k     <Plug>(neosnippet_expand_or_jump)
-    smap <Leader>k     <Plug>(neosnippet_expand_or_jump)
-    xmap <Leader>k     <Plug>(neosnippet_expand_target)
-    
+    imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+    smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+    xmap <C-k>     <Plug>(neosnippet_expand_target)
+
     " SuperTab like snippets behavior.
-    "imap <expr><TAB>
-    " \ pumvisible() ? "\<C-n>" :
-    " \ neosnippet#expandable_or_jumpable() ?
-    " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+    imap <expr><TAB>
+     \ pumvisible() ? "\<C-n>" :
+     \ neosnippet#expandable_or_jumpable() ?
+     \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
     smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
     \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
     
