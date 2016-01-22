@@ -515,5 +515,5 @@ command Asc %!xxd -r
 
 command Gotags !gotags -R . >tags
 
-command Cswp !find . -name "*.swp" -exec rm -f {} \;
+command Cswp !rm -f ~/.cache/swap_dir/*
 
