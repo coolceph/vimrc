@@ -12,25 +12,31 @@ syntax on        "语法支持
 set nowrap
 set nocompatible "vi兼容性，貌似vim会在检测到.vimrc时自动设置 
 
-" tab length exceptions on some file types
+"代码缩进设置
+set autoindent
+set smartindent
+set smarttab      "开启时，在行首按TAB将加入sw个空格，否则加入ts个空格
+set tabstop=4     "编辑时一个TAB字符占多少个空格的位置
+set softtabstop=4 "方便在开启了et后使用退格（backspace）键，每次退格将删除X个空格
+set shiftwidth=4  "使用每层缩进的空格数
+set expandtab     "是否将输入的TAB自动展开成空格。开启后要输入TAB，需要Ctrl-V<TAB>
+
+filetype plugin indent on
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType make setlocal noexpandtab
+autocmd FileType python setlocal et sta sw=4 sts=4
 
 "set clipboard+=unnamed "use System clipboard on Mac
-set mouse-=a   "默认禁用全部鼠标控制
-set autoindent              "设置自动缩进
-set bs=2                    "在insert模式下用退格键删除
-"set expandtab     "是否在缩进和遇到 Tab 键时使用空格替代；使用 noexpandtab 取消设置
-set tabstop=8               "制表符的宽度，参考ceph
-"set softtabstop=4 "软制表符宽度，设置为非零数值后使用 Tab 键和 Backspace 时光标移动的格数等于该数值，但实际插入的字符仍受 tabstop 和 expandtab 控制
+set mouse-=a                "默认禁用全部鼠标控制
+set backspace=2             "在insert模式下用退格键删除
 set number                  "显示行号
 set autoread                "文件在Vim之外修改过，自动重新读入
 set showbreak=↪             "显示换行符
 set backspace=indent,eol,start "允许任意地方使用backspace键
 set completeopt=longest,menuone,preview "更好的insert模式自动完成
-
+set modeline    "允许被编辑的文件以注释的形式设置Vim选项
 set hidden              "switching buffers without saving
 set ruler               " show the cursor position all the time
 set showcmd             " display incomplete commands
@@ -48,13 +54,12 @@ set cursorline          "highline cursor line
 set ttyfast             "indicate faster terminal connection
 set laststatus=2        "always show status line
 set cpoptions+=J
-set lbr                 " break the line by words
+set linebreak           " break the line by words
 set scrolloff=3         " show at least 3 lines around the current cursor position
 set sidescroll=1
 set sidescrolloff=10
 set virtualedit+=block
 set lazyredraw
-"set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set splitbelow
 set splitright
