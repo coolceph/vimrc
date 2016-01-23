@@ -283,6 +283,9 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
     nnoremap <silent> [unite]m :<C-u>Unite -auto-resize -buffer-name=mappings mapping<cr>
     nnoremap <silent> [unite]s :<C-u>Unite -quick-match buffer<cr>
 
+"Ack选项
+    let g:ack_default_options = " -s -H --nocolor --nogroup --column --ignore-file=is:tags --ignore-file=ext:taghl"
+
 "Tagbar配置
     let g:tagbar_width=26
     noremap <silent> <F4> :TagbarToggle<CR>
