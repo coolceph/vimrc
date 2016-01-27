@@ -9,7 +9,7 @@
     "F12 鼠标模式切换
 
 syntax on        "语法支持
-set nocompatible "vi兼容性，貌似vim会在检测到.vimrc时自动设置 
+set nocompatible "vi兼容性，貌似vim会在检测到.vimrc时自动设置
 
 "代码缩进设置
 set autoindent
@@ -39,7 +39,7 @@ set modeline    "允许被编辑的文件以注释的形式设置Vim选项
 set hidden              "switching buffers without saving
 set ruler               " show the cursor position all the time
 set showcmd             " display incomplete commands
-set wildmenu            " show enhanced completion 
+set wildmenu            " show enhanced completion
 set wildmode=list:longest "together with wildmenu
 set wildignore+=.hg,.git,.svn                    " Version control
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
@@ -64,7 +64,7 @@ set splitbelow
 set splitright
 set fillchars=diff:⣿
 " Make Vim able to edit crontab files again.
-set backupskip=/tmp/*,/private/tmp/*" 
+set backupskip=/tmp/*,/private/tmp/*"
 
 " Resize splits when the window is resized
 au VimResized * :wincmd =
@@ -183,31 +183,41 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
     let g:airline_powerline_fonts = 1
     let g:airline_detect_paste=1
 
-    let g:airline#extensions#whitespace#enabled = 0
-    let g:airline#extensions#syntastic#enabled = 1 
-    let g:airline#extensions#branch#enabled = 1 
-    let g:airline#extensions#tabline#enabled = 1 
-    let g:airline#extensions#tabline#left_sep = ' '
-    let g:airline#extensions#tabline#left_alt_sep = '|'
+    "let g:airline#extensions#whitespace#enabled = 0
+    "let g:airline#extensions#syntastic#enabled = 1
+    "let g:airline#extensions#branch#enabled = 1
+    "let g:airline#extensions#tabline#enabled = 1
+    "let g:airline#extensions#tabline#left_sep = ' '
+    "let g:airline#extensions#tabline#left_alt_sep = '|'
 
     " to use fancy symbols for airline, uncomment the following lines and use a
     " patched font (more info on the README.rst)
-    if !exists('g:airline_symbols')
-       let g:airline_symbols = {}
-    endif
-    let g:airline_left_sep = '⮀'
-    let g:airline_left_alt_sep = '⮁'
-    let g:airline_right_sep = '⮂'
-    let g:airline_right_alt_sep = '⮃'
-    let g:airline_symbols.branch = '⭠'
-    let g:airline_symbols.readonly = '⭤'
-    let g:airline_symbols.linenr = '⭡'
+    "if !exists('g:airline_symbols')
+    "   let g:airline_symbols = {}
+    "endif
+    " powerline symbols
+    "let g:airline_left_sep = ''
+    "let g:airline_left_alt_sep = ''
+    "let g:airline_right_sep = ''
+    "let g:airline_right_alt_sep = ''
+    "let g:airline_symbols.branch = ''
+    "let g:airline_symbols.readonly = ''
+    "let g:airline_symbols.linenr = ''
+
+    " old vim-powerline symbols
+    "let g:airline_left_sep = '⮀'
+    "let g:airline_left_alt_sep = '⮁'
+    "let g:airline_right_sep = '⮂'
+    "let g:airline_right_alt_sep = '⮃'
+    "let g:airline_symbols.branch = '⭠'
+    "let g:airline_symbols.readonly = '⭤'
+    "let g:airline_symbols.linenr = '⭡'
 
 "Unite 聚合搜索
     call unite#filters#matcher_default#use(['matcher_fuzzy'])
     call unite#filters#sorter_default#use(['sorter_rank'])
     call unite#set_profile('files', 'context.smartcase', 1)
-    
+
     let g:unite_data_directory='~/.cache/unite'
     let g:unite_enable_start_insert=1
     let g:unite_source_history_yank_enable=1
@@ -261,7 +271,7 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
 "      let g:unite_source_grep_default_opts='-s -H --nocolor --nogroup --column'
 "      let g:unite_source_grep_recursive_opt=''
 "    endif
-    
+
     function! s:unite_settings()
       nmap <buffer> Q <plug>(unite_exit)
       nmap <buffer> <esc> <plug>(unite_exit)
@@ -273,7 +283,7 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
 
     nmap <space> [unite]
     nnoremap [unite] <nop>
-    
+
     nnoremap <silent> [unite]<space> :<C-u>Unite -toggle -auto-resize -buffer-name=mixed file_mru file_rec/async buffer bookmark<cr><c-u>
     nnoremap <silent> [unite]f :<C-u>Unite -toggle -auto-resize -buffer-name=files file_rec/async<cr><c-u>
     nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/yank<cr>
@@ -350,10 +360,10 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
     nnoremap <Leader>gr :Gremove<CR>
     nnoremap <Leader>gl :Glog<CR>
     nnoremap <Leader>gb :Gblame<CR>
-    nnoremap <Leader>gm :Gmove 
-    nnoremap <Leader>gp :Ggrep 
+    nnoremap <Leader>gm :Gmove
+    nnoremap <Leader>gp :Ggrep
     nnoremap <Leader>gR :Gread<CR>
-    nnoremap <Leader>gg :Git 
+    nnoremap <Leader>gg :Git
     nnoremap <Leader>gd :Gdiff<CR>
 
 "Autoclose自动成对补充括号插件
@@ -375,7 +385,7 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
     au FileType go nmap <leader>r <Plug>(go-run)
     au FileType go nmap <leader>b <Plug>(go-build)
     au FileType go nmap <leader>t <Plug>(go-test)
-    au FileType go nmap <leader>c <Plug>(go-coverage) 
+    au FileType go nmap <leader>c <Plug>(go-coverage)
     let g:tagbar_type_go = {
         \ 'ctagstype' : 'go',
         \ 'kinds'     : [
@@ -417,7 +427,7 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
      \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
     smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
     \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-    
+
     " For conceal markers.
     if has('conceal')
       set conceallevel=2 concealcursor=niv
@@ -466,11 +476,11 @@ let g:SignatureMap = {
             \  ($XDG_CACHE_HOME != '' ?
             \   $XDG_CACHE_HOME . '/undotree' : expand('~/.cache/undotree'))),
             \  ':p'), '\\', '/', 'g'), '/$', '', '')
-    
+
       if !isdirectory(s:undotree_dir)
         call mkdir(s:undotree_dir, 'p')
       endif
-    
+
       return s:undotree_dir
     endfunction"}}}
 
@@ -490,11 +500,11 @@ let g:SignatureMap = {
             \  ($XDG_CACHE_HOME != '' ?
             \   $XDG_CACHE_HOME . '/swap_dir' : expand('~/.cache/swap_dir'))),
             \  ':p'), '\\', '/', 'g'), '/$', '', '')
-    
+
       if !isdirectory(s:swap_dir)
         call mkdir(s:swap_dir, 'p')
       endif
-    
+
       return s:swap_dir
     endfunction"}}}
 
