@@ -171,6 +171,7 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
     language message en_US.UTF-8
     let $LC_ALL='en_US.UTF-8'
     let $LANG='en_US.UTF-8'
+    let $TERM='xterm-256color'
 
 "pathogen是Vim用来管理插件的插件
     source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
@@ -188,11 +189,16 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
     let g:airline_detect_paste=1
     let g:airline_theme = 'jellybeans'
     let g:airline#extensions#whitespace#enabled = 0
+    let g:airline#extensions#whitespace#symbol = '!'
     let g:airline#extensions#syntastic#enabled = 1
     let g:airline#extensions#branch#enabled = 1
     let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#tabline#left_sep = ' '
-    let g:airline#extensions#tabline#left_alt_sep = '|'
+    let g:airline#extensions#tabline#buffer_nr_show = 1
+    "let g:airline#extensions#tabline#left_sep = ' '
+    "let g:airline#extensions#tabline#left_alt_sep = '|'
+
+    nnoremap <C-N> :bn<CR>
+    nnoremap <C-P> :bp<CR>
 
     " to use fancy symbols for airline, uncomment the following lines and use a
     " patched font (more info on the README.rst)
