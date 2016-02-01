@@ -20,6 +20,7 @@ set tabstop=4     "编辑时一个TAB字符占多少个空格的位置
 set softtabstop=4 "方便在开启了et后使用退格（backspace）键，每次退格将删除X个空格
 set shiftwidth=4  "使用每层缩进的空格数
 set expandtab     "是否将输入的TAB自动展开成空格。开启后要输入TAB，需要Ctrl-V<TAB>
+set updatetime=250
 
 filetype plugin indent on
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -88,6 +89,7 @@ fun! TogglePasteMode()
     if s:old_pastemode == "0"
         set number
         set nopaste
+        call gitgutter#enable()
         let s:old_pastemode = "1"
         echo "set edit mode"
     else
@@ -95,6 +97,7 @@ fun! TogglePasteMode()
         set norelativenumber
         set nolist
         set paste
+        call gitgutter#disable()
         let s:old_pastemode = "0"
         echo "set copy/paste mode"
     endif
@@ -183,19 +186,35 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
 " Airline ------------------------------
     let g:airline_powerline_fonts = 1
     let g:airline_detect_paste=1
-
-    "let g:airline#extensions#whitespace#enabled = 0
-    "let g:airline#extensions#syntastic#enabled = 1
-    "let g:airline#extensions#branch#enabled = 1
-    "let g:airline#extensions#tabline#enabled = 1
-    "let g:airline#extensions#tabline#left_sep = ' '
-    "let g:airline#extensions#tabline#left_alt_sep = '|'
+    let g:airline_theme = 'jellybeans'
+    let g:airline#extensions#whitespace#enabled = 0
+    let g:airline#extensions#syntastic#enabled = 1
+    let g:airline#extensions#branch#enabled = 1
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#left_sep = ' '
+    let g:airline#extensions#tabline#left_alt_sep = '|'
 
     " to use fancy symbols for airline, uncomment the following lines and use a
     " patched font (more info on the README.rst)
-    "if !exists('g:airline_symbols')
-    "   let g:airline_symbols = {}
-    "endif
+    if !exists('g:airline_symbols')
+      let g:airline_symbols = {}
+    endif
+
+    " unicode symbols
+    "let g:airline_left_sep = '»'
+    "let g:airline_left_sep = '▶'
+    "let g:airline_right_sep = '«'
+    "let g:airline_right_sep = '◀'
+    "let g:airline_symbols.crypt = '🔒'
+    "let g:airline_symbols.linenr = '␊'
+    "let g:airline_symbols.linenr = '␤'
+    "let g:airline_symbols.linenr = '¶'
+    "let g:airline_symbols.branch = '⎇'
+    "let g:airline_symbols.paste = 'ρ'
+    "let g:airline_symbols.paste = 'Þ'
+    "let g:airline_symbols.paste = '∥'
+    "let g:airline_symbols.whitespace = 'Ξ'
+
     " powerline symbols
     "let g:airline_left_sep = ''
     "let g:airline_left_alt_sep = ''
