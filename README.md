@@ -13,33 +13,33 @@ cd ~/.vim && ./install.sh
 
 # ShortCuts
 
-F2  Paste Model Switch
+F2: Paste Model Switch
 
-F3  NerdTREE Switch
+F3: NerdTREE Switch
 
-F4  tagbar Switch
+F4: tagbar Switch
 
-F5  LineNumber Model Switch
+F5: LineNumber Model Switch
 
-F6  Whether Show Special Characters Such as Enter
+F6: Whether Show Special Characters Such as Enter
 
-F7  Update ctags
+F7: Update ctags
 
-F8  Open undotree
+F8: Open undotree
 
-F12 Mouse Model Switch
+F12: Mouse Model Switch
 
-SpaceSpace Active Unite Search Plugin
+SpaceSpace: Active Unite Search Plugin
 
 # Quick Commands
 
-Ctags   Genrate ctags
+Ctags: Genrate ctags
 
-Gotags  Genrate gotags
+Gotags: Genrate gotags
 
-Hex/Asc Swtich between Text and Hex
+Hex/Asc: Swtich between Text and Hex
 
-Cswp    Clear *.swp
+Cswp: Clear *.swp
 
 # FAQ
 
