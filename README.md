@@ -1,4 +1,4 @@
-Best vimrc for CoolCeph team, used for C/C++ and Go.
+Best vimrc for CoolCeph team, used for C/C++, Python, PHP and Go.
 
 Enjoy it.
 
@@ -17,32 +17,32 @@ F2: Paste Model Switch
 
 F3: NerdTREE Switch
 
-F4: tagbar Switch
+F4: Tagbar Switch
 
 F5: LineNumber Model Switch
 
-F6: Whether Show Special Characters Such as Enter
+F6: Whether Show Special Characters Such as Enter,Tab
 
 F7: Update ctags
 
 F8: Open undotree
 
-F12: Mouse Model Switch
+F12: Mouse Model Switch (all or none)
 
-SpaceSpace: Active Unite Search Plugin
+SpaceSpace: Activate Unite Search Plugin
 
 # Quick Commands
 
-Ctags: Genrate ctags
+Ctags: Genrate ctags for pwd
 
-Gotags: Genrate gotags
+Gotags: Genrate gotags for pwd
 
-Hex/Asc: Swtich between Text and Hex
+Hex/Asc: Swtich between Asc and Hex
 
 Cswp: Clear *.swp
 
 # FAQ
 
-- My state line has strangs characters
+- My state line has strange characters
 
 You should install the fonts to your system and update the config of your terminal.
