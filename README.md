@@ -1,34 +1,42 @@
-# vimrc
+Best vimrc for CoolCeph team, used for C/C++ and Go.
 
-coolceph team多年积累下的vim配置
+Enjoy it.
 
 ![alt tag](https://raw.github.com/coolceph/vimrc/master/screenshot-2.png)
 
-# 快捷键说明
-F2  paste模式开关
+# Install
 
-F3  NerdTREE开关
+git clone https://github.com/coolceph/vimrc.git ~/.vim
 
-F4  tagbar开关
+cd ~/.vim && ./install.sh
 
-F5  行号模式切换
+# ShortCuts
 
-F6  是否显示特殊字符
+F2  Paste Model Switch
 
-F7  更新ctags文件
+F3  NerdTREE Switch
 
-F8  打开undotree
+F4  tagbar Switch
 
-F12 鼠标模式切换
+F5  LineNumber Model Switch
 
-SpaceSpace 激活Unite插件搜索
+F6  Whether Show Special Characters Such as Enter
 
-# 快捷命令
-Ctags   生成ctags文件
+F7  Update ctags
 
-Hex/Asc 转换文本模式/16进制模式
+F8  Open undotree
 
-Gotags  生成go的tags
+F12 Mouse Model Switch
 
-Cswp    清理*.swp文件
+SpaceSpace Active Unite Search Plugin
+
+# Quick Commands
+
+Ctags   Genrate ctags
+
+Gotags  Genrate gotags
+
+Hex/Asc Swtich between Text and Hex
+
+Cswp    Clear *.swp
 
