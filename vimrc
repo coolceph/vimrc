@@ -9,7 +9,7 @@
     "F12 鼠标模式切换
 
 syntax on        "语法支持
-set nowrap
+set nowrap       "禁用自动折行
 set nocompatible "vi兼容性，貌似vim会在检测到.vimrc时自动设置
 
 "代码缩进设置
@@ -171,7 +171,6 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
     language message en_US.UTF-8
     let $LC_ALL='en_US.UTF-8'
     let $LANG='en_US.UTF-8'
-    let $TERM='xterm-256color'
 
 "pathogen是Vim用来管理插件的插件
     source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
