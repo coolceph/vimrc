@@ -6,9 +6,10 @@ Enjoy it.
 
 # Install
 
+```
 git clone https://github.com/coolceph/vimrc.git ~/.vim
-
 cd ~/.vim && ./install.sh
+```
 
 # ShortCuts
 
@@ -40,3 +41,8 @@ Hex/Asc Swtich between Text and Hex
 
 Cswp    Clear *.swp
 
+# FAQ
+
+- My state line has strangs characters
+
+You should install the fonts to your system and update the config of your terminal.
