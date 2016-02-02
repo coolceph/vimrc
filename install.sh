@@ -1,8 +1,14 @@
-cd ~/vimrc/bundle/vimproc.vim/
+#!/bin/sh
+
+git submodule init
+git submodule update
+
+cd ~/.vim/bundle/vimproc.vim/
 make
 cd ~
+
 unlink ~/.vimrc
-ln -s ~/vimrc/vimrc ~/.vimrc
+ln -s ~/.vim/vimrc ~/.vimrc
 
 if [ x$TERM != x"xterm-256color" ]
 then
@@ -30,5 +36,7 @@ then
 else
     echo "TERM is xterm-256color, OK"
 fi
+
+mkdir -p ~/.cache/swap_dir/
 
 echo "Install OK"
