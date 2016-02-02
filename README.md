@@ -1,5 +1,8 @@
 # vimrc
+
 coolceph team多年积累下的vim配置
+
+![alt tag](https://raw.github.com/coolceph/vimrc/master/screenshot-2.png)
 
 # 快捷键说明
 F2  paste模式开关
