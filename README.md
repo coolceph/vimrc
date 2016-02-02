@@ -45,4 +45,5 @@ Cswp: Clear *.swp
 
 - My state line has strange characters
 
-You should install the fonts to your system and update the config of your terminal.
+You should install the powerline fonts into your system and update the config of your terminal to use powerline fonts to display the Non-ASCII characters.
+In the fonts dir, there is some powerline fonts you could choose.
