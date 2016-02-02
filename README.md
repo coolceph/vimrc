@@ -31,6 +31,12 @@ F12: Mouse Model Switch (all or none)
 
 SpaceSpace: Activate Unite Search Plugin
 
+<C-n>/<C-p>: Switch between buffers.
+
+<C-hjkl>: Switch between windows.
+
+The leader key is ','.
+
 # Quick Commands
 
 Ctags: Genrate ctags for pwd
