@@ -53,3 +53,10 @@ Cswp: Clear *.swp
 
 You should install the powerline fonts into your system and update the config of your terminal to use powerline fonts to display the Non-ASCII characters.
 In the fonts dir, there is some powerline fonts you could choose.
+
+- My vim is ugly, it seems some color are missing
+
+You should set your env TERM=xterm-256color, you can do this by the following there ways:
+1) run ~/.vim/install.sh, but you need run it every time when you login
+2) set TERM=xterm-256color in your .bashrc or .zshrc
+3) config your terminal tool
