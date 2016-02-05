@@ -61,7 +61,7 @@ Cswp: Clear *.swp
 
 - *My vim is ugly, it seems some color are missing*
 
-    You should set your env TERM=xterm-256color, you can do this by the following there ways:
+    You should set your env TERM=xterm-256color, you can do this by the following two ways:
 
     1) run ~/.vim/install.sh, it will set TERM to xterm-256color for bash/zsh. If you use other shells, you need to set TERM yourself.
 
