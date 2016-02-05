@@ -6,7 +6,9 @@
     "F6 是否显示特殊字符
     "F7 更新ctags文件
     "F8 打开undotree
+    "F9 进入MultiCursor模式
     "F12 鼠标模式切换
+    "<Ctrl+c> 快速推出VIM(:qall!)
 
 syntax on        "语法支持
 set nowrap       "禁用自动折行
@@ -122,11 +124,11 @@ endfunction
 
 noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
 
+"快速退出vim
+    nnoremap <C-c> :qall!<CR>
+
 "设置mapleader前缀
     let mapleader = ','
-
-"快速退出vim
-    nnoremap <leader>q :qa!<CR>
 
 "搜索相关的设置
     "set gdefault   "由于设置gdefault之后会导致%s/abc/abc/g最后的g参数反义，影响直觉，因此禁用
@@ -138,13 +140,13 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
     set smartcase  " case sensitive when uc present
     nnoremap <leader>/ :nohlsearch<CR> "清空搜索结果高亮显示
 
-"在屏幕中各子窗口之间切换
+"Window navigation mappings
     noremap <C-h> <C-w>h
     noremap <C-j> <C-w>j
     noremap <C-k> <C-w>k
     noremap <C-l> <C-w>l
 
-" tab navigation mappings
+"Tab navigation mappings
     map tn :tabn<CR>
     map tp :tabp<CR>
     map tm :tabm
@@ -154,6 +156,14 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
     imap <C-S-Right> <ESC>:tabn<CR>
     map <C-S-Left> :tabp<CR>
     imap <C-S-Left> <ESC>:tabp<CR>
+
+"Buffer navigation mappings
+    nnoremap <C-n> :bn<CR>
+    nnoremap <C-p> :bp<CR>
+
+"For code reviewing
+    "nnoremap j jzz
+    "nnoremap k kzz
 
 "代码折叠相关配置
 "    set foldmethod=syntax       "代码折叠 共有6中方式如下
@@ -195,9 +205,6 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
     let g:airline#extensions#tabline#buffer_nr_show = 1
     "let g:airline#extensions#tabline#left_sep = ' '
     "let g:airline#extensions#tabline#left_alt_sep = '|'
-
-    nnoremap <C-N> :bn<CR>
-    nnoremap <C-P> :bp<CR>
 
     " to use fancy symbols for airline, uncomment the following lines and use a
     " patched font (more info on the README.rst)
@@ -250,13 +257,7 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
 
     let g:unite_source_grep_max_candidates = 200
 
-    if executable('hw')
-      " Use hw (highway)
-      " https://github.com/tkengo/highway
-      let g:unite_source_grep_command = 'hw'
-      let g:unite_source_grep_default_opts = '--no-group --no-color'
-      let g:unite_source_grep_recursive_opt = ''
-    elseif executable('ag')
+    if executable('ag')
       " Use ag (the silver searcher)
       " https://github.com/ggreer/the_silver_searcher
       let g:unite_source_grep_command = 'ag'
@@ -264,11 +265,12 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
       \ '-i --vimgrep --hidden --ignore ' .
       \ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
       let g:unite_source_grep_recursive_opt = ''
-    elseif executable('pt')
-      " Use pt (the platinum searcher)
-      " https://github.com/monochromegane/the_platinum_searcher
-      let g:unite_source_grep_command = 'pt'
-      let g:unite_source_grep_default_opts = '--nogroup --nocolor'
+    elseif executable('ack')
+      " Use ack
+      " http://beyondgrep.com/
+      let g:unite_source_grep_command = 'ack-grep'
+      let g:unite_source_grep_default_opts =
+      \ '-i --no-heading --no-color -k -H'
       let g:unite_source_grep_recursive_opt = ''
     elseif executable('ack-grep')
       " Use ack
@@ -276,6 +278,18 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
       let g:unite_source_grep_command = 'ack-grep'
       let g:unite_source_grep_default_opts =
       \ '-i --no-heading --no-color -k -H'
+      let g:unite_source_grep_recursive_opt = ''
+    elseif executable('hw')
+      " Use hw (highway)
+      " https://github.com/tkengo/highway
+      let g:unite_source_grep_command = 'hw'
+      let g:unite_source_grep_default_opts = '--no-group --no-color'
+      let g:unite_source_grep_recursive_opt = ''
+    elseif executable('pt')
+      " Use pt (the platinum searcher)
+      " https://github.com/monochromegane/the_platinum_searcher
+      let g:unite_source_grep_command = 'pt'
+      let g:unite_source_grep_default_opts = '--nogroup --nocolor'
       let g:unite_source_grep_recursive_opt = ''
     elseif executable('jvgrep')
       " Use jvgrep
@@ -285,17 +299,6 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
       \ '-i --exclude ''\.(git|svn|hg|bzr)'''
       let g:unite_source_grep_recursive_opt = '-R'
     endif
-
-"    if executable('ag')
-"      let g:unite_source_grep_command='ag'
-"      let g:unite_source_grep_default_opts='--nocolor --nogroup -S -C4'
-"      let g:unite_source_grep_recursive_opt=''
-"    elseif executable('ack')
-"      let g:unite_source_grep_command='ack'
-"      "let g:unite_source_grep_default_opts='--no-heading --no-color -C4'
-"      let g:unite_source_grep_default_opts='-s -H --nocolor --nogroup --column'
-"      let g:unite_source_grep_recursive_opt=''
-"    endif
 
     function! s:unite_settings()
       nmap <buffer> Q <plug>(unite_exit)
@@ -516,6 +519,57 @@ let g:SignatureMap = {
         let &undodir = s:undotree_dir
         set undofile
     endif
+
+"vim-multiple-cursors
+    "
+    "Other plugins may trigger on keypresses when in insert mode. These plugins
+    "generally provide a means to toggle their active state. These hooks allow the
+    "user to provide functions in their .vimrc to do this when
+    "multiple-cursor-mode is entered.
+    "With this locking and unlocking we prevent neocomplete to trigger it's
+    "function calls until we are finished with multiple cursors editing.
+    "
+    " Called once right before you start selecting multiple cursors
+    function! Multiple_cursors_before()
+      if exists(':NeoComplcacheUnLock')==2
+        exe 'NeoComplcacheUnLock'
+      endif
+    endfunction
+
+    " Called once only when the multiple selection is canceled (default <Esc>)
+    function! Multiple_cursors_after()
+      if exists(':NeoComplcacheUnLock')==2
+        exe 'NeoComplcacheUnLock'
+      endif
+    endfunction
+
+    "If you don't like the plugin taking over your favorite key bindings, you
+    "can turn off the default with
+    let g:multi_cursor_use_default_mapping=0
+
+    " Default mapping
+    let g:multi_cursor_next_key='<C-n>'
+    let g:multi_cursor_prev_key='<C-p>'
+    let g:multi_cursor_skip_key='<C-x>'
+    let g:multi_cursor_quit_key='<Esc>'
+
+    "By default, the 'next' key is also used to enter multicursor mode. If you
+    "want to use a different key to start multicursor mode than for selecting
+    "the next location, do like the following:
+    " Map start key separately from next key
+    let g:multi_cursor_start_key='<F9>'
+
+    "Note that when multicursor mode is started, it selects current word with
+    "boundaries, i.e. it behaves like *. If you want to avoid word boundaries in
+    "Normal mode (as g* does) but still have old behaviour up your sleeve, you can
+    "do the following
+    "let g:multi_cursor_start_key='<C-n>'
+    let g:multi_cursor_start_word_key='g<C-n>'
+
+    "You can also map your own keys to quit, if g:multi_cursor_quit_key won't
+    "work:
+    "let g:multi_cursor_quit_key='<C-c>'
+    "nnoremap <C-c> :call multiple_cursors#quit()<CR>
 
 "统一swapdir&backupdir
     function! s:get_swap_dir() "{{{

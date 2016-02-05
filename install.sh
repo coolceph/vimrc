@@ -8,7 +8,7 @@ make
 cd ~
 
 unlink ~/.vimrc
-ln -s ~/.vim/vimrc ~/.vimrc
+echo "source ~/.vim/vimrc" > ~/.vimrc
 
 if [ x$TERM != x"xterm-256color" ]
 then

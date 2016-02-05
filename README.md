@@ -27,6 +27,8 @@ F7: Update ctags
 
 F8: Open undotree
 
+F9: Enter multi cursor mode
+
 F12: Mouse Model Switch (all or none)
 
 SpaceSpace: Activate Unite Search Plugin
@@ -34,6 +36,8 @@ SpaceSpace: Activate Unite Search Plugin
 <C-n>/<C-p>: Switch between buffers.
 
 <C-hjkl>: Switch between windows.
+
+<C-c>: Quit vim without saving
 
 The leader key is ','.
 

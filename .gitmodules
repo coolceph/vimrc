@@ -97,3 +97,6 @@
 [submodule "bundle/vimshell.vim"]
 	path = bundle/vimshell.vim
 	url = https://github.com/Shougo/vimshell.vim
+[submodule "bundle/vim-multiple-cursors"]
+	path = bundle/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors
