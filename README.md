@@ -33,11 +33,11 @@ F12: Mouse Model Switch (all or none)
 
 SpaceSpace: Activate Unite Search Plugin
 
-<C-n>/<C-p>: Switch between buffers.
+Ctrl+n/Ctrl+p: Switch between buffers.
 
-<C-hjkl>: Switch between windows.
+Ctrl+hjkl: Switch between windows.
 
-<C-c>: Quit vim without saving
+Ctrl+c: Quit vim without saving
 
 The leader key is ','.
 
