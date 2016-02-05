@@ -61,6 +61,5 @@ In the fonts dir, there is some powerline fonts you could choose.
 - My vim is ugly, it seems some color are missing
 
 You should set your env TERM=xterm-256color, you can do this by the following there ways:
-1) run ~/.vim/install.sh, but you need run it every time when you login
-2) set TERM=xterm-256color in your .bashrc or .zshrc
-3) config your terminal tool
+1) run ~/.vim/install.sh, it will set TERM to xterm-256color for bash/zsh. If you use other shells, you need to set TERM yourself.
+2) Your terminal util like iterm is also needed to set for xterm-256color too. You need set it yourself too.
