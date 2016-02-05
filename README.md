@@ -33,9 +33,9 @@ F12: Mouse Model Switch (all or none)
 
 SpaceSpace: Activate Unite Search Plugin
 
-Ctrl+n/Ctrl+p: Switch between buffers.
+Ctrl+n/p: Switch between buffers.
 
-Ctrl+hjkl: Switch between windows.
+Ctrl+h/j/k/l: Switch between windows.
 
 Ctrl+c: Quit vim without saving
 
