@@ -137,6 +137,9 @@ Cswp: Clear *.swp
 
 [vimshell.vim]
 
+[vim-expand-region]
+
+[vim-trailing-whitespace]
 
 [STL-Syntax]:https://github.com/Mizuchi/STL-Syntax
 [ack.vim]:https://github.com/mileszs/ack.vim
@@ -172,4 +175,6 @@ Cswp: Clear *.swp
 [vim-togglenumber]:https://github.com/tkhoa2711/vim-togglenumber
 [vimproc.vim]:https://github.com/Shougo/vimproc.vim.git
 [vimshell.vim]:https://github.com/Shougo/vimshell.vim
+[vim-expand-region]://github.com/terryma/vim-expand-region
+[vim-trailing-whitespace]:https://github.com/bronson/vim-trailing-whitespace
 
