@@ -1,18 +1,44 @@
-"快捷键说明
-    "F2 paste模式开关
-    "F3 NerdTREE开关
-    "F4 tagbar开关
-    "F5 行号模式切换
-    "F6 是否显示特殊字符
-    "F7 更新ctags文件
-    "F8 打开undotree
-    "F9 进入MultiCursor模式
-    "F12 鼠标模式切换
-    "<Ctrl+c> 快速推出VIM(:qall!)
+" Coolceph VIMRC
+"
+" Maintainer:	coolceph <https://github.com/coolceph>
+" Last change:	2016 Feb 7
+"
+" To use it, copy it to
+"     for Unix and OS/2:  ~/.vimrc
+"	      for Amiga:  s:.vimrc
+"  for MS-DOS and Win32:  $VIM\_vimrc
+"	    for OpenVMS:  sys$login:.vimrc
 
-syntax on        "语法支持
+" +----------+---------------------+
+" | Key      | Function            |
+" +----------+---------------------+
+" | F2       | paste模式开关       |
+" | F3       | NerdTREE开关        |
+" | F4       | tagbar开关          |
+" | F5       | 行号模式切换        |
+" | F6       | 是否显示特殊字符    |
+" | F7       | 更新ctags文件       |
+" | F8       | 打开undotree        |
+" | F9       | 进入MultiCursor模式 |
+" | F12      | 鼠标模式切换        |
+" | <Ctrl+c> | 快速推出VIM(:qall!) |
+" +----------+---------------------+
+
+" Use Vim settings, rather than Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+  syntax on
+  set hlsearch
+endif
+
 set nowrap       "禁用自动折行
-set nocompatible "vi兼容性，貌似vim会在检测到.vimrc时自动设置
 
 "代码缩进设置
 set autoindent
@@ -24,20 +50,54 @@ set shiftwidth=4  "使用每层缩进的空格数
 set expandtab     "是否将输入的TAB自动展开成空格。开启后要输入TAB，需要Ctrl-V<TAB>
 set updatetime=250
 
-filetype plugin indent on
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType make setlocal noexpandtab
-autocmd FileType python setlocal et sta sw=4 sts=4
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+  set mouse-=a
+endif
 
-"set clipboard+=unnamed "use System clipboard on Mac
-set mouse-=a                "默认禁用全部鼠标控制
-set backspace=2             "在insert模式下用退格键删除
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
+
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+  autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+  autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
+  autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+  autocmd FileType make setlocal noexpandtab
+  autocmd FileType python setlocal et sta sw=4 sts=4
+
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if line("'\"") >= 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
+  augroup END
+
+else
+
+  set autoindent		" always set autoindenting on
+
+endif " has("autocmd")
+
+set clipboard+=unnamed "use System clipboard on Mac
 set number                  "显示行号
 set autoread                "文件在Vim之外修改过，自动重新读入
 set showbreak=↪             "显示换行符
-set backspace=indent,eol,start "允许任意地方使用backspace键
 set completeopt=longest,menuone,preview "更好的insert模式自动完成
 set modeline    "允许被编辑的文件以注释的形式设置Vim选项
 set hidden              "switching buffers without saving
@@ -72,15 +132,6 @@ set backupskip=/tmp/*,/private/tmp/*"
 
 " Resize splits when the window is resized
 au VimResized * :wincmd =
-
-"保证vim在reopen一个文件时定位到同一行
-augroup line_return
-    au!
-    au BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \     execute 'normal! g`"zvzz' |
-        \ endif
-augroup END
 
 "开关复制模式
 fun! TogglePasteMode()
@@ -134,7 +185,6 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
     "set gdefault   "由于设置gdefault之后会导致%s/abc/abc/g最后的g参数反义，影响直觉，因此禁用
     set showmatch  " show matching brackets/parenthesis
     set incsearch  " find as you type search
-    set hlsearch   " 高亮搜索结果
     set magic      " 根据vim说明默认开启此参数
     set ignorecase " 忽略大小写
     set smartcase  " case sensitive when uc present
