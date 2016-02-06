@@ -41,8 +41,6 @@ endif
 set nowrap       "禁用自动折行
 
 "代码缩进设置
-set autoindent
-set smartindent
 set smarttab      "开启时，在行首按TAB将加入sw个空格，否则加入ts个空格
 set tabstop=4     "编辑时一个TAB字符占多少个空格的位置
 set softtabstop=4 "方便在开启了et后使用退格（backspace）键，每次退格将删除X个空格
