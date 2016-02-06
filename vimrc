@@ -468,7 +468,7 @@ let g:SignatureMap = {
         \ 'ToggleMarkAtLine'   :  "m.",
         \ 'PurgeMarksAtLine'   :  "m-",
         \ 'DeleteMark'         :  "dm",
-        \ 'PurgeMarks'         :  "mda",
+        \ 'PurgeMarks'         :  "m<Space>",
         \ 'PurgeMarkers'       :  "m<BS>",
         \ 'GotoNextLineAlpha'  :  "']",
         \ 'GotoPrevLineAlpha'  :  "'[",
@@ -570,6 +570,10 @@ let g:SignatureMap = {
     "work:
     "let g:multi_cursor_quit_key='<C-c>'
     "nnoremap <C-c> :call multiple_cursors#quit()<CR>
+
+"vim-expand-region
+    map K <Plug>(expand_region_expand)
+    map J <Plug>(expand_region_shrink)
 
 "统一swapdir&backupdir
     function! s:get_swap_dir() "{{{
