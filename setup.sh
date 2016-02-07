@@ -1,4 +1,6 @@
-vim_path=~/.vim
+vim_path=.vim
+vim_dir=$HOME
+vim_fullpath=$vim_dir/$vim_path
 
 color_print() {
     printf '\033[0;31m%s\033[0m\n' "$1"
@@ -34,24 +36,24 @@ help() {
 }
 
 make_vimproc() {
-    cd $vim_path/bundle/vimproc.vim/
+    cd $vim_fullpath/bundle/vimproc.vim/
     make
     cd -
     color_print "Make vimproc.vim finished"
 }
 
 make_vimrc() {
-    unlink ~/.vimrc
-    echo "source ~/.vim/vimrc" > ~/.vimrc
+    unlink $HOME/.vimrc
+    echo "source $vim_fullpath/vimrc" > $HOME/.vimrc
     color_print "Make vimrc finished"
 }
 
-backup_dotvim() {
-    cd ~
+backup_vimrc() {
+    cd $vim_dir
     backup_date=`date +%Y%m%d`
     color_print $backup_date
-    tar --exclude .git -czvf vimrc-$backup_date-mini.tar.gz .vimrc $vim_path
-    tar -czvf vimrc-$backup_date-full.tar.gz .vimrc $vim_path
+    tar --exclude .git -czvf vimrc-$backup_date-mini.tar.gz $vim_path
+    tar -czvf vimrc-$backup_date-full.tar.gz $vim_path
     cd -
     color_print "Backup Finished "$backup_date
 }
@@ -85,24 +87,24 @@ check_term() {
 }
 
 init_plugins() {
-    if [ ! -d "$vim_path/bundle" ]
+    if [ ! -d "$vim_fullpath/bundle" ]
     then
-        color_print "$vim_path/bundle is not existed, vimrc will create"
-        mkdir -p $vim_path/bundle
+        color_print "$vim_fullpath/bundle is not existed, vimrc will create"
+        mkdir -p $vim_fullpath/bundle
     else
-        if [ ! -f $vim_path/bundle/vimrc.init ]; then
-            color_print "$vim_path/bundle is existed and not created by vimrc, stop"
+        if [ ! -f $vim_fullpath/bundle/vimrc.init ]; then
+            color_print "$vim_fullpath/bundle is existed and not created by vimrc, stop"
             exit -1
         fi
-        color_print "$vim_path/bundle is existed and created by vimrc, not init_plugins is needed"
+        color_print "$vim_fullpath/bundle is existed and created by vimrc, not init_plugins is needed"
         return 0
     fi
 
     color_print "Start init_plugins"
-    cp vimrc $vim_path
-    cp setup.sh $vim_path
+    cp vimrc $vim_fullpath
+    cp setup.sh $vim_fullpath
 
-    cd $vim_path/bundle
+    cd $vim_fullpath/bundle
 
     git clone https://github.com/Mizuchi/STL-Syntax
     git clone https://github.com/mileszs/ack.vim
@@ -143,13 +145,13 @@ init_plugins() {
     git clone https://github.com/tpope/vim-surround
     git clone https://github.com/tpope/vim-repeat
 
-	touch $vim_path/bundle/vimrc.init
+	touch $vim_fullpath/bundle/vimrc.init
     cd -
     color_print "All plugins init finished!"
 }
 
 update_plugins() {
-    cd $vim_path/bundle
+    cd $vim_fullpath/bundle
     x=0
     y=1
 
@@ -188,12 +190,11 @@ while getopts ":iub" opts; do
             ;;
         u)
             logo
-            require
             update_plugins
             ;;
         b)
             logo
-            backup_dotvim
+            backup_vimrc
             ;;
         :)
             help;;
