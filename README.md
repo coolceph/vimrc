@@ -139,6 +139,12 @@ The leader key is ','.
 
 [vim-trailing-whitespace]
 
+[vim-surround]
+
+[vim-repeat]
+
+[a.vim]
+
 [STL-Syntax]:https://github.com/Mizuchi/STL-Syntax
 [ack.vim]:https://github.com/mileszs/ack.vim
 [ag.vim]:https://github.com/rking/ag.vim
@@ -175,4 +181,7 @@ The leader key is ','.
 [vimshell.vim]:https://github.com/Shougo/vimshell.vim
 [vim-expand-region]://github.com/terryma/vim-expand-region
 [vim-trailing-whitespace]:https://github.com/bronson/vim-trailing-whitespace
+[vim-surround]:https://github.com/tpope/vim-surround
+[vim-repeat]://github.com/tpope/vim-repeat
+[a.vim]:https://github.com/vim-scripts/a.vim
 
