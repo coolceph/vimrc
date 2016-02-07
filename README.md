@@ -6,11 +6,20 @@ Enjoy it.
 
 # Install
 
+* Use install.sh, with git submodule(Need clone to ~/.vim)
+
 ```
 git clone https://github.com/coolceph/vimrc.git ~/.vim
 cd ~/.vim && ./install.sh
 ```
 
+* Use setup.sh, no submodule
+
+```
+git clone https://github.com/coolceph/vimrc.git $ANY_DIR
+cd $ANY_DIR
+./setup.sh -i
+```
 # ShortCuts
 
 F2           : Paste Model Switch
