@@ -1,14 +1,23 @@
-" Coolceph VIMRC
+"|------------------------|
+"|    Coolceph VIMRC      |
+"|------------------------|
+"|           _            |
+"|   __   __(_)___ ___    |
+"|   | | / / / __ `__ \   |
+"|   | |/ / / / / / / /   |
+"|   |___/_/_/ /_/ /_/    |
+"|                        |
+"|------------------------|
 "
-" Maintainer:	coolceph <https://github.com/coolceph>
-" Last change:	2016 Feb 7
+" Maintainer:	coolceph <https://github.com/coolceph/vimrc>
+" Last change:	2016 Feb 8
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
 "	      for Amiga:  s:.vimrc
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
-
+"
 " +----------+---------------------+
 " | Key      | Function            |
 " +----------+---------------------+

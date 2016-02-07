@@ -6,6 +6,15 @@ color_print() {
     printf '\033[0;31m%s\033[0m\n' "$1"
 }
 
+warn() {
+    color_print "$1" >&2
+}
+
+die() {
+    warn "$1"
+    exit 1
+}
+
 logo() {
     color_print "Thank you for installing vimrc!"
     color_print '            _         '
@@ -190,6 +199,7 @@ while getopts ":iub" opts; do
             ;;
         u)
             logo
+            require
             update_plugins
             ;;
         b)
