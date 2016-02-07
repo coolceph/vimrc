@@ -13,43 +13,43 @@ cd ~/.vim && ./install.sh
 
 # ShortCuts
 
-F2: Paste Model Switch
+F2           : Paste Model Switch
 
-F3: NerdTREE Switch
+F3           : NerdTREE Switch
 
-F4: Tagbar Switch
+F4           : Tagbar Switch
 
-F5: LineNumber Model Switch
+F5           : LineNumber Model Switch
 
-F6: Whether Show Special Characters Such as Enter,Tab
+F6           : Whether Show Special Characters Such as Enter,Tab
 
-F7: Update ctags
+F7           : Update ctags
 
-F8: Open undotree
+F8           : Open undotree
 
-F9: Enter multi cursor mode
+F9           : Enter multi cursor mode
 
-F12: Mouse Model Switch (all or none)
+F12          : Mouse Model Switch (all or none)
 
-SpaceSpace: Activate Unite Search Plugin
+SpaceSpace   : Activate Unite Search Plugin
 
-Ctrl+n/p: Switch between buffers.
+Ctrl+n/p     : Switch between buffers.
 
-Ctrl+h/j/k/l: Switch between windows.
+Ctrl+h/j/k/l : Switch between windows.
 
-Ctrl+c: Quit vim without saving
+Ctrl+c       : Quit vim without saving
 
 The leader key is ','.
 
 # Quick Commands
 
-Ctags: Genrate ctags for pwd
+Ctags   : Genrate ctags for pwd
 
-Gotags: Genrate gotags for pwd
+Gotags  : Genrate gotags for pwd
 
-Hex/Asc: Swtich between Asc and Hex
+Hex/Asc : Swtich between Asc and Hex
 
-Cswp: Clear *.swp
+Cswp    : Clear *.swp
 
 # FAQ
 
