@@ -22,43 +22,32 @@ cd $ANY_DIR
 ```
 # ShortCuts
 
-F2           : Paste Model Switch
-
-F3           : NerdTREE Switch
-
-F4           : Tagbar Switch
-
-F5           : LineNumber Model Switch
-
-F6           : Whether Show Special Characters Such as Enter,Tab
-
-F7           : Update ctags
-
-F8           : Open undotree
-
-F9           : Enter multi cursor mode
-
-F12          : Mouse Model Switch (all or none)
-
-SpaceSpace   : Activate Unite Search Plugin
-
-Ctrl+n/p     : Switch between buffers.
-
-Ctrl+h/j/k/l : Switch between windows.
-
-Ctrl+c       : Quit vim without saving
+| Key            | Function                                            |
+| -------------- | --------------------------------------------------- |
+| F2             | Paste mode toggle(normal/paste)                     |
+| F3             | NerdTREE toggle                                     |
+| F4             | Tagbar toggle                                       |
+| F5             | LineNumber Model Switch                             |
+| F6             | Whether or not show listchar                        |
+| F7             | Update ctags                                        |
+| F8             | Open undotree                                       |
+| F9             | Enter multi-cursor-mode                             |
+| F12            | Mouse mode switch (mouse=a/-a)                      |
+| SpaceSpace     | Activate Unite Search Plugin                        |
+| Ctrl+n/p       | Switch between buffers.                             |
+| Ctrl+h/j/k/l   | Switch between windows.                             |
+| Ctrl+c         | Completely quit vim without saving                  |
 
 The leader key is ','.
 
 # Quick Commands
 
-Ctags   : Genrate ctags for pwd
-
-Gotags  : Genrate gotags for pwd
-
-Hex/Asc : Swtich between Asc and Hex
-
-Cswp    : Clear *.swp
+| Cmd     | Function                   |
+| ------- | -------------------------- |
+| Ctags   | Genrate ctags for pwd      |
+| Gotags  | Genrate gotags for pwd     |
+| Hex/Asc | Swtich between Asc and Hex |
+| Cswp    | Clear swp files            |
 
 # FAQ
 
