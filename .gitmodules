@@ -112,3 +112,6 @@
 [submodule "bundle/bundle/vim-repeat"]
 	path = bundle/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat
+[submodule "bundle/a.vim"]
+	path = bundle/a.vim
+	url = https://github.com/vim-scripts/a.vim

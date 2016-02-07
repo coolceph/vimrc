@@ -153,6 +153,7 @@ init_plugins() {
     git clone https://github.com/bronson/vim-trailing-whitespace
     git clone https://github.com/tpope/vim-surround
     git clone https://github.com/tpope/vim-repeat
+    git clone https://github.com/vim-scripts/a.vim
 
 	touch $vim_fullpath/bundle/vimrc.init
     cd -
