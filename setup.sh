@@ -1,6 +1,28 @@
+# |------------------------|
+# |    Coolceph VIMRC      |
+# |------------------------|
+# |           _            |
+# |   __   __(_)___ ___    |
+# |   | | / / / __ `__ \   |
+# |   | |/ / / / / / / /   |
+# |   |___/_/_/ /_/ /_/    |
+# |                        |
+# |------------------------|
+#
+# | ---------------------- | ---------------------- |
+# | vimrc安装脚本          |                        |
+# | ---------------------- | ---------------------- |
+# | 说明                   |                        |
+# | ---------------------- | ---------------------- |
+# | vim_path               | vimrc安装目录的父目录  |
+# | vim_dir                | vimrc安装目录名        |
+# | ---------------------- | ---------------------- |
 vim_path=.vim
 vim_dir=$HOME
-vim_fullpath=$vim_dir/$vim_path
+
+#setup.sh start here, do not modify
+vim_fullpath=$vim_dir/$vim_path        # vimrc安装到的目录
+vim_init_file=$vim_fullpath/vimrc.init # vimrc标志文件，记录安装的日期
 
 color_print() {
     printf '\033[0;31m%s\033[0m\n' "$1"
@@ -101,7 +123,7 @@ init_plugins() {
         color_print "$vim_fullpath/bundle is not existed, vimrc will create"
         mkdir -p $vim_fullpath/bundle
     else
-        if [ ! -f $vim_fullpath/bundle/vimrc.init ]; then
+        if [ ! -f $vim_init_file ]; then
             color_print "$vim_fullpath/bundle is existed and not created by vimrc, stop"
             exit -1
         fi
@@ -115,47 +137,58 @@ init_plugins() {
 
     cd $vim_fullpath/bundle
 
-    git clone https://github.com/Mizuchi/STL-Syntax
-    git clone https://github.com/mileszs/ack.vim
-    git clone https://github.com/rking/ag.vim
-    git clone https://github.com/chrisbra/csv.vim
-    git clone https://github.com/nanotech/jellybeans.vim
-    git clone https://github.com/Shougo/neocomplcache.vim
-    git clone https://github.com/Shougo/neomru.vim
-    git clone https://github.com/Shougo/neosnippet-snippets
-    git clone https://github.com/Shougo/neosnippet.vim
-    git clone https://github.com/Shougo/vimshell.vim
-    git clone https://github.com/scrooloose/nerdcommenter
-    git clone https://github.com/scrooloose/nerdtree
-    git clone https://github.com/NLKNguyen/papercolor-theme
-    git clone https://github.com/kien/rainbow_parentheses.vim
-    git clone https://github.com/majutsushi/tagbar
-    git clone https://github.com/vim-php/tagbar-phpctags.vim
-    git clone https://github.com/abudden/taghighlight-automirror
-    git clone https://github.com/mbbill/undotree
-    git clone https://github.com/Shougo/unite.vim
-    git clone https://github.com/bling/vim-airline
-    git clone https://github.com/altercation/vim-colors-solarized
-    git clone https://github.com/easymotion/vim-easymotion
-    git clone https://github.com/tpope/vim-fugitive
-    git clone https://github.com/fatih/vim-go
-    git clone https://github.com/henrik/vim-indexed-search
-    git clone https://github.com/tpope/vim-pathogen
-    git clone https://github.com/kshenoy/vim-signature
-    git clone https://github.com/nvie/vim-togglemouse
-    git clone https://github.com/tkhoa2711/vim-togglenumber
-    git clone https://github.com/Shougo/vimproc.vim.git
-    git clone https://github.com/vim-airline/vim-airline-themes
-    git clone https://github.com/airblade/vim-gitgutter
-    git clone https://github.com/godlygeek/tabular
-    git clone https://github.com/terryma/vim-multiple-cursors
-    git clone https://github.com/terryma/vim-expand-region
-    git clone https://github.com/bronson/vim-trailing-whitespace
-    git clone https://github.com/tpope/vim-surround
-    git clone https://github.com/tpope/vim-repeat
-    git clone https://github.com/vim-scripts/a.vim
+    plugin_list=(
+    "https://github.com/Mizuchi/STL-Syntax"
+    "https://github.com/mileszs/ack.vim"
+    "https://github.com/rking/ag.vim"
+    "https://github.com/chrisbra/csv.vim"
+    "https://github.com/nanotech/jellybeans.vim"
+    "https://github.com/Shougo/neocomplcache.vim"
+    "https://github.com/Shougo/neomru.vim"
+    "https://github.com/Shougo/neosnippet-snippets"
+    "https://github.com/Shougo/neosnippet.vim"
+    "https://github.com/Shougo/vimshell.vim"
+    "https://github.com/scrooloose/nerdcommenter"
+    "https://github.com/scrooloose/nerdtree"
+    "https://github.com/kien/rainbow_parentheses.vim"
+    "https://github.com/majutsushi/tagbar"
+    "https://github.com/vim-php/tagbar-phpctags.vim"
+    "https://github.com/abudden/taghighlight-automirror"
+    "https://github.com/mbbill/undotre"
+    "https://github.com/Shougo/unite.vim"
+    "https://github.com/bling/vim-airline"
+    "https://github.com/easymotion/vim-easymotion"
+    "https://github.com/tpope/vim-fugitive"
+    "https://github.com/fatih/vim-go"
+    "https://github.com/henrik/vim-indexed-search"
+    "https://github.com/tpope/vim-pathogen"
+    "https://github.com/kshenoy/vim-signature"
+    "https://github.com/nvie/vim-togglemouse"
+    "https://github.com/tkhoa2711/vim-togglenumber"
+    "https://github.com/Shougo/vimproc.vim.git"
+    "https://github.com/vim-airline/vim-airline-themes"
+    "https://github.com/airblade/vim-gitgutter"
+    "https://github.com/godlygeek/tabular"
+    "https://github.com/terryma/vim-multiple-cursors"
+    "https://github.com/terryma/vim-expand-region"
+    "https://github.com/bronson/vim-trailing-whitespace"
+    "https://github.com/tpope/vim-surround"
+    "https://github.com/tpope/vim-repeat"
+    "https://github.com/vim-scripts/a.vim"
+    "https://github.com/tomasr/molokai"
+    )
 
-	touch $vim_fullpath/bundle/vimrc.init
+    plugin_cnt=${#plugin_list[@]}
+    x=0
+    for i in "${plugin_list[@]}"
+    do
+        let "x+=1"
+        color_print "Installing [$x/$plugin_cnt] $i"
+        git clone $i
+    done
+
+    init_date=`date +%Y-%m-%d\_%H:%M:%S`
+    echo "init_date="$init_date > $vim_init_file
     cd -
     color_print "All plugins init finished!"
 }
