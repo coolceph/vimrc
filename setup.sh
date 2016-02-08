@@ -171,7 +171,7 @@ init_plugins() {
     "https://github.com/godlygeek/tabular"
     "https://github.com/terryma/vim-multiple-cursors"
     "https://github.com/terryma/vim-expand-region"
-    "https://github.com/bronson/vim-trailing-whitespace"
+    "https://github.com/ntpeters/vim-better-whitespace"
     "https://github.com/tpope/vim-surround"
     "https://github.com/tpope/vim-repeat"
     "https://github.com/vim-scripts/a.vim"

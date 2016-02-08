@@ -84,7 +84,6 @@ if has("autocmd")
   autocmd FileType make setlocal noexpandtab
   autocmd FileType python setlocal et sta sw=4 sts=4
 
-
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
   " (happens when dropping a file on gvim).
@@ -149,6 +148,7 @@ fun! TogglePasteMode()
     if s:old_pastemode == "0"
         set number
         set nopaste
+        :EnableWhitespace
         call gitgutter#enable()
         let s:old_pastemode = "1"
         echo "set edit mode"
@@ -157,6 +157,7 @@ fun! TogglePasteMode()
         set norelativenumber
         set nolist
         set paste
+        :DisableWhitespace
         call gitgutter#disable()
         let s:old_pastemode = "0"
         echo "set copy/paste mode"
@@ -627,6 +628,12 @@ let g:SignatureMap = {
 "vim-expand-region
     map K <Plug>(expand_region_expand)
     map J <Plug>(expand_region_shrink)
+
+"vim-better-whitespace
+"need this hack code to make everything OK now
+    autocmd VimEnter * DisableWhitespace
+    autocmd VimEnter * EnableWhitespace
+    map <leader><space> :StripWhitespace<CR>
 
 "统一swapdir&backupdir
     function! s:get_swap_dir() "{{{
