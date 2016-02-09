@@ -57,6 +57,8 @@ The leader key is ','.
 
     In the fonts dir, there is some powerline fonts you could choose.
 
+    You could found more powerline fonts in [powerline_fonts]
+
 - *My vim is ugly, it seems some color are missing*
 
     You should set your env TERM=xterm-256color, you can do this by the following two ways:
@@ -184,4 +186,5 @@ The leader key is ','.
 [vim-surround]:https://github.com/tpope/vim-surround
 [vim-repeat]://github.com/tpope/vim-repeat
 [a.vim]:https://github.com/vim-scripts/a.vim
+[powerline_fonts]:https://github.com/powerline/fonts
 
