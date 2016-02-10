@@ -6,20 +6,12 @@ Enjoy it.
 
 # Install
 
-* Use install.sh, with git submodule(Need clone to ~/.vim)
+* vimrc will install to ~/.vim, require ~/.vim does not exist.
 
 ```
-git clone https://github.com/coolceph/vimrc.git ~/.vim
-cd ~/.vim && ./install.sh
+bash -c "$( curl https://raw.githubusercontent.com/coolceph/vimrc/master/setup.sh )"
 ```
 
-* Use setup.sh, no submodule
-
-```
-git clone https://github.com/coolceph/vimrc.git $ANY_DIR
-cd $ANY_DIR
-./setup.sh -i
-```
 # ShortCuts
 
 | Key            | Function                                            |

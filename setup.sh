@@ -144,6 +144,12 @@ update() {
 }
 
 if [ $# -ne 1 ]; then
+    logo
+    require
+    check_term
+    install
+    make_vimproc
+    make_vimrc
     help
 fi
 
