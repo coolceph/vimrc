@@ -23,6 +23,7 @@ vim_dir=$HOME
 #setup.sh start here, do not modify
 vim_fullpath=$vim_dir/$vim_path        # vimrc安装到的目录
 vim_init_file=$vim_fullpath/vimrc.init # vimrc标志文件，记录安装的日期
+vim_pwd=$PWD
 
 color_print() {
     printf '\033[0;31m%s\033[0m\n' "$1"
@@ -59,17 +60,18 @@ require() {
 
 help() {
     echo "setup.sh -- setup vimrc"
-    echo "Usage: setup.sh -i/-u/-b"
+    echo "Usage: setup.sh -i/-u/-b/-l"
     echo "-i -- install vimrc"
     echo "-u -- update vimrc's plugins"
     echo "-b -- backup ~/.vim"
+    echo "-l -- link ~/.vim/vimrc to ~/.vimrc and make vim-proc, for green install from tar.gz"
     exit 0
 }
 
 make_vimproc() {
     cd $vim_fullpath/bundle/vimproc.vim/
     make
-    cd -
+    cd $vim_pwd
     color_print "Make vimproc.vim finished"
 }
 
@@ -83,9 +85,8 @@ backup_vimrc() {
     cd $vim_dir
     backup_date=`date +%Y%m%d`
     color_print $backup_date
-    tar --exclude .git -czvf vimrc-$backup_date-mini.tar.gz $vim_path
-    tar -czvf vimrc-$backup_date-full.tar.gz $vim_path
-    cd -
+    tar --exclude .git -czvf vimrc-$backup_date-mini.tar.gz $vim_path/bundle $vim_path/vimrc $vim_path/setup.sh
+    cd $vim_pwd
     color_print "Backup Finished "$backup_date
 }
 
@@ -117,128 +118,60 @@ check_term() {
     fi
 }
 
-init_plugins() {
-    if [ ! -d "$vim_fullpath/bundle" ]
-    then
-        color_print "$vim_fullpath/bundle is not existed, vimrc will create"
-        mkdir -p $vim_fullpath/bundle
+install() {
+    color_print "Start install"
+
+    git clone https://github.com/coolceph/vimrc $vim_fullpath;
+    if [ $? -eq 0 ]; then
+        cd $vim_fullpath
+        git submodule init
+        git submodule update
+        cd $vim_pwd
+        color_print "All plugins init finished!"
     else
-        if [ ! -f $vim_init_file ]; then
-            color_print "$vim_fullpath/bundle is existed and not created by vimrc, stop"
-            exit -1
-        fi
-        color_print "$vim_fullpath/bundle is existed and created by vimrc, not init_plugins is needed"
-        return 0
+        echo $?
+        color_print "Install failed! "
+        exit -1
     fi
-
-    color_print "Start init_plugins"
-    cp vimrc $vim_fullpath
-    cp setup.sh $vim_fullpath
-
-    cd $vim_fullpath/bundle
-
-    plugin_list=(
-    "https://github.com/Mizuchi/STL-Syntax"
-    "https://github.com/mileszs/ack.vim"
-    "https://github.com/rking/ag.vim"
-    "https://github.com/chrisbra/csv.vim"
-    "https://github.com/nanotech/jellybeans.vim"
-    "https://github.com/Shougo/neocomplcache.vim"
-    "https://github.com/Shougo/neomru.vim"
-    "https://github.com/Shougo/neosnippet-snippets"
-    "https://github.com/Shougo/neosnippet.vim"
-    "https://github.com/Shougo/vimshell.vim"
-    "https://github.com/scrooloose/nerdcommenter"
-    "https://github.com/scrooloose/nerdtree"
-    "https://github.com/kien/rainbow_parentheses.vim"
-    "https://github.com/majutsushi/tagbar"
-    "https://github.com/vim-php/tagbar-phpctags.vim"
-    "https://github.com/abudden/taghighlight-automirror"
-    "https://github.com/mbbill/undotree"
-    "https://github.com/Shougo/unite.vim"
-    "https://github.com/bling/vim-airline"
-    "https://github.com/easymotion/vim-easymotion"
-    "https://github.com/tpope/vim-fugitive"
-    "https://github.com/fatih/vim-go"
-    "https://github.com/henrik/vim-indexed-search"
-    "https://github.com/tpope/vim-pathogen"
-    "https://github.com/kshenoy/vim-signature"
-    "https://github.com/nvie/vim-togglemouse"
-    "https://github.com/tkhoa2711/vim-togglenumber"
-    "https://github.com/Shougo/vimproc.vim"
-    "https://github.com/vim-airline/vim-airline-themes"
-    "https://github.com/airblade/vim-gitgutter"
-    "https://github.com/godlygeek/tabular"
-    "https://github.com/terryma/vim-multiple-cursors"
-    "https://github.com/terryma/vim-expand-region"
-    "https://github.com/ntpeters/vim-better-whitespace"
-    "https://github.com/tpope/vim-surround"
-    "https://github.com/tpope/vim-repeat"
-    "https://github.com/vim-scripts/a.vim"
-    "https://github.com/tomasr/molokai"
-    )
-
-    plugin_cnt=${#plugin_list[@]}
-    x=0
-    for i in "${plugin_list[@]}"
-    do
-        let "x+=1"
-        color_print "Installing [$x/$plugin_cnt] $i"
-        git clone $i
-    done
-
-    init_date=`date +%Y-%m-%d\_%H:%M:%S`
-    echo "init_date="$init_date > $vim_init_file
-    cd -
-    color_print "All plugins init finished!"
 }
 
-update_plugins() {
-    cd $vim_fullpath/bundle
-    x=0
-    y=1
-
-    for filename in `ls`
-    do
-        array[$x]=$filename
-        let "x+=1"
-    done
-
-    for i in "${array[@]}"
-    do
-        cd $i
-        color_print "Updating [$y/$x] $i"
-        git pull
-        cd ..
-        let "y+=1"
-    done
-
-    cd -
+update() {
+    cd $vim_fullpath
+    git pull
+    git submodule update
     color_print "Update finished!"
+    cd $vim_pwd
 }
 
 if [ $# -ne 1 ]; then
     help
 fi
 
-while getopts ":iub" opts; do
+while getopts ":iubl" opts; do
     case $opts in
         i)
             logo
             require
             check_term
-            init_plugins
+            install
             make_vimproc
             make_vimrc
             ;;
         u)
             logo
             require
-            update_plugins
+            update
             ;;
         b)
             logo
             backup_vimrc
+            ;;
+        l)
+            logo
+            require
+            check_term
+            make_vimproc
+            make_vimrc
             ;;
         :)
             help;;
