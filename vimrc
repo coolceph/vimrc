@@ -540,14 +540,32 @@ let g:SignatureMap = {
         \ 'ListLocalMarkers'   :  "m?"
         \ }
 
-"easy motion
-    let g:EasyMotion_smartcase = 1
-    "let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
-    map <Leader><leader>h <Plug>(easymotion-linebackward)
-    map <Leader><Leader>j <Plug>(easymotion-j)
-    map <Leader><Leader>k <Plug>(easymotion-k)
-    map <Leader><leader>l <Plug>(easymotion-lineforward)
-    " 重复上一次操作, 类似repeat插件, 很强大
+"vim-commentary
+    "use <BackSpace> to comment/uncomment a line
+    nmap <BS> gcc
+    vmap <BS> gc
+
+"easymotion
+    let g:EasyMotion_do_mapping = 0 " Disable default mappings
+    let g:EasyMotion_smartcase  = 1 " Turn on case insensitive feature
+    let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+
+    " Move to anywhere of current line
+    map <Leader>l <Plug>(easymotion-lineanywhere)
+
+    " Move to line
+    map <Leader>L <Plug>(easymotion-bd-jk)
+
+    " Move to word
+    map  <Leader>w <Plug>(easymotion-bd-w)
+
+    " <Leader>f{char} to move to {char}
+    map  <Leader>f <Plug>(easymotion-bd-f)
+
+    " <Leader>f{char}{char} to move to {char}{char}
+    map  <Leader>F <Plug>(easymotion-bd-f2)
+
+    " Repeat last motion!
     map <Leader><leader>, <Plug>(easymotion-repeat)
 
 "undotree
