@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016 Feb 8
+" Last change:	2016 Feb 11
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -100,7 +100,7 @@ else
 
 endif " has("autocmd")
 
-set clipboard+=unnamed "use System clipboard on Mac
+"set clipboard+=unnamed "use System clipboard on Mac
 set number                  "显示行号
 set autoread                "文件在Vim之外修改过，自动重新读入
 set showbreak=↪             "显示换行符
