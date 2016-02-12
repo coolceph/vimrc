@@ -43,6 +43,20 @@ The leader key is ','.
 
 # FAQ
 
+- *How should I install vimrc on a Linux server with no internet*
+
+    Vim version 7.4+ is needed on your Linux server, then the steps:
+
+    1) You need install vimrc on a Mac/Linux with internet first.
+
+    2) Then run "~/.vim/setup.sh -b", a "vimrc-2016xxxx-mini.tar.gz" file will appear in your ~ dir.
+
+    3) Copy the "vimrc-2016xxxx-mini.tar.gz" to your user's home dir on Linux server.
+
+    4) Run "cd ~;rm -rf ~/.vim;tar -zxvf vimrc-2016xxxx-mini.tar.gz;.vim/setup.sh -l"
+
+    You now get full-featured vimrc on your Linux server.
+
 - *My state line has strange characters*
 
     You should install the powerline fonts into your system and update the config of your terminal to use powerline fonts to display the Non-ASCII characters.
