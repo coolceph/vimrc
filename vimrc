@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016 Feb 11
+" Last change:	2016.02.12
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -250,7 +250,8 @@ noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
 " Airline ------------------------------
     let g:airline_powerline_fonts = 1
     let g:airline_detect_paste=1
-    let g:airline_theme = 'powerlineish'
+    " let g:airline_theme = 'powerlineish'
+    " let g:airline_theme = 'jellybeans'
     let g:airline#extensions#whitespace#enabled = 0
     let g:airline#extensions#whitespace#symbol = '!'
     let g:airline#extensions#syntastic#enabled = 1
@@ -678,15 +679,14 @@ let g:SignatureMap = {
 
 "tagbar-phpctags
 "    let g:tagbar_phpctags_bin='PATH_TO_phpctags'
-    let g:tagbar_phpctags_memory_limit = '512M'
+    let g:tagbar_phpctags_memory_limit = '256M'
 
-"自定义快捷扫描ctags命令
-command Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
-"command Ctags !ctags -R .
-command Hex %!xxd
-command Asc %!xxd -r
+"自定义命令
+command! Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
+command! Gotags !gotags -R . >tags
 
-command Gotags !gotags -R . >tags
+command! Hex %!xxd
+command! Asc %!xxd -r
 
-command Cswp !rm -f ~/.cache/swap_dir/*
+command! Cswp !rm -f ~/.cache/swap_dir/*
 
