@@ -97,12 +97,6 @@
 [submodule "bundle/vim-expand-region"]
 	path = bundle/vim-expand-region
 	url = https://github.com/terryma/vim-expand-region
-[submodule "bundle/bundle/vim-surround"]
-	path = bundle/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround
-[submodule "bundle/bundle/vim-repeat"]
-	path = bundle/bundle/vim-repeat
-	url = https://github.com/tpope/vim-repeat
 [submodule "bundle/a.vim"]
 	path = bundle/a.vim
 	url = https://github.com/vim-scripts/a.vim
