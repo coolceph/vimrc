@@ -1,5 +1,7 @@
 Best vimrc for CoolCeph team, used for C/C++, Python, PHP and Go.
 
+The design principles of coolceph vimrc is simple, green and easy. Coolceph vimrc is designed running well on Linux and Mac, just need ctags, git and powerline_fonts. And also coolceph vimrc can be copied and installed anywhere by just a tarball.
+
 Enjoy it.
 
 ![alt tag](https://raw.github.com/coolceph/vimrc/master/screenshot-2.png)
