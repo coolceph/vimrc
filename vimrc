@@ -149,6 +149,7 @@ fun! TogglePasteMode()
         set number
         set nopaste
         :EnableWhitespace
+        :IndentLinesEnable
         call gitgutter#enable()
         let s:old_pastemode = "1"
         echo "set edit mode"
@@ -158,6 +159,7 @@ fun! TogglePasteMode()
         set nolist
         set paste
         :DisableWhitespace
+        :IndentLinesDisable
         call gitgutter#disable()
         let s:old_pastemode = "0"
         echo "set copy/paste mode"
@@ -653,6 +655,10 @@ let g:SignatureMap = {
     autocmd VimEnter * DisableWhitespace
     autocmd VimEnter * EnableWhitespace
     map <leader><space> :StripWhitespace<CR>
+
+"indentLine
+    " let g:indentLine_char = '┆'
+    let g:indentLine_char = '¦'
 
 "统一swapdir&backupdir
     function! s:get_swap_dir() "{{{
