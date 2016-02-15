@@ -155,6 +155,8 @@ The leader key is ','.
 
 [a.vim]
 
+[indentLine]
+
 [STL-Syntax]:https://github.com/Mizuchi/STL-Syntax
 [ack.vim]:https://github.com/mileszs/ack.vim
 [ag.vim]:https://github.com/rking/ag.vim
@@ -194,5 +196,6 @@ The leader key is ','.
 [vim-surround]:https://github.com/tpope/vim-surround
 [vim-repeat]://github.com/tpope/vim-repeat
 [a.vim]:https://github.com/vim-scripts/a.vim
+[indentLine]:https://github.com/Yggdroot/indentLine
 [powerline_fonts]:https://github.com/powerline/fonts
 
