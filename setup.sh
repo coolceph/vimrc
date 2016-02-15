@@ -118,6 +118,60 @@ check_term() {
     fi
 }
 
+check_lang() {
+    if [ x$LANG != x"en_US.UTF-8" ]
+    then
+        color_print "LANG is not en_US.UTF-8, will set LANG=en_US.UTF-8"
+
+        is_zsh=`color_print $SHELL|grep 'zsh'|wc -l`
+        is_bash=`color_print $SHELL|grep 'bash'|wc -l`
+
+        if [ $is_zsh -eq 1 ]
+        then
+            color_print "Your shell is zsh, set LANG in ~/.zshrc"
+            echo "export LANG=en_US.UTF-8" >> ~/.zshrc
+            color_print "Set LANG OK, please execute:"
+            color_print "    source ~/.zshrc"
+        elif [ $is_bash -eq 1 ]
+        then
+            color_print "Your shell is bash, set LANG in ~/.bash_profile"
+            echo "export LANG=en_US.UTF-8" >> ~/.bash_profile
+            color_print "Set LANG OK, please execute:"
+            color_print "    source ~/.bash_profile"
+        else
+            color_print "Your shell cannot set LANG automatically, please set LANG to xterm-256color by yourself"
+        fi
+    else
+        color_print "LANG is en_US.UTF-8, OK"
+    fi
+
+    if [ x$LC_ALL != x"en_US.UTF-8" ]
+    then
+        color_print "LC_ALL is not en_US.UTF-8, will set LC_ALL=en_US.UTF-8"
+
+        is_zsh=`color_print $SHELL|grep 'zsh'|wc -l`
+        is_bash=`color_print $SHELL|grep 'bash'|wc -l`
+
+        if [ $is_zsh -eq 1 ]
+        then
+            color_print "Your shell is zsh, set LC_ALL in ~/.zshrc"
+            echo "export LC_ALL=en_US.UTF-8" >> ~/.zshrc
+            color_print "Set LC_ALL OK, please execute:"
+            color_print "    source ~/.zshrc"
+        elif [ $is_bash -eq 1 ]
+        then
+            color_print "Your shell is bash, set LC_ALL in ~/.bash_profile"
+            echo "export LC_ALL=en_US.UTF-8" >> ~/.bash_profile
+            color_print "Set LC_ALL OK, please execute:"
+            color_print "    source ~/.bash_profile"
+        else
+            color_print "Your shell cannot set LC_ALL automatically, please set LC_ALL to xterm-256color by yourself"
+        fi
+    else
+        color_print "LC_ALL is en_US.UTF-8, OK"
+    fi
+}
+
 install() {
     color_print "Start install"
 
@@ -147,6 +201,7 @@ if [ $# -ne 1 ]; then
     logo
     require
     check_term
+    check_lang
     install
     make_vimproc
     make_vimrc
@@ -159,6 +214,7 @@ while getopts ":iubl" opts; do
             logo
             require
             check_term
+            check_lang
             install
             make_vimproc
             make_vimrc
@@ -176,6 +232,7 @@ while getopts ":iubl" opts; do
             logo
             require
             check_term
+            check_lang
             make_vimproc
             make_vimrc
             ;;
