@@ -137,8 +137,6 @@ The leader key is ','.
 
 [vim-signature]
 
-[vim-togglemouse]
-
 [vim-togglenumber]
 
 [vimproc.vim]
@@ -187,7 +185,6 @@ The leader key is ','.
 [vim-multiple-cursors]:https://github.com/terryma/vim-multiple-cursors
 [vim-pathogen]:https://github.com/tpope/vim-pathogen
 [vim-signature]:https://github.com/kshenoy/vim-signature
-[vim-togglemouse]:https://github.com/nvie/vim-togglemouse
 [vim-togglenumber]:https://github.com/tkhoa2711/vim-togglenumber
 [vimproc.vim]:https://github.com/Shougo/vimproc.vim.git
 [vimshell.vim]:https://github.com/Shougo/vimshell.vim
