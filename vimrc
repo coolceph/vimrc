@@ -276,8 +276,7 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
 " Airline ------------------------------
     let g:airline_powerline_fonts = 1
     let g:airline_detect_paste=1
-    " let g:airline_theme = 'powerlineish'
-    " let g:airline_theme = 'jellybeans'
+    let g:airline_theme = 'powerlineish'
     let g:airline#extensions#whitespace#enabled = 0
     let g:airline#extensions#whitespace#symbol = '!'
     let g:airline#extensions#syntastic#enabled = 1
