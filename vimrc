@@ -146,14 +146,20 @@ fun! TogglePasteMode()
     endif
 
     if s:old_pastemode == "0"
+        let s:old_pastemode = "1"
         set number
         set nopaste
         :EnableWhitespace
         :IndentLinesEnable
         call gitgutter#enable()
-        let s:old_pastemode = "1"
+
+        if exists("s:old_pastemouse")
+            let &mouse = s:old_pastemouse
+        endif
+
         echo "set edit mode"
     else
+        let s:old_pastemode = "0"
         set nonumber
         set norelativenumber
         set nolist
@@ -161,7 +167,10 @@ fun! TogglePasteMode()
         :DisableWhitespace
         :IndentLinesDisable
         call gitgutter#disable()
-        let s:old_pastemode = "0"
+
+        let s:old_pastemouse = &mouse
+        let &mouse=""
+
         echo "set copy/paste mode"
     endif
 endfunction
@@ -184,6 +193,21 @@ fun! UpdateCtagsAndFileTypes()
 endfunction
 
 noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
+
+"鼠标模式切换
+fun! ToggleMouse()
+    if &mouse == ""
+        let &mouse = "a"
+        echo "Mouse is for Vim (" . &mouse . ")"
+    else
+        let &mouse = ""
+        echo "Mouse is for Vim (" . &mouse . ")"
+    endif
+endfunction
+
+"使用F12切换鼠标模式
+noremap <F12> :call ToggleMouse()<CR>
+inoremap <F12> <Esc>:call ToggleMouse()<CR>a
 
 "快速退出vim
     nnoremap <C-c> :qall!<CR>
