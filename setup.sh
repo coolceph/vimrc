@@ -76,7 +76,9 @@ make_vimproc() {
 }
 
 make_vimrc() {
-    unlink $HOME/.vimrc
+    if [ -f $HOME/.vimrc ]; then
+        unlink $HOME/.vimrc
+    fi
     echo "source $vim_fullpath/vimrc" > $HOME/.vimrc
     color_print "Make vimrc finished"
 }
