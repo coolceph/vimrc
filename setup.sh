@@ -83,6 +83,11 @@ make_vimrc() {
     color_print "Make vimrc finished"
 }
 
+close_powerline_fonts() {
+    echo "let g:airline_powerline_fonts = 0" >> $HOME/.vimrc
+    color_print "Close powerline fonts"
+}
+
 backup_vimrc() {
     cd $vim_dir
     backup_date=`date +%Y%m%d`
@@ -210,7 +215,7 @@ if [ $# -ne 1 ]; then
     help
 fi
 
-while getopts ":iubl" opts; do
+while getopts ":iubln" opts; do
     case $opts in
         i)
             logo
@@ -237,6 +242,14 @@ while getopts ":iubl" opts; do
             check_lang
             make_vimproc
             make_vimrc
+            ;;
+        n)
+            logo
+            check_term
+            check_lang
+            make_vimproc
+            make_vimrc
+            close_powerline_fonts
             ;;
         :)
             help;;
