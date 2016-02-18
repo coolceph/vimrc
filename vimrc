@@ -101,16 +101,16 @@ else
 endif " has("autocmd")
 
 "set clipboard+=unnamed "use System clipboard on Mac
-set number                  "显示行号
-set autoread                "文件在Vim之外修改过，自动重新读入
-set showbreak=↪             "显示换行符
-set completeopt=longest,menuone,preview "更好的insert模式自动完成
-set modeline    "允许被编辑的文件以注释的形式设置Vim选项
-set hidden              "switching buffers without saving
-set ruler               " show the cursor position all the time
-set showcmd             " display incomplete commands
-set wildmenu            " show enhanced completion
-set wildmode=list:longest "together with wildmenu
+set number                                       " 显示行号
+set autoread                                     " 文件在Vim之外修改过，自动重新读入
+set showbreak=↪                                  " 显示换行符
+set completeopt=longest,menuone,preview          " 更好的insert模式自动完成
+set modeline                                     " 允许被编辑的文件以注释的形式设置Vim选项
+set hidden                                       " switching buffers without saving
+set ruler                                        " show the cursor position all the time
+set showcmd                                      " display incomplete commands
+set wildmenu                                     " show enhanced completion
+set wildmode=list:longest                        " together with wildmenu
 set wildignore+=.hg,.git,.svn                    " Version control
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
@@ -118,13 +118,13 @@ set wildignore+=*.sw?                            " Vim swap files
 set wildignore+=*.DS_Store                       " OSX bullshit
 set wildignore+=*.pyc                            " Python byte code
 set wildignore+=*.orig                           " Merge resolution files
-set visualbell          "flash screen when bell rings
-set cursorline          "highline cursor line
-set ttyfast             "indicate faster terminal connection
-set laststatus=2        "always show status line
+set visualbell                                   " flash screen when bell rings
+set cursorline                                   " highline cursor line
+set ttyfast                                      " indicate faster terminal connection
+set laststatus=2                                 " always show status line
 set cpoptions+=J
-set linebreak           " break the line by words
-set scrolloff=3         " show at least 3 lines around the current cursor position
+set linebreak                                    " break the line by words
+set scrolloff=3                                  " show at least 3 lines around the current cursor position
 set sidescroll=1
 set sidescrolloff=10
 set virtualedit+=block
