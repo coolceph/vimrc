@@ -129,6 +129,7 @@ set sidescroll=1
 set sidescrolloff=10
 set virtualedit+=block
 set lazyredraw
+set nolist
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set splitbelow
 set splitright
@@ -157,12 +158,15 @@ fun! TogglePasteMode()
             let &mouse = s:old_pastemouse
         endif
 
+        if exists("s:old_pastelist")
+            let &list=s:old_pastelist
+        endif
+
         echo "set edit mode"
     else
         let s:old_pastemode = "0"
         set nonumber
         set norelativenumber
-        set nolist
         set paste
         :DisableWhitespace
         :IndentLinesDisable
@@ -170,6 +174,9 @@ fun! TogglePasteMode()
 
         let s:old_pastemouse = &mouse
         let &mouse=""
+
+        let s:old_pastelist = &list
+        let &list="0"
 
         echo "set copy/paste mode"
     endif
@@ -462,6 +469,12 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
         \ ['red',         'firebrick3'],
         \ ]
     let g:rbpt_max = 16
+    let g:rbpt_loadcmd_toggle = 0
+
+    au VimEnter * RainbowParenthesesToggle
+    au Syntax * RainbowParenthesesLoadRound
+    au Syntax * RainbowParenthesesLoadSquare
+    au Syntax * RainbowParenthesesLoadBraces
 
 "Fugitive配置
     nnoremap <Leader>gs :Gstatus<CR>
