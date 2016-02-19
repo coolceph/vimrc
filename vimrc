@@ -183,8 +183,8 @@ fun! TogglePasteMode()
 endfunction
 
 "使用F2切换复制/粘帖模式和正常编辑模式
-"set pastetoggle=<F2> "old mode, deprecated
 noremap <F2> :call TogglePasteMode()<CR>
+inoremap <F2> <ESC>:call TogglePasteMode()<CR>i
 
 "使用F5切换行号模式
 noremap <F5> :ToggleNumber<CR>
@@ -731,8 +731,8 @@ let g:SignatureMap = {
     set backupdir=~/.cache/swap_dir//
 
 "tagbar-phpctags
-"    let g:tagbar_phpctags_bin='PATH_TO_phpctags'
-    let g:tagbar_phpctags_memory_limit = '256M'
+    let g:tagbar_phpctags_bin='~/.vim/bundle/tagbar-phpctags.vim/bin/phpctags'
+    let g:tagbar_phpctags_memory_limit = '128M'
 
 "自定义命令
 command! Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
