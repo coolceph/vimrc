@@ -75,6 +75,13 @@ make_vimproc() {
     color_print "Make vimproc.vim finished"
 }
 
+make_phpctags() {
+    cd $vim_fullpath/bundle/tagbar-phpctags.vim/
+    make
+    cd $vim_pwd
+    color_print "Make tagbar-phpctags.vim finished"
+}
+
 make_vimrc() {
     if [ -L $HOME/.vimrc ]; then
         unlink $HOME/.vimrc
@@ -214,6 +221,7 @@ if [ $# -ne 1 ]; then
     check_lang
     install
     make_vimproc
+    make_phpctags
     make_vimrc
     help
 fi
@@ -227,6 +235,7 @@ while getopts ":iubln" opts; do
             check_lang
             install
             make_vimproc
+            make_phpctags
             make_vimrc
             ;;
         u)
@@ -244,6 +253,7 @@ while getopts ":iubln" opts; do
             check_term
             check_lang
             make_vimproc
+            make_phpctags
             make_vimrc
             ;;
         n)
@@ -251,6 +261,7 @@ while getopts ":iubln" opts; do
             check_term
             check_lang
             make_vimproc
+            make_phpctags
             make_vimrc
             close_powerline_fonts
             ;;
