@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.02.18
+" Last change:	2016.02.19
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -190,7 +190,7 @@ noremap <F2> :call TogglePasteMode()<CR>
 noremap <F5> :ToggleNumber<CR>
 
 "使用F6开关list字符
-noremap <F6> :set list!<CR>
+noremap <F6> :set invlist<CR>:set list?<CR>
 
 "使用F7更新Taghighlight
 fun! UpdateCtagsAndFileTypes()
@@ -255,6 +255,20 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
 "For code reviewing
     "nnoremap j jzz
     "nnoremap k kzz
+
+" upper/lower word
+    nmap <leader>u mQviwU`Q
+    nmap <leader>d mQviwu`Q
+
+" upper/lower first char of word
+    nmap <leader>U mQgewvU`Q
+    nmap <leader>D mQgewvu`Q
+
+" set text wrapping toggles
+    nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
+
+" find merge conflict markers
+    nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
 "代码折叠相关配置
 "    set foldmethod=syntax       "代码折叠 共有6中方式如下
@@ -486,9 +500,6 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     nnoremap <Leader>gR :Gread<CR>
     nnoremap <Leader>gg :Git
     nnoremap <Leader>gd :Gdiff<CR>
-
-"Autoclose自动成对补充括号插件
-    nmap <Leader>x <Plug>ToggleAutoCloseMappings
 
 "vim-go & gotags config
     let g:go_highlight_functions = 1
