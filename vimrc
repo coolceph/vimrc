@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.02.19
+" Last change:	2016.02.22
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -47,7 +47,7 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-set nowrap       "禁用自动折行
+" set nowrap       "禁用自动折行
 
 "代码缩进设置
 set smarttab      "开启时，在行首按TAB将加入sw个空格，否则加入ts个空格
