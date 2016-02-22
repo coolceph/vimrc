@@ -270,6 +270,9 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
 " find merge conflict markers
     nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
+" 在命令行里面, 用%%表示当前文件路径
+    cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+
 "代码折叠相关配置
 "    set foldmethod=syntax       "代码折叠 共有6中方式如下
         "1. manual 手工定义折叠
@@ -706,6 +709,12 @@ let g:SignatureMap = {
 "indentLine
     " let g:indentLine_char = '┆'
     let g:indentLine_char = '¦'
+
+"vim-visual-star-search
+    "This plugin allows you to select some text using Vim's visual mode, then hit
+    "* and # to search for it elsewhere in the file
+    "If you hit <leader>* (\* unless you changed the mapleader), vim recursively
+    "vimgreps for the word under the cursor or the visual selection.
 
 "统一swapdir&backupdir
     function! s:get_swap_dir() "{{{
