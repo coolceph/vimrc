@@ -273,6 +273,10 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
 " 在命令行里面, 用%%表示当前文件路径
     cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
 
+" 使用系统剪贴板复制粘帖(仅用于Mac)
+    map <leader>y "+y
+    map <leader>p "+p
+
 "代码折叠相关配置
 "    set foldmethod=syntax       "代码折叠 共有6中方式如下
         "1. manual 手工定义折叠
