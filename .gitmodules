@@ -118,3 +118,6 @@
 [submodule "bundle/vim-visual-star-search"]
 	path = bundle/vim-visual-star-search
 	url = https://github.com/bronson/vim-visual-star-search
+[submodule "bundle/vim-template"]
+	path = bundle/vim-template
+	url = https://github.com/aperezdc/vim-template
