@@ -52,6 +52,7 @@ require() {
     color_print "Checking requirements for vimrc..."
     color_print "Checking vim version..."
     vim --version | grep 7.[4-9] || die "Your vim's version is too low!\nPlease download higher version(7.4+) from http://www.vim.org/download.php"
+    vim --version | grep +lua || die "Your vim does not have +lua"
     color_print "Checking if git exists..."
     which git || die "No git installed!\nPlease install git from http://git-scm.com/downloads/"
     color_print "Check if ctags exists..."
