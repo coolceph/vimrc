@@ -6,6 +6,16 @@ Enjoy it.
 
 ![alt tag](https://raw.github.com/coolceph/vimrc/master/screenshot-2.png)
 
+# Requirements
+
+* Vim 7.4+ compiled with if_lua. If :echo has("lua") returns 1, then you're done; otherwise, Mac OSX see below.
+
+```
+brew install vim --with-lua
+```
+
+* Ctags
+
 # Install
 
 * vimrc will install to ~/.vim, require ~/.vim does not exist.
