@@ -97,7 +97,7 @@ The leader key is ','.
 
 [jellybeans.vim]
 
-[neocomplcache.vim]
+[neocomplete.vim]
 
 [neomru.vim]
 
@@ -170,7 +170,7 @@ The leader key is ','.
 [ag.vim]:https://github.com/rking/ag.vim
 [csv.vim]:https://github.com/chrisbra/csv.vim
 [jellybeans.vim]:https://github.com/nanotech/jellybeans.vim
-[neocomplcache.vim]:https://github.com/Shougo/neocomplcache.vim
+[neocomplete.vim]:https://github.com/Shougo/neocomplete.vim
 [neomru.vim]:https://github.com/Shougo/neomru.vim
 [neosnippet-snippets]:https://github.com/Shougo/neosnippet-snippets
 [neosnippet.vim]:https://github.com/Shougo/neosnippet.vim
@@ -205,4 +205,5 @@ The leader key is ','.
 [a.vim]:https://github.com/vim-scripts/a.vim
 [indentLine]:https://github.com/Yggdroot/indentLine
 [powerline_fonts]:https://github.com/powerline/fonts
+[vim-templete]:https://github.com/aperezdc/vim-template
 
