@@ -506,6 +506,7 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 " vim-clang (work with neocomplete)
+    "vim-clang supports relative include path in .clang configuration file.
     " disable auto completion for vim-clang
     let g:clang_auto = 0
     " default 'longest' can not work with neocomplete
