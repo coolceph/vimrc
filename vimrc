@@ -104,7 +104,7 @@ endif " has("autocmd")
 set number                                       " 显示行号
 set autoread                                     " 文件在Vim之外修改过，自动重新读入
 set showbreak=↪                                  " 显示换行符
-set completeopt=longest,menuone,preview          " 更好的insert模式自动完成
+set completeopt=longest,menuone                  " 更好的insert模式自动完成
 set modeline                                     " 允许被编辑的文件以注释的形式设置Vim选项
 set hidden                                       " switching buffers without saving
 set ruler                                        " show the cursor position all the time
