@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.02.26
+" Last change:	2016.02.27
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -448,6 +448,8 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     let g:neocomplete#sources#syntax#min_keyword_length = 3
     let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
+    let g:neocomplete#sources#tags#cache_limit_size = 4194304
+
     " Define dictionary.
     let g:neocomplete#sources#dictionary#dictionaries = {
         \ 'default' : '',
@@ -496,7 +498,7 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
       let g:neocomplete#sources#omni#input_patterns = {}
     endif
     let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-    let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+    let g:neocomplete#sources#omni#input_patterns.c   = '[^.[:digit:] *\t]\%(\.\|->\)'
     let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
     " For perlomni.vim setting.
