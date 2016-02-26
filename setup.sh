@@ -57,6 +57,8 @@ require() {
     which git || die "No git installed!\nPlease install git from http://git-scm.com/downloads/"
     color_print "Check if ctags exists..."
     which ctags || warn "No ctags installed!\nPlease install ctags form http://ctags.sourceforge.net/ after vimrc intallation!"
+    color_print "Check if clang exists..."
+    which clang || warn "No clang installed!\nPlease install ctags form http://clang.llvm.org/ after vimrc intallation!"
 }
 
 help() {

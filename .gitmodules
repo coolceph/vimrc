@@ -124,3 +124,6 @@
 [submodule "bundle/neocomplete.vim"]
 	path = bundle/neocomplete.vim
 	url = https://github.com/Shougo/neocomplete.vim
+[submodule "bundle/vim-clang"]
+	path = bundle/vim-clang
+	url = https://github.com/justmao945/vim-clang
