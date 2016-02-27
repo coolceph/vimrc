@@ -128,7 +128,7 @@ set scrolloff=3                                  " show at least 3 lines around 
 set sidescroll=1
 set sidescrolloff=10
 set virtualedit+=block
-set lazyredraw
+" set lazyredraw
 set nolist
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set splitbelow
