@@ -165,6 +165,14 @@ The leader key is ','.
 
 [indentLine]
 
+[vim-templete]
+
+[syntastic]
+
+[rust.vim]
+
+[vim-clang]
+
 [STL-Syntax]:https://github.com/Mizuchi/STL-Syntax
 [ack.vim]:https://github.com/mileszs/ack.vim
 [ag.vim]:https://github.com/rking/ag.vim
@@ -206,4 +214,7 @@ The leader key is ','.
 [indentLine]:https://github.com/Yggdroot/indentLine
 [powerline_fonts]:https://github.com/powerline/fonts
 [vim-templete]:https://github.com/aperezdc/vim-template
+[syntastic]:https://github.com/scrooloose/syntastic
+[rush.vim]:https://github.com/rust-lang/rust.vim
+[vim-clang]:https://github.com/justmao945/vim-clang
 
