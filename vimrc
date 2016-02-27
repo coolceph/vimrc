@@ -277,6 +277,12 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     map <leader>y "+y
     map <leader>p "+p
 
+" command mode, ctrl-a to head， ctrl-e to tail
+	cnoremap <C-j> <t_kd>
+	cnoremap <C-k> <t_ku>
+	cnoremap <C-a> <Home>
+	cnoremap <C-e> <End>
+
 "代码折叠相关配置
 "    set foldmethod=syntax       "代码折叠 共有6中方式如下
         "1. manual 手工定义折叠
