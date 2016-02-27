@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.02.27
+" Last change:	2016.02.28
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -128,7 +128,7 @@ set scrolloff=3                                  " show at least 3 lines around 
 set sidescroll=1
 set sidescrolloff=10
 set virtualedit+=block
-set lazyredraw
+" set lazyredraw "Disable to fix cursor sometimes disappeared
 set nolist
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set splitbelow
@@ -216,11 +216,13 @@ endfunction
 noremap <F12> :call ToggleMouse()<CR>
 inoremap <F12> <Esc>:call ToggleMouse()<CR>a
 
-"快速退出vim
-    nnoremap <C-c> :qall!<CR>
-
 "设置mapleader前缀
     let mapleader = ','
+
+"快速退出vim
+    nnoremap <C-c> :qall!<CR>
+    nnoremap <Leader>q :qall!<CR>
+    nnoremap <Leader>x :q<CR>
 
 "搜索相关的设置
     "set gdefault   "由于设置gdefault之后会导致%s/abc/abc/g最后的g参数反义，影响直觉，因此禁用
@@ -812,6 +814,23 @@ let g:SignatureMap = {
 "tagbar-phpctags
     let g:tagbar_phpctags_bin='~/.vim/bundle/tagbar-phpctags.vim/bin/phpctags'
     let g:tagbar_phpctags_memory_limit = '128M'
+
+"Syntastic
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+
+    " let g:syntastic_always_populate_loc_list = 0
+    " let g:syntastic_auto_loc_list = 0
+    let g:syntastic_check_on_open = 0
+    let g:syntastic_check_on_wq = 0
+    let g:syntastic_loc_list_height = 5
+    " let g:syntastic_enable_highlighting=1
+    " let g:syntastic_python_checkers=['pyflakes'] " 使用pyflakes,速度比pylint快
+    " let g:syntastic_javascript_checkers = ['jsl', 'jshint']
+    " let g:syntastic_html_checkers=['tidy', 'jshint']"
+
+    nnoremap <Leader>s :SyntasticCheck<CR>:Errors<CR>
 
 "自定义命令
 command! Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .

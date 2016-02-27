@@ -127,3 +127,9 @@
 [submodule "bundle/vim-clang"]
 	path = bundle/vim-clang
 	url = https://github.com/justmao945/vim-clang
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic
+[submodule "bundle/rust.vim"]
+	path = bundle/rust.vim
+	url = https://github.com/rust-lang/rust.vim
