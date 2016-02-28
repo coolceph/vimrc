@@ -215,6 +215,6 @@ The leader key is ','.
 [powerline_fonts]:https://github.com/powerline/fonts
 [vim-templete]:https://github.com/aperezdc/vim-template
 [syntastic]:https://github.com/scrooloose/syntastic
-[rush.vim]:https://github.com/rust-lang/rust.vim
+[rust.vim]:https://github.com/rust-lang/rust.vim
 [vim-clang]:https://github.com/justmao945/vim-clang
 
