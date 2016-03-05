@@ -101,6 +101,7 @@ else
 endif " has("autocmd")
 
 "set clipboard+=unnamed "use System clipboard on Mac
+set history=1024
 set number                                       " 显示行号
 set autoread                                     " 文件在Vim之外修改过，自动重新读入
 set showbreak=↪                                  " 显示换行符
@@ -235,11 +236,14 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
 "搜索相关的设置
     "set gdefault   "由于设置gdefault之后会导致%s/abc/abc/g最后的g参数反义，影响直觉，因此禁用
     set showmatch  " show matching brackets/parenthesis
-    set incsearch  " find as you type search
+    " set incsearch  " find as you type search
     set magic      " 根据vim说明默认开启此参数
     set ignorecase " 忽略大小写
     set smartcase  " case sensitive when uc present
-    nnoremap <leader>/ :nohlsearch<CR> "清空搜索结果高亮显示
+
+    "清空搜索结果高亮显示
+    nnoremap <leader>/ :nohlsearch<CR>
+    nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 
 "Window navigation mappings
     noremap <C-h> <C-w>h
@@ -877,6 +881,49 @@ let g:SignatureMap = {
     let g:yankring_max_history=256
     " let g:yankring_replace_n_pkey='<C-K>'
     " let g:yankring_replace_n_nkey='<C-J>'
+
+"CtrlSF 类似Sublime的带上下文的0全文搜索
+    nmap     <C-F>f <Plug>CtrlSFPrompt
+    vmap     <C-F>f <Plug>CtrlSFVwordPath
+    vmap     <C-F>F <Plug>CtrlSFVwordExec
+    nmap     <C-F>n <Plug>CtrlSFCwordPath
+    nmap     <C-F>p <Plug>CtrlSFPwordPath
+    nnoremap <C-F>o :CtrlSFOpen<CR>
+    nnoremap <C-F>t :CtrlSFToggle<CR>
+    inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+
+" incsearch.vim x fuzzy x vim-easymotion
+    "insearch.vim
+    map /  <Plug>(incsearch-forward)
+    map ?  <Plug>(incsearch-backward)
+    map g/ <Plug>(incsearch-stay)
+
+    "insearch with no hlsearch
+    let g:incsearch#auto_nohlsearch = 1
+    map n  <Plug>(incsearch-nohl-n)
+    map N  <Plug>(incsearch-nohl-N)
+    map *  <Plug>(incsearch-nohl-*)
+    map #  <Plug>(incsearch-nohl-#)
+    map g* <Plug>(incsearch-nohl-g*)
+    map g# <Plug>(incsearch-nohl-g#)
+
+    "incsearch + easymotion
+    map z/ <Plug>(incsearch-easymotion-/)
+    map z? <Plug>(incsearch-easymotion-?)
+    map zg/ <Plug>(incsearch-easymotion-stay)
+
+    function! s:config_easyfuzzymotion(...) abort
+      return extend(copy({
+      \   'converters': [incsearch#config#fuzzy#converter()],
+      \   'modules': [incsearch#config#easymotion#module()],
+      \   'keymap': {"\<CR>": '<Over>(easymotion)'},
+      \   'is_expr': 0,
+      \   'is_stay': 1
+      \ }), get(a:, 1, {}))
+    endfunction
+
+    "fuzzy search + easymotion
+    noremap <silent><expr> <Space>z incsearch#go(<SID>config_easyfuzzymotion())
 
 "自定义命令
 command! Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
