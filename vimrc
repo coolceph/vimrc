@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.03.01
+" Last change:	2016.03.06
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -120,7 +120,7 @@ set wildignore+=*.pyc                            " Python byte code
 set wildignore+=*.orig                           " Merge resolution files
 set visualbell                                   " flash screen when bell rings
 set cursorline                                   " highline cursor line
-set ttyfast                                      " indicate faster terminal connection
+" set ttyfast                                      " indicate faster terminal connection
 set laststatus=2                                 " always show status line
 set cpoptions+=J
 set linebreak                                    " break the line by words
@@ -212,12 +212,20 @@ fun! ToggleMouse()
     endif
 endfunction
 
+"开关YankRing剪贴板缓冲区
+nnoremap <F10> :YRShow<CR>
+
 "使用F12切换鼠标模式
 noremap <F12> :call ToggleMouse()<CR>
 inoremap <F12> <Esc>:call ToggleMouse()<CR>a
 
-"设置mapleader前缀
-    let mapleader = ','
+" With a map leader it's possible to do extra key combinations
+    let mapleader=","
+    " let g:mapleader=","
+
+" Instead of reverting the cursor to the last position in the buffer, we
+" set it to the first line when editing a git commit message
+    au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 
 "快速退出vim
     nnoremap <C-c> :qall!<CR>
@@ -250,9 +258,10 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     map <C-S-Left> :tabp<CR>
     imap <C-S-Left> <ESC>:tabp<CR>
 
-"Buffer navigation mappings
-    nnoremap <C-n> :bn<CR>
-    nnoremap <C-p> :bp<CR>
+"Buffer navigation mappings,
+"conflict with YankRing, disable this mapping
+    " nnoremap <C-n> :bn<CR>
+    " nnoremap <C-p> :bp<CR>
 
 "For code reviewing
     "nnoremap j jzz
@@ -307,7 +316,14 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     execute pathogen#infect('bundle/{}', '~/.vim/bundle/{}')
 
 "jellybeans配色方案配置
-    colorscheme jellybeans
+    try
+        if $TERM =~ '-256color$'
+            colorscheme jellybeans
+        else
+          colorscheme default
+        endif
+    catch
+    endtry
 
 " Airline ------------------------------
     let g:airline_powerline_fonts = 1
@@ -533,8 +549,6 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
 
 "NerdTree配置
     map <F3> :NERDTreeToggle<CR>
-    map <leader>e :NERDTreeFind<CR>
-    nmap <leader>nt :NERDTreeFind<CR>
 
     let NERDTreeShowBookmarks=1
     let NERDTreeIgnore=['\.o','\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
@@ -837,6 +851,32 @@ let g:SignatureMap = {
     " let g:syntastic_html_checkers=['tidy', 'jshint']"
 
     nnoremap <Leader>s :SyntasticCheck<CR>:Errors<CR>
+
+""""""""""""""""""""""""""""""""""""
+" YankRing
+""""""""""""""""""""""""""""""""""""
+    function! s:get_yankring_dir() "{{{
+      let s:yankring_dir=
+            \ substitute(substitute(fnamemodify(
+            \ get(s:, 'yankring_dir',
+            \  ($XDG_CACHE_HOME != '' ?
+            \   $XDG_CACHE_HOME . '/yankring_dir' : expand('~/.cache/yankring_dir'))),
+            \  ':p'), '\\', '/', 'g'), '/$', '', '')
+
+      if !isdirectory(s:yankring_dir)
+        call mkdir(s:yankring_dir, 'p')
+      endif
+
+      return s:yankring_dir
+    endfunction"}}}
+
+    let s:yankring_dir = "~/.cache/yankring_dir//"
+    call s:get_yankring_dir()
+
+    let g:yankring_history_dir="~/.cache/yankring_dir//"
+    let g:yankring_max_history=256
+    " let g:yankring_replace_n_pkey='<C-K>'
+    " let g:yankring_replace_n_nkey='<C-J>'
 
 "自定义命令
 command! Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
