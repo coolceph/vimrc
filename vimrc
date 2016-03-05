@@ -925,6 +925,9 @@ let g:SignatureMap = {
     "fuzzy search + easymotion
     noremap <silent><expr> <Space>z incsearch#go(<SID>config_easyfuzzymotion())
 
+"vim-extradite 查看gitlog
+    nnoremap <Leader>gl :Extradite<CR>
+
 "自定义命令
 command! Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 command! Gotags !gotags -R . >tags
