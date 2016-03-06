@@ -183,6 +183,14 @@ The leader key is ','.
 
 [incsearch-easymotion.vim]
 
+[YankRing.vim]
+
+[hexmode]
+
+[vim-pasta]
+
+[vim-operator-user]
+
 [STL-Syntax]:https://github.com/Mizuchi/STL-Syntax
 [ack.vim]:https://github.com/mileszs/ack.vim
 [ag.vim]:https://github.com/rking/ag.vim
@@ -232,4 +240,8 @@ The leader key is ','.
 [incsearch.vim]:https://github.com/haya14busa/incsearch.vim
 [incsearch-easymotion.vim]:https://github.com/haya14busa/incsearch-easymotion.vim
 [incsearch-fuzzy.vim]:https://github.com/haya14busa/incsearch-fuzzy.vim
+[YankRing.vim]:https://github.com/vim-scripts/YankRing.vim
+[hexmode]:https://github.com/fidian/hexmode
+[vim-pasta]:https://github.com/sickill/vim-pasta
+[vim-operator-user]:https://github.com/kana/vim-operator-user
 
