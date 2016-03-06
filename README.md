@@ -36,6 +36,7 @@ bash -c "$( curl https://raw.githubusercontent.com/coolceph/vimrc/master/setup.s
 | F7             | Update ctags                                        |
 | F8             | Open undotree                                       |
 | F9             | Enter multi-cursor-mode                             |
+| F10            | Enter Rankring clipboard                            |
 | F12            | Mouse mode switch (mouse=a/-a)                      |
 | SpaceSpace     | Activate Unite Search Plugin                        |
 | Ctrl+n/p       | Switch between buffers.                             |
