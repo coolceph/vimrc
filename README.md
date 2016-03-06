@@ -192,6 +192,10 @@ The leader key is ','.
 
 [vim-operator-user]
 
+[vim-plist]
+
+[vim-json]
+
 [STL-Syntax]:https://github.com/Mizuchi/STL-Syntax
 [ack.vim]:https://github.com/mileszs/ack.vim
 [ag.vim]:https://github.com/rking/ag.vim
@@ -245,4 +249,6 @@ The leader key is ','.
 [hexmode]:https://github.com/fidian/hexmode
 [vim-pasta]:https://github.com/sickill/vim-pasta
 [vim-operator-user]:https://github.com/kana/vim-operator-user
+[vim-plist]:https://github.com/darfink/vim-plist
+[vim-json]:https://github.com/elzr/vim-json
 
