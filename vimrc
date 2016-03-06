@@ -928,6 +928,13 @@ let g:SignatureMap = {
 "vim-extradite 查看gitlog
     nnoremap <Leader>gl :Extradite<CR>
 
+"vim-plist
+    let g:plist_display_format = 'xml'
+    let g:plist_save_format = ''
+
+"vim-json
+    let g:vim_json_syntax_conceal = 0
+
 "自定义命令
 command! Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 command! Gotags !gotags -R . >tags

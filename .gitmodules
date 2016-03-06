@@ -163,3 +163,9 @@
 [submodule "bundle/incsearch-fuzzy.vim"]
 	path = bundle/incsearch-fuzzy.vim
 	url = https://github.com/haya14busa/incsearch-fuzzy.vim
+[submodule "bundle/vim-plist"]
+	path = bundle/vim-plist
+	url = https://github.com/darfink/vim-plist
+[submodule "bundle/vim-json"]
+	path = bundle/vim-json
+	url = https://github.com/elzr/vim-json
