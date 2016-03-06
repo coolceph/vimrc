@@ -173,6 +173,16 @@ The leader key is ','.
 
 [vim-clang]
 
+[ctrlsf.vim]
+
+[vim-extradite]
+
+[incsearch.vim]
+
+[incsearch-fuzzy.vim]
+
+[incsearch-easymotion.vim]
+
 [STL-Syntax]:https://github.com/Mizuchi/STL-Syntax
 [ack.vim]:https://github.com/mileszs/ack.vim
 [ag.vim]:https://github.com/rking/ag.vim
@@ -217,4 +227,9 @@ The leader key is ','.
 [syntastic]:https://github.com/scrooloose/syntastic
 [rust.vim]:https://github.com/rust-lang/rust.vim
 [vim-clang]:https://github.com/justmao945/vim-clang
+[vim-extradite]:https://github.com/ketor/vim-extradite
+[ctrlsf.vim]:https://github.com/dyng/ctrlsf.vim
+[incsearch.vim]:https://github.com/haya14busa/incsearch.vim
+[incsearch-easymotion.vim]:https://github.com/haya14busa/incsearch-easymotion.vim
+[incsearch-fuzzy.vim]:https://github.com/haya14busa/incsearch-fuzzy.vim
 
