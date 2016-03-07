@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.03.06
+" Last change:	2016.03.07
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -243,7 +243,6 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
 
     "清空搜索结果高亮显示
     nnoremap <leader>/ :nohlsearch<CR>
-    nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 
 "Window navigation mappings
     noremap <C-h> <C-w>h
