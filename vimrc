@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.03.07
+" Last change:	2016.03.08
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -718,18 +718,18 @@ let g:SignatureMap = {
 
 "undotree
     function! s:get_undotree_dir() "{{{
-      let s:undotree_dir=
+        let s:undotree_dir=
             \ substitute(substitute(fnamemodify(
             \ get(s:, 'undotree_dir',
             \  ($XDG_CACHE_HOME != '' ?
             \   $XDG_CACHE_HOME . '/undotree' : expand('~/.cache/undotree'))),
             \  ':p'), '\\', '/', 'g'), '/$', '', '')
 
-      if !isdirectory(s:undotree_dir)
-        call mkdir(s:undotree_dir, 'p')
-      endif
+        if !isdirectory(s:undotree_dir)
+            call mkdir(s:undotree_dir, 'p')
+        endif
 
-      return s:undotree_dir
+        return s:undotree_dir
     endfunction"}}}
 
     nnoremap <F8> :UndotreeToggle<cr>
@@ -813,18 +813,18 @@ let g:SignatureMap = {
 
 "统一swapdir&backupdir
     function! s:get_swap_dir() "{{{
-      let s:swap_dir=
+        let s:swap_dir=
             \ substitute(substitute(fnamemodify(
             \ get(s:, 'swap_dir',
             \  ($XDG_CACHE_HOME != '' ?
             \   $XDG_CACHE_HOME . '/swap_dir' : expand('~/.cache/swap_dir'))),
             \  ':p'), '\\', '/', 'g'), '/$', '', '')
 
-      if !isdirectory(s:swap_dir)
-        call mkdir(s:swap_dir, 'p')
-      endif
+        if !isdirectory(s:swap_dir)
+            call mkdir(s:swap_dir, 'p')
+        endif
 
-      return s:swap_dir
+        return s:swap_dir
     endfunction"}}}
 
     let s:swap_dir = "~/.cache/swap_dir//"
@@ -855,22 +855,20 @@ let g:SignatureMap = {
 
     nnoremap <Leader>s :SyntasticCheck<CR>:Errors<CR>
 
-""""""""""""""""""""""""""""""""""""
-" YankRing
-""""""""""""""""""""""""""""""""""""
+" YankRing 剪贴板增量，支持256个最近剪贴
     function! s:get_yankring_dir() "{{{
-      let s:yankring_dir=
+        let s:yankring_dir=
             \ substitute(substitute(fnamemodify(
             \ get(s:, 'yankring_dir',
             \  ($XDG_CACHE_HOME != '' ?
             \   $XDG_CACHE_HOME . '/yankring_dir' : expand('~/.cache/yankring_dir'))),
             \  ':p'), '\\', '/', 'g'), '/$', '', '')
 
-      if !isdirectory(s:yankring_dir)
-        call mkdir(s:yankring_dir, 'p')
-      endif
+        if !isdirectory(s:yankring_dir)
+            call mkdir(s:yankring_dir, 'p')
+        endif
 
-      return s:yankring_dir
+        return s:yankring_dir
     endfunction"}}}
 
     let s:yankring_dir = "~/.cache/yankring_dir//"
