@@ -792,8 +792,9 @@ let g:SignatureMap = {
     "nnoremap <C-c> :call multiple_cursors#quit()<CR>
 
 "vim-expand-region
-    map K <Plug>(expand_region_expand)
-    map J <Plug>(expand_region_shrink)
+    "Press '+' to expand the visual selection and '_' to shrink it.
+    " map K <Plug>(expand_region_expand)
+    " map J <Plug>(expand_region_shrink)
 
 "vim-better-whitespace
 "need this hack code to make everything OK now
@@ -936,6 +937,13 @@ let g:SignatureMap = {
 
 "vim-json
     let g:vim_json_syntax_conceal = 0
+
+"accelerated-smooth-scroll
+    let g:ac_smooth_scroll_no_default_key_mappings = 1
+    nmap J <Plug>(ac-smooth-scroll-c-d)
+    nmap K <Plug>(ac-smooth-scroll-c-u)
+    " nmap <silent> <C-f> <Plug>(ac-smooth-scroll-c-f)
+    " nmap <silent> <C-b> <Plug>(ac-smooth-scroll-c-b)
 
 "自定义命令
 command! Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
