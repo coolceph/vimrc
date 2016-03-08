@@ -905,9 +905,14 @@ let g:SignatureMap = {
     map g# <Plug>(incsearch-nohl-g#)
 
     "incsearch + easymotion
-    map z/ <Plug>(incsearch-easymotion-/)
-    map z? <Plug>(incsearch-easymotion-?)
-    map zg/ <Plug>(incsearch-easymotion-stay)
+    " map z/ <Plug>(incsearch-easymotion-/)
+    " map z? <Plug>(incsearch-easymotion-?)
+    " map zg/ <Plug>(incsearch-easymotion-stay)
+
+    "fuzzy search
+    map z/ <Plug>(incsearch-fuzzy-/)
+    map z? <Plug>(incsearch-fuzzy-?)
+    map zg/ <Plug>(incsearch-fuzzy-stay)
 
     function! s:config_easyfuzzymotion(...) abort
       return extend(copy({
