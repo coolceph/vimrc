@@ -121,7 +121,7 @@ set wildignore+=*.pyc                            " Python byte code
 set wildignore+=*.orig                           " Merge resolution files
 set visualbell                                   " flash screen when bell rings
 set cursorline                                   " highline cursor line
-" set ttyfast                                      " indicate faster terminal connection
+set ttyfast                                      " indicate faster terminal connection
 set laststatus=2                                 " always show status line
 set cpoptions+=J
 set linebreak                                    " break the line by words
@@ -129,7 +129,7 @@ set scrolloff=3                                  " show at least 3 lines around 
 set sidescroll=1
 set sidescrolloff=10
 set virtualedit+=block
-" set lazyredraw "Disable to fix cursor sometimes disappeared
+set lazyredraw
 set nolist
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set splitbelow
