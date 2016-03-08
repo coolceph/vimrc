@@ -880,14 +880,14 @@ let g:SignatureMap = {
     " let g:yankring_replace_n_nkey='<C-J>'
 
 "CtrlSF 类似Sublime的带上下文的0全文搜索
-    nmap     <C-F>f <Plug>CtrlSFPrompt
-    vmap     <C-F>f <Plug>CtrlSFVwordPath
-    vmap     <C-F>F <Plug>CtrlSFVwordExec
-    nmap     <C-F>n <Plug>CtrlSFCwordPath
-    nmap     <C-F>p <Plug>CtrlSFPwordPath
-    nnoremap <C-F>o :CtrlSFOpen<CR>
-    nnoremap <C-F>t :CtrlSFToggle<CR>
-    inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+    nmap     <C-G>f <Plug>CtrlSFPrompt
+    vmap     <C-G>f <Plug>CtrlSFVwordPath
+    vmap     <C-G>F <Plug>CtrlSFVwordExec
+    nmap     <C-G>n <Plug>CtrlSFCwordPath
+    nmap     <C-G>p <Plug>CtrlSFPwordPath
+    nnoremap <C-G>o :CtrlSFOpen<CR>
+    nnoremap <C-G>t :CtrlSFToggle<CR>
+    inoremap <C-G>t <Esc>:CtrlSFToggle<CR>
 
 " incsearch.vim x fuzzy x vim-easymotion
     "insearch.vim
