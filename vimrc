@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.03.08
+" Last change:	2016.03.09
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -344,7 +344,7 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     " to use fancy symbols for airline, uncomment the following lines and use a
     " patched font (more info on the README.rst)
     if !exists('g:airline_symbols')
-      let g:airline_symbols = {}
+        let g:airline_symbols = {}
     endif
 
     " unicode symbols
@@ -393,54 +393,54 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     let g:unite_source_grep_max_candidates = 200
 
     if executable('ag')
-      " Use ag (the silver searcher)
-      " https://github.com/ggreer/the_silver_searcher
-      let g:unite_source_grep_command = 'ag'
-      let g:unite_source_grep_default_opts =
-      \ '-i --vimgrep --hidden --ignore ' .
-      \ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
-      let g:unite_source_grep_recursive_opt = ''
+        " Use ag (the silver searcher)
+        " https://github.com/ggreer/the_silver_searcher
+        let g:unite_source_grep_command = 'ag'
+        let g:unite_source_grep_default_opts =
+        \ '-i --vimgrep --hidden --ignore ' .
+        \ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+        let g:unite_source_grep_recursive_opt = ''
     elseif executable('ack')
-      " Use ack
-      " http://beyondgrep.com/
-      let g:unite_source_grep_command = 'ack-grep'
-      let g:unite_source_grep_default_opts =
-      \ '-i --no-heading --no-color -k -H'
-      let g:unite_source_grep_recursive_opt = ''
+        " Use ack
+        " http://beyondgrep.com/
+        let g:unite_source_grep_command = 'ack-grep'
+        let g:unite_source_grep_default_opts =
+        \ '-i --no-heading --no-color -k -H'
+        let g:unite_source_grep_recursive_opt = ''
     elseif executable('ack-grep')
-      " Use ack
-      " http://beyondgrep.com/
-      let g:unite_source_grep_command = 'ack-grep'
-      let g:unite_source_grep_default_opts =
-      \ '-i --no-heading --no-color -k -H'
-      let g:unite_source_grep_recursive_opt = ''
+        " Use ack
+        " http://beyondgrep.com/
+        let g:unite_source_grep_command = 'ack-grep'
+        let g:unite_source_grep_default_opts =
+        \ '-i --no-heading --no-color -k -H'
+        let g:unite_source_grep_recursive_opt = ''
     elseif executable('hw')
-      " Use hw (highway)
-      " https://github.com/tkengo/highway
-      let g:unite_source_grep_command = 'hw'
-      let g:unite_source_grep_default_opts = '--no-group --no-color'
-      let g:unite_source_grep_recursive_opt = ''
+        " Use hw (highway)
+        " https://github.com/tkengo/highway
+        let g:unite_source_grep_command = 'hw'
+        let g:unite_source_grep_default_opts = '--no-group --no-color'
+        let g:unite_source_grep_recursive_opt = ''
     elseif executable('pt')
-      " Use pt (the platinum searcher)
-      " https://github.com/monochromegane/the_platinum_searcher
-      let g:unite_source_grep_command = 'pt'
-      let g:unite_source_grep_default_opts = '--nogroup --nocolor'
-      let g:unite_source_grep_recursive_opt = ''
+        " Use pt (the platinum searcher)
+        " https://github.com/monochromegane/the_platinum_searcher
+        let g:unite_source_grep_command = 'pt'
+        let g:unite_source_grep_default_opts = '--nogroup --nocolor'
+        let g:unite_source_grep_recursive_opt = ''
     elseif executable('jvgrep')
-      " Use jvgrep
-      " https://github.com/mattn/jvgrep
-      let g:unite_source_grep_command = 'jvgrep'
-      let g:unite_source_grep_default_opts =
-      \ '-i --exclude ''\.(git|svn|hg|bzr)'''
-      let g:unite_source_grep_recursive_opt = '-R'
+        " Use jvgrep
+        " https://github.com/mattn/jvgrep
+        let g:unite_source_grep_command = 'jvgrep'
+        let g:unite_source_grep_default_opts =
+        \ '-i --exclude ''\.(git|svn|hg|bzr)'''
+        let g:unite_source_grep_recursive_opt = '-R'
     endif
 
     function! s:unite_settings()
-      nmap <buffer> Q <plug>(unite_exit)
-      nmap <buffer> <esc> <plug>(unite_exit)
-      imap <buffer> <esc> <plug>(unite_exit)
-      imap <buffer> <C-j>   <Plug>(unite_select_next_line)
-      imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
+        nmap <buffer> Q <plug>(unite_exit)
+        nmap <buffer> <esc> <plug>(unite_exit)
+        imap <buffer> <esc> <plug>(unite_exit)
+        imap <buffer> <C-j>   <Plug>(unite_select_next_line)
+        imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
     endfunction
     autocmd FileType unite call s:unite_settings()
 
