@@ -231,7 +231,6 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
 "快速退出vim
     nnoremap <C-c> :qall!<CR>
     nnoremap <Leader>q :qall!<CR>
-    nnoremap <Leader>x :q<CR>
 
 "搜索相关的设置
     "set gdefault   "由于设置gdefault之后会导致%s/abc/abc/g最后的g参数反义，影响直觉，因此禁用
@@ -549,6 +548,8 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     " for c and c++
     let g:neocomplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
     let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+
+    map <silent> <Leader>x <Esc>:ClangCloseWindow<CR>
 
 "NerdTree配置
     map <F3> :NERDTreeToggle<CR>
