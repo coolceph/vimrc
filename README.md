@@ -39,7 +39,6 @@ bash -c "$( curl https://raw.githubusercontent.com/coolceph/vimrc/master/setup.s
 | F10            | Enter Rankring clipboard                            |
 | F12            | Mouse mode switch (mouse=a/-a)                      |
 | SpaceSpace     | Activate Unite Search Plugin                        |
-| Ctrl+n/p       | Switch between buffers.                             |
 | Ctrl+h/j/k/l   | Switch between windows.                             |
 | Ctrl+c         | Completely quit vim without saving                  |
 
@@ -196,6 +195,8 @@ The leader key is ','.
 
 [vim-json]
 
+[vim-exchange]
+
 [STL-Syntax]:https://github.com/Mizuchi/STL-Syntax
 [ack.vim]:https://github.com/mileszs/ack.vim
 [ag.vim]:https://github.com/rking/ag.vim
@@ -251,4 +252,5 @@ The leader key is ','.
 [vim-operator-user]:https://github.com/kana/vim-operator-user
 [vim-plist]:https://github.com/darfink/vim-plist
 [vim-json]:https://github.com/elzr/vim-json
+[vim-exchange]:https://github.com/tommcdo/vim-exchange
 
