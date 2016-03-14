@@ -51,6 +51,7 @@ The leader key is ','.
 | Ctags   | Genrate ctags for pwd      |
 | Gotags  | Genrate gotags for pwd     |
 | Hex/Asc | Swtich between Asc and Hex |
+| Hexmode | Toggle Hex/Asc mode        |
 | Cswp    | Clear swp files            |
 
 # FAQ
@@ -197,6 +198,8 @@ The leader key is ','.
 
 [vim-exchange]
 
+[hexmode]
+
 [STL-Syntax]:https://github.com/Mizuchi/STL-Syntax
 [ack.vim]:https://github.com/mileszs/ack.vim
 [ag.vim]:https://github.com/rking/ag.vim
@@ -253,4 +256,5 @@ The leader key is ','.
 [vim-plist]:https://github.com/darfink/vim-plist
 [vim-json]:https://github.com/elzr/vim-json
 [vim-exchange]:https://github.com/tommcdo/vim-exchange
+[hexmode]:https://github.com/fidian/hexmode
 
