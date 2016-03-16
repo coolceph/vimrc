@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.03.09
+" Last change:	2016.03.16
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -265,9 +265,25 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     " nnoremap <C-n> :bn<CR>
     " nnoremap <C-p> :bp<CR>
 
-"For code reviewing
-    "nnoremap j jzz
-    "nnoremap k kzz
+"Code View Mode
+    fun! ToggleCodeViewMode()
+        if !exists("s:codeviewmode")
+            let s:codeviewmode = "0"
+        endif
+
+        if s:codeviewmode == "0"
+            nmap j jzz
+            nmap k kzz
+            let s:codeviewmode = "1"
+            echo "Code View Mode"
+        else
+            unmap j
+            unmap k
+            let s:codeviewmode = "0"
+            echo "Code Edit Mode"
+        endif
+    endfunction
+    nnoremap <Leader>jk :call ToggleCodeViewMode()<CR>
 
 " upper/lower word
     nmap <leader>u mQviwU`Q
