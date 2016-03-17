@@ -94,8 +94,6 @@ The leader key is ','.
 
 [ag.vim]
 
-[csv.vim]
-
 [jellybeans.vim]
 
 [neocomplete.vim]
@@ -109,8 +107,6 @@ The leader key is ','.
 [nerdcommenter]
 
 [nerdtree]
-
-[papercolor-theme]
 
 [rainbow_parentheses.vim]
 
@@ -130,8 +126,6 @@ The leader key is ','.
 
 [vim-airline-themes]
 
-[vim-colors-solarized]
-
 [vim-easymotion]
 
 [vim-fugitive]
@@ -139,8 +133,6 @@ The leader key is ','.
 [vim-gitgutter]
 
 [vim-go]
-
-[vim-indexed-search]
 
 [vim-multiple-cursors]
 
@@ -166,15 +158,11 @@ The leader key is ','.
 
 [indentLine]
 
-[vim-templete]
-
 [syntastic]
 
 [rust.vim]
 
 [vim-clang]
-
-[ctrlsf.vim]
 
 [vim-extradite]
 
@@ -203,7 +191,6 @@ The leader key is ','.
 [STL-Syntax]:https://github.com/Mizuchi/STL-Syntax
 [ack.vim]:https://github.com/mileszs/ack.vim
 [ag.vim]:https://github.com/rking/ag.vim
-[csv.vim]:https://github.com/chrisbra/csv.vim
 [jellybeans.vim]:https://github.com/nanotech/jellybeans.vim
 [neocomplete.vim]:https://github.com/Shougo/neocomplete.vim
 [neomru.vim]:https://github.com/Shougo/neomru.vim
@@ -211,7 +198,6 @@ The leader key is ','.
 [neosnippet.vim]:https://github.com/Shougo/neosnippet.vim
 [nerdcommenter]:https://github.com/scrooloose/nerdcommenter
 [nerdtree]:https://github.com/scrooloose/nerdtree
-[papercolor-theme]:https://github.com/NLKNguyen/papercolor-theme
 [rainbow_parentheses.vim]:https://github.com/kien/rainbow_parentheses.vim
 [tabular]:https://github.com/godlygeek/tabular
 [tagbar]:https://github.com/majutsushi/tagbar
@@ -221,12 +207,10 @@ The leader key is ','.
 [unite.vim]:https://github.com/Shougo/unite.vim
 [vim-airline]:https://github.com/bling/vim-airline
 [vim-airline-themes]:https://github.com/vim-airline/vim-airline-themes
-[vim-colors-solarized]:https://github.com/altercation/vim-colors-solarized
 [vim-easymotion]:https://github.com/easymotion/vim-easymotion
 [vim-fugitive]:https://github.com/tpope/vim-fugitive
 [vim-gitgutter]:https://github.com/airblade/vim-gitgutter
 [vim-go]:https://github.com/fatih/vim-go
-[vim-indexed-search]:https://github.com/henrik/vim-indexed-search
 [vim-multiple-cursors]:https://github.com/terryma/vim-multiple-cursors
 [vim-pathogen]:https://github.com/tpope/vim-pathogen
 [vim-signature]:https://github.com/kshenoy/vim-signature
@@ -240,12 +224,10 @@ The leader key is ','.
 [a.vim]:https://github.com/vim-scripts/a.vim
 [indentLine]:https://github.com/Yggdroot/indentLine
 [powerline_fonts]:https://github.com/powerline/fonts
-[vim-templete]:https://github.com/aperezdc/vim-template
 [syntastic]:https://github.com/scrooloose/syntastic
 [rust.vim]:https://github.com/rust-lang/rust.vim
 [vim-clang]:https://github.com/justmao945/vim-clang
 [vim-extradite]:https://github.com/ketor/vim-extradite
-[ctrlsf.vim]:https://github.com/dyng/ctrlsf.vim
 [incsearch.vim]:https://github.com/haya14busa/incsearch.vim
 [incsearch-easymotion.vim]:https://github.com/haya14busa/incsearch-easymotion.vim
 [incsearch-fuzzy.vim]:https://github.com/haya14busa/incsearch-fuzzy.vim

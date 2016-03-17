@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.03.16
+" Last change:	2016.03.17
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -29,6 +29,7 @@
 " | F7       | 更新ctags文件       |
 " | F8       | 打开undotree        |
 " | F9       | 进入MultiCursor模式 |
+" | F10      | 打开YankRin剪贴板   |
 " | F12      | 鼠标模式切换        |
 " | <Ctrl+c> | 快速推出VIM(:qall!) |
 " +----------+---------------------+
