@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.03.17
+" Last change:	2016.03.21
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -811,8 +811,8 @@ let g:SignatureMap = {
 
 "vim-expand-region
     "Press '+' to expand the visual selection and '_' to shrink it.
-    " map K <Plug>(expand_region_expand)
-    " map J <Plug>(expand_region_shrink)
+    map K <Plug>(expand_region_expand)
+    map J <Plug>(expand_region_shrink)
 
 "vim-better-whitespace
 "need this hack code to make everything OK now
