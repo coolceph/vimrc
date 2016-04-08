@@ -48,8 +48,6 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-" set nowrap       "禁用自动折行
-
 "代码缩进设置
 set smarttab      "开启时，在行首按TAB将加入sw个空格，否则加入ts个空格
 set tabstop=4     "编辑时一个TAB字符占多少个空格的位置
@@ -67,41 +65,40 @@ endif
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
+    " Enable file type detection.
+    " Use the default filetype settings, so that mail gets 'tw' set to 72,
+    " 'cindent' is on in C files, etc.
+    " Also load indent files, to automatically do language-dependent indenting.
+    filetype plugin indent on
 
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
+    " Put these in an autocmd group, so that we can delete them easily.
+    augroup vimrcEx
+    au!
 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-  autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-  autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
-  autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-  autocmd FileType make setlocal noexpandtab
-  autocmd FileType python setlocal et sta sw=4 sts=4
+    " For all text files set 'textwidth' to 78 characters.
+    autocmd FileType text setlocal textwidth=78
+    autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType make setlocal noexpandtab
+    autocmd FileType python setlocal et sta sw=4 sts=4
 
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") >= 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    autocmd BufReadPost *
+        \ if line("'\"") >= 1 && line("'\"") <= line("$") |
+        \   exe "normal! g`\"" |
+        \ endif
 
-  augroup END
+    augroup END
 
 else
 
-  set autoindent		" always set autoindenting on
+    set autoindent		" always set autoindenting on
 
 endif " has("autocmd")
 
-"set clipboard+=unnamed "use System clipboard on Mac
 set history=1024
 set number                                       " 显示行号
 set autoread                                     " 文件在Vim之外修改过，自动重新读入
@@ -223,7 +220,6 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
 
 " With a map leader it's possible to do extra key combinations
     let mapleader=","
-    " let g:mapleader=","
 
 " Instead of reverting the cursor to the last position in the buffer, we
 " set it to the first line when editing a git commit message
@@ -234,9 +230,7 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     nnoremap <Leader>q :qall!<CR>
 
 "搜索相关的设置
-    "set gdefault   "由于设置gdefault之后会导致%s/abc/abc/g最后的g参数反义，影响直觉，因此禁用
     set showmatch  " show matching brackets/parenthesis
-    " set incsearch  " find as you type search
     set magic      " 根据vim说明默认开启此参数
     set ignorecase " 忽略大小写
     set smartcase  " case sensitive when uc present
@@ -260,11 +254,6 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     imap <C-S-Right> <ESC>:tabn<CR>
     map <C-S-Left> :tabp<CR>
     imap <C-S-Left> <ESC>:tabp<CR>
-
-"Buffer navigation mappings,
-"conflict with YankRing, disable this mapping
-    " nnoremap <C-n> :bn<CR>
-    " nnoremap <C-p> :bp<CR>
 
 "Code View Mode
     fun! ToggleCodeViewMode()
@@ -321,7 +310,7 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
         "4. syntax 用语法高亮来定义折叠
         "5. diff   对没有更改的文本进行折叠
         "6. marker 用标志折叠
-"    vnoremap <Space> zah "空格键折叠，h是为了解决Space会导致焦点右移一位的问题
+
 "设置菜单和帮助的语言，默认改为英语
     set fileencodings=utf-8,gbk "使用utf-8或gbk打开文件
     set encoding=utf8
@@ -477,8 +466,8 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
 
 "Tagbar配置
     let g:tagbar_width=26
-    noremap <silent> <F4> :TagbarToggle<CR>
     let g:tagbar_autofocus = 1
+    noremap <silent> <F4> :TagbarToggle<CR>
 
 " Neocomplete (need LUA)
    " Disable AutoComplPop.
@@ -811,11 +800,9 @@ let g:SignatureMap = {
 
 "vim-expand-region
     "Press '+' to expand the visual selection and '_' to shrink it.
-    map K <Plug>(expand_region_expand)
-    map J <Plug>(expand_region_shrink)
 
 "vim-better-whitespace
-"need this hack code to make everything OK now
+    "need this hack code to make everything OK now
     autocmd VimEnter * DisableWhitespace
     autocmd VimEnter * EnableWhitespace
     map <leader><space> :StripWhitespace<CR>
@@ -867,6 +854,13 @@ let g:SignatureMap = {
     let g:syntastic_check_on_open = 0
     let g:syntastic_check_on_wq = 0
     let g:syntastic_loc_list_height = 5
+
+    "set error or warning signs
+    let g:syntastic_error_symbol = '✗'
+    let g:syntastic_warning_symbol = '⚠'
+    "whether to show balloons
+    let g:syntastic_enable_balloons = 1
+
     " let g:syntastic_enable_highlighting=1
     " let g:syntastic_python_checkers=['pyflakes'] " 使用pyflakes,速度比pylint快
     " let g:syntastic_javascript_checkers = ['jsl', 'jshint']
