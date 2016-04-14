@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.04.09
+" Last change:	2016.04.15
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -865,6 +865,10 @@ let g:SignatureMap = {
     " let g:syntastic_python_checkers=['pyflakes'] " 使用pyflakes,速度比pylint快
     " let g:syntastic_javascript_checkers = ['jsl', 'jshint']
     " let g:syntastic_html_checkers=['tidy', 'jshint']"
+
+    "fix lag working with vim-go
+    let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+    let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
     nnoremap <Leader>s :SyntasticCheck<CR>:Errors<CR>
 
