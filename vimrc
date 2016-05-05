@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.04.15
+" Last change:	2016.05.04
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -947,6 +947,7 @@ let g:SignatureMap = {
 "自定义命令
 command! Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 command! Gotags !gotags -R . >tags
+command! Phptags !~/.vim/bundle/tagbar-phpctags.vim/bin/phpctags -R .
 
 command! Hex %!xxd
 command! Asc %!xxd -r
