@@ -979,7 +979,7 @@ let g:SignatureMap = {
 command! Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 command! Gotags !gotags -R . >tags
 command! Phptags !~/.vim/bundle/tagbar-phpctags.vim/bin/phpctags -R .
-command! Cscope !find . -name "*.h" -o -name "*.c" -o -name "*.cc" -o -name "*.cpp" -o -name "*.hpp" -o -name "*.java" > cscope.files;cscope -bkq -i cscope.files
+command! Cscope !find . -name "*.h" -o -name "*.c" -o -name "*.cc" -o -name "*.cpp" -o -name "*.hpp" -o -name "*.java" -o -name "*.php" > cscope.files;cscope -bkq -i cscope.files
 
 command! Hex %!xxd
 command! Asc %!xxd -r
