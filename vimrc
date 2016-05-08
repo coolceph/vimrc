@@ -957,14 +957,15 @@ let g:SignatureMap = {
         set csverb
     endif
 
-    "s: 查找C语言符号，即查找函数名、宏、枚举值等出现的地方
-    "g: 查找函数、宏、枚举等定义的位置，类似ctags所提供的功能
-    "d: 查找本函数调用的函数
-    "c: 查找调用本函数的函数
-    "t: 查找指定的字符串
-    "e: 查找egrep模式，相当于egrep功能，但查找速度快多了
-    "f: 查找并打开文件，类似vim的find功能
-    "i: 查找包含本文件的文件
+    " The following maps all invoke one of the following cscope search types:
+    "   's'   symbol: find all references to the token under cursor
+    "   'g'   global: find global definition(s) of the token under cursor
+    "   'c'   calls:  find all calls to the function name under cursor
+    "   't'   text:   find all instances of the text under cursor
+    "   'e'   egrep:  egrep search for the word under cursor
+    "   'f'   file:   open the filename under cursor
+    "   'i'   includes: find files that include the filename under cursor
+    "   'd'   called: find functions that function under cursor calls
     nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
     nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
     nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
