@@ -172,3 +172,6 @@
 [submodule "bundle/vim-exchange"]
 	path = bundle/vim-exchange
 	url = https://github.com/tommcdo/vim-exchange
+[submodule "bundle/better-indent-support-for-php-with-html"]
+	path = bundle/better-indent-support-for-php-with-html
+	url = https://github.com/captbaritone/better-indent-support-for-php-with-html
