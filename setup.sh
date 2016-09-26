@@ -51,7 +51,11 @@ logo() {
 require() {
     color_print "Checking requirements for vimrc..."
     color_print "Checking vim version..."
-    vim --version | grep 7.[4-9] || die "Your vim's version is too low!\nPlease download higher version(7.4+) from http://www.vim.org/download.php"
+    vim_version=`vim --version|head -n 1|awk '{print $5}'|cut -c 1,3`
+    if [ ${vim_version} -lt 74 ]
+    then
+        die "Your vim's version is too low! Please download higher version(7.4+) from http://www.vim.org/download.php"
+    fi
     vim --version | grep +lua || die "Your vim does not have +lua"
     color_print "Checking if git exists..."
     which git || die "No git installed!\nPlease install git from http://git-scm.com/downloads/"
