@@ -175,3 +175,6 @@
 [submodule "bundle/better-indent-support-for-php-with-html"]
 	path = bundle/better-indent-support-for-php-with-html
 	url = https://github.com/captbaritone/better-indent-support-for-php-with-html
+[submodule "bundle/molokai"]
+	path = bundle/molokai
+	url = https://github.com/tomasr/molokai

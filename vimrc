@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.05.23
+" Last change:	2016.09.27
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -324,14 +324,14 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     execute pathogen#infect('bundle/{}', '~/.vim/bundle/{}')
 
 "jellybeans配色方案配置
-    try
-        if $TERM =~ '-256color$'
-            colorscheme jellybeans
-        else
-          colorscheme default
-        endif
-    catch
-    endtry
+    " try
+    "     if $TERM =~ '-256color$'
+    "         colorscheme jellybeans
+    "     else
+    "       colorscheme default
+    "     endif
+    " catch
+    " endtry
 
 " Airline ------------------------------
     let g:airline_powerline_fonts = 1
