@@ -275,14 +275,6 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     endfunction
     nnoremap <Leader>jk :call ToggleCodeViewMode()<CR>
 
-" upper/lower word
-    nmap <leader>u mQviwU`Q
-    nmap <leader>d mQviwu`Q
-
-" upper/lower first char of word
-    nmap <leader>U mQgewvU`Q
-    nmap <leader>D mQgewvu`Q
-
 " set text wrapping toggles
     nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
 
