@@ -192,6 +192,8 @@ The leader key is ','.
 
 [hexmode]
 
+[vim-table-mode]
+
 [STL-Syntax]:https://github.com/Mizuchi/STL-Syntax
 [ack.vim]:https://github.com/mileszs/ack.vim
 [ag.vim]:https://github.com/rking/ag.vim
@@ -243,4 +245,5 @@ The leader key is ','.
 [vim-json]:https://github.com/elzr/vim-json
 [vim-exchange]:https://github.com/tommcdo/vim-exchange
 [hexmode]:https://github.com/fidian/hexmode
+[vim-table-mode]:https://github.com/dhruvasagar/vim-table-mode
 
