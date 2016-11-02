@@ -78,6 +78,10 @@ The leader key is ','.
 
     You could found more powerline fonts in [powerline_fonts]
 
+    Remarks: 1. The SourceCodePro-Regular.otf contains all unicode character and new powerline glyphs. If you use a font that not contains powerline glyphs, you could setup your iTerm to use a different font for Non-ASCII text to use SourceCodePro-Regular.
+             2. The Menlo-OldPowerline.otf contains old powerline glyphs, installing it will make old powerline display correct on Mac OSX.
+             3. The SFMono is licensed to registered third-party developers for the design and development of applications for iOS, macOS and watchOS, please note that it is forbidden to use this typeface for your commercial project.
+
 - *My vim is ugly, it seems some color are missing*
 
     You should set your env TERM=xterm-256color, you can do this by the following two ways:
