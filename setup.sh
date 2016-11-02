@@ -110,7 +110,7 @@ backup_vimrc() {
     cd $vim_dir
     backup_date=`date +%Y%m%d`
     color_print $backup_date
-    tar --exclude .git -czvf vimrc-$backup_date-mini.tar.gz $vim_path/bundle $vim_path/vimrc $vim_path/setup.sh
+    tar --exclude .git -czvf vimrc-$backup_date-mini.tar.gz $vim_path/bundle $vim_path/fonts $vim_path/vimrc $vim_path/setup.sh
     cd $vim_pwd
     color_print "Backup Finished "$backup_date
 }
