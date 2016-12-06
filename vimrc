@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.11.03
+" Last change:	2016.12.06
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -884,7 +884,7 @@ let g:SignatureMap = {
     call s:get_yankring_dir()
 
     let g:yankring_history_dir="~/.cache/yankring_dir//"
-    let g:yankring_max_history=256
+    let g:yankring_max_history=512
     " let g:yankring_replace_n_pkey='<C-K>'
     " let g:yankring_replace_n_nkey='<C-J>'
 
