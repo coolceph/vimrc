@@ -129,7 +129,7 @@ set sidescroll=1
 set sidescrolloff=10
 set virtualedit+=block
 set lazyredraw
-set nolist
+set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set splitbelow
 set splitright
