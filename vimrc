@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.12.06
+" Last change:	2016.12.16
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -82,6 +82,7 @@ if has("autocmd")
     autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType make setlocal noexpandtab
     autocmd FileType python setlocal expandtab smarttab shiftwidth=4 softtabstop=4
+    autocmd FileType c,cpp setlocal shiftwidth=2 tabstop=8 smarttab
 
     " When editing a file, always jump to the last known cursor position.
     " Don't do it when the position is invalid or when inside an event handler
