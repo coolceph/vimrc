@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.12.16
+" Last change:	2016.12.17
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -129,7 +129,7 @@ set sidescroll=1
 set sidescrolloff=10
 set virtualedit+=block
 set lazyredraw
-set list
+set nolist
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set splitbelow
 set splitright
