@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.12.17
+" Last change:	2016.12.19
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -561,32 +561,67 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     let NERDTreeKeepTreeInNewTab=1
 
 "rainbow_parentheses括号匹配着色插件配置
-    nnoremap <leader>R :RainbowParenthesesToggle<cr>
-    let g:rbpt_colorpairs = [
-        \ ['brown',       'RoyalBlue3'],
-        \ ['Darkblue',    'SeaGreen3'],
-        \ ['darkgray',    'DarkOrchid3'],
-        \ ['darkgreen',   'firebrick3'],
-        \ ['darkcyan',    'RoyalBlue3'],
-        \ ['darkred',     'SeaGreen3'],
-        \ ['darkmagenta', 'DarkOrchid3'],
-        \ ['brown',       'firebrick3'],
-        \ ['gray',        'RoyalBlue3'],
-        \ ['black',       'SeaGreen3'],
-        \ ['darkmagenta', 'DarkOrchid3'],
-        \ ['Darkblue',    'firebrick3'],
-        \ ['darkgreen',   'RoyalBlue3'],
-        \ ['darkcyan',    'SeaGreen3'],
-        \ ['darkred',     'DarkOrchid3'],
-        \ ['red',         'firebrick3'],
-        \ ]
-    let g:rbpt_max = 16
-    let g:rbpt_loadcmd_toggle = 0
+    " nnoremap <leader>R :RainbowParenthesesToggle<cr>
+    " let g:rbpt_colorpairs = [
+    "     \ ['brown',       'RoyalBlue3'],
+    "     \ ['Darkblue',    'SeaGreen3'],
+    "     \ ['darkgray',    'DarkOrchid3'],
+    "     \ ['darkgreen',   'firebrick3'],
+    "     \ ['darkcyan',    'RoyalBlue3'],
+    "     \ ['darkred',     'SeaGreen3'],
+    "     \ ['darkmagenta', 'DarkOrchid3'],
+    "     \ ['brown',       'firebrick3'],
+    "     \ ['gray',        'RoyalBlue3'],
+    "     \ ['black',       'SeaGreen3'],
+    "     \ ['darkmagenta', 'DarkOrchid3'],
+    "     \ ['Darkblue',    'firebrick3'],
+    "     \ ['darkgreen',   'RoyalBlue3'],
+    "     \ ['darkcyan',    'SeaGreen3'],
+    "     \ ['darkred',     'DarkOrchid3'],
+    "     \ ['red',         'firebrick3'],
+    "     \ ]
+    " let g:rbpt_max = 16
+    " let g:rbpt_loadcmd_toggle = 0
 
-    au VimEnter * RainbowParenthesesToggle
-    au Syntax * RainbowParenthesesLoadRound
-    au Syntax * RainbowParenthesesLoadSquare
-    au Syntax * RainbowParenthesesLoadBraces
+    " au VimEnter * RainbowParenthesesToggle
+    " au Syntax * RainbowParenthesesLoadRound
+    " au Syntax * RainbowParenthesesLoadSquare
+    " au Syntax * RainbowParenthesesLoadBraces
+
+"rainbow配置
+    let g:rainbow_conf = {
+    \	'guifgs': ['RoyalBlue3', 'SeaGreen3', 'DarkOrchid3', 'firebrick3', 'darkorange3'],
+    \	'ctermfgs': ['red','darkred','darkcyan','darkgreen','Darkblue','darkmagenta','gray','brown','darkmagenta','darkred','darkcyan','darkgreen','darkgray','Darkblue','brown'],
+    \	'operators': '_,_',
+    \	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+    \	'separately': {
+    \		'*': {},
+    \		'lisp': {
+    \			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+    \		},
+    \		'tex': {
+    \			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+    \		},
+    \		'vim': {
+    \			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+    \		},
+    \		'xml': {
+    \			'parentheses': ['start=/\v\<\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'))?)*\>/ end=#</\z1># fold'],
+    \		},
+    \		'xhtml': {
+    \			'parentheses': ['start=/\v\<\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'))?)*\>/ end=#</\z1># fold'],
+    \		},
+    \		'html': {
+    \			'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+    \		},
+    \		'php': {
+    \			'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold', 'start=/(/ end=/)/ containedin=@htmlPreproc contains=@phpClTop', 'start=/\[/ end=/\]/ containedin=@htmlPreproc contains=@phpClTop', 'start=/{/ end=/}/ containedin=@htmlPreproc contains=@phpClTop'],
+    \		},
+    \		'css': 0,
+    \	}
+    \}
+
+    let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 
 "Fugitive配置
     nnoremap <Leader>gs :Gstatus<CR>

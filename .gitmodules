@@ -34,9 +34,6 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
-[submodule "bundle/rainbow_parentheses.vim"]
-	path = bundle/rainbow_parentheses.vim
-	url = https://github.com/kien/rainbow_parentheses.vim
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
@@ -184,3 +181,6 @@
 [submodule "bundle/vim-table-mode"]
 	path = bundle/vim-table-mode
 	url = https://github.com/dhruvasagar/vim-table-mode
+[submodule "bundle/rainbow"]
+	path = bundle/rainbow
+	url = https://github.com/luochen1990/rainbow
