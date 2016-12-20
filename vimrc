@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.12.19
+" Last change:	2016.12.20
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -973,7 +973,7 @@ let g:SignatureMap = {
     let g:vim_json_syntax_conceal = 0
 
 "cscope setting
-    if has("cscope")
+    function! AddScope()
         " set csprg=/usr/local/bin/cscope
         " set cscopetagorder=1
         " set cscopetag
@@ -983,6 +983,15 @@ let g:SignatureMap = {
             cs add cscope.out
         endif
         set csverb
+    endfunction
+
+    function! GenerateScope()
+        !find . -name "*.h" -o -name "*.c" -o -name "*.cc" -o -name "*.cpp" -o -name "*.hpp" -o -name "*.java" -o -name "*.php" -o -name "*.go"> cscope.files;cscope -bkq -i cscope.files
+        call AddScope()
+    endfunction
+
+    if has("cscope")
+        call AddScope()
     endif
 
     " The following maps all invoke one of the following cscope search types:
@@ -1010,7 +1019,7 @@ let g:SignatureMap = {
 command! Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 command! Gotags !gotags -R . >tags
 command! Phptags !phpctags -R .
-command! Cscope !find . -name "*.h" -o -name "*.c" -o -name "*.cc" -o -name "*.cpp" -o -name "*.hpp" -o -name "*.java" -o -name "*.php" > cscope.files;cscope -bkq -i cscope.files
+command! Cscope call GenerateScope()
 
 command! Hex %!xxd
 command! Asc %!xxd -r
