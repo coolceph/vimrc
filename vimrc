@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.12.20
+" Last change:	2016.12.21
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -48,6 +48,20 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+"默认关闭鼠标，方便Terminal下操作
+if has('mouse')
+  set mouse-=a
+endif
+
+"MacVim工作在gui模式，需要设置字体
+"在Powerline字体开启时，需要选择Powerline字体，例如原版Source\ Code\ Pro或者SF\ Mono\ for\ Powerline
+"在Powerline字体关闭时，可以任意选择等宽字体
+"GUI模式开启鼠标支持
+if has("gui_running")
+    set guifont=SF\ Mono\ for\ Powerline:h12
+    set mouse=a
+endif
+
 "代码缩进设置
 set smarttab      "开启时，在行首按TAB将加入sw个空格，否则加入ts个空格
 set tabstop=4     "编辑时一个TAB字符占多少个空格的位置
@@ -55,12 +69,6 @@ set softtabstop=4 "方便在开启了et后使用退格（backspace）键，每�
 set shiftwidth=4  "使用每层缩进的空格数
 set expandtab     "是否将输入的TAB自动展开成空格。开启后要输入TAB，需要Ctrl-V<TAB>
 set updatetime=250
-
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse-=a
-endif
-
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
