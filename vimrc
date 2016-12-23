@@ -56,10 +56,12 @@ endif
 "MacVim工作在gui模式，需要设置字体
 "在Powerline字体开启时，需要选择Powerline字体，例如原版Source\ Code\ Pro或者SF\ Mono\ for\ Powerline
 "在Powerline字体关闭时，可以任意选择等宽字体
-"GUI模式开启鼠标支持
+"GUI模式开启鼠标支持，关闭左右的scrollbar
 if has("gui_running")
     set guifont=SF\ Mono\ for\ Powerline:h12
     set mouse=a
+    set guioptions-=r
+    set guioptions-=L
 endif
 
 "代码缩进设置
