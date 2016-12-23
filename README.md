@@ -8,10 +8,11 @@ Enjoy it.
 
 # Requirements
 
-* Vim 7.4+ compiled with if_lua. If :echo has("lua") returns 1, then you're done; otherwise, Mac OSX see below.
+* Vim/MacVim 7.4+ compiled with if_lua. If :echo has("lua") returns 1, then you're done; otherwise, Mac OSX see below.
 
 ```
 brew install vim --with-lua
+brew install macvim --with-lua
 ```
 
 * Ctags
