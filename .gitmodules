@@ -1,6 +1,6 @@
 [submodule "bundle/vim-pathogen"]
 	path = bundle/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen.git
+	url = https://github.com/tpope/vim-pathogen
 [submodule "bundle/STL-Syntax"]
 	path = bundle/STL-Syntax
 	url = https://github.com/Mizuchi/STL-Syntax
@@ -16,9 +16,6 @@
 [submodule "bundle/jellybeans.vim"]
 	path = bundle/jellybeans.vim
 	url = https://github.com/nanotech/jellybeans.vim
-[submodule "bundle/neocomplcache.vim"]
-	path = bundle/neocomplcache.vim
-	url = https://github.com/Shougo/neocomplcache.vim
 [submodule "bundle/neomru.vim"]
 	path = bundle/neomru.vim
 	url = https://github.com/Shougo/neomru.vim
@@ -126,7 +123,7 @@
 	url = https://github.com/justmao945/vim-clang
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic
+	url = https://github.com/vim-syntastic/syntastic
 [submodule "bundle/rust.vim"]
 	path = bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim
@@ -151,9 +148,6 @@
 [submodule "bundle/incsearch.vim"]
 	path = bundle/incsearch.vim
 	url = https://github.com/haya14busa/incsearch.vim
-[submodule "bundle/ctrlsf.vim"]
-	path = bundle/ctrlsf.vim
-	url = https://github.com/dyng/ctrlsf.vim
 [submodule "bundle/incsearch-easymotion.vim"]
 	path = bundle/incsearch-easymotion.vim
 	url = https://github.com/haya14busa/incsearch-easymotion.vim
