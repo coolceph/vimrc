@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2016.12.21
+" Last change:	2017.01.09
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -250,10 +250,11 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     nnoremap <leader>/ :nohlsearch<CR>
 
 "Window navigation mappings
-    noremap <C-h> <C-w>h
-    noremap <C-j> <C-w>j
-    noremap <C-k> <C-w>k
-    noremap <C-l> <C-w>l
+"deprecated after using vim-tmux-navigator
+    " noremap <C-h> <C-w>h
+    " noremap <C-j> <C-w>j
+    " noremap <C-k> <C-w>k
+    " noremap <C-l> <C-w>l
 
 "Tab navigation mappings
     map tn :tabn<CR>
