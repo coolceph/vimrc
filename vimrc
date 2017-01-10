@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2017.01.09
+" Last change:	2017.01.11
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -1025,6 +1025,14 @@ let g:SignatureMap = {
 
 "nerdtree-git-plugin
     let g:NERDTreeUpdateOnCursorHold = 0
+
+"accelerated-smooth-scroll
+"只开启ctrl-u/d滚动，每次滚动10行
+    let g:ac_smooth_scroll_step_count = 10
+    let g:ac_smooth_scroll_no_default_key_mappings = 1
+    let g:ac_smooth_scroll_visualmode_key_mappings = 1
+    nmap <silent> <C-d> <Plug>(ac-smooth-scroll-c-d)
+    nmap <silent> <C-u> <Plug>(ac-smooth-scroll-c-u)
 
 "自定义命令
 command! Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
