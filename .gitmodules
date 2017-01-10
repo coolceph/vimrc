@@ -129,7 +129,7 @@
 	url = https://github.com/rust-lang/rust.vim
 [submodule "bundle/accelerated-smooth-scroll"]
 	path = bundle/accelerated-smooth-scroll
-	url = https://github.com/yonchu/accelerated-smooth-scroll
+	url = https://github.com/ketor/accelerated-smooth-scroll
 [submodule "bundle/vim-pasta"]
 	path = bundle/vim-pasta
 	url = https://github.com/sickill/vim-pasta
