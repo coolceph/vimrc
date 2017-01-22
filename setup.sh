@@ -97,7 +97,6 @@ make_vimrc() {
         /bin/rm -f $HOME/.vimrc
     fi
     echo "source $vim_fullpath/vimrc" > $HOME/.vimrc
-    echo "colorscheme jellybeans" >> $HOME/.vimrc
     color_print "Make vimrc finished"
 }
 
