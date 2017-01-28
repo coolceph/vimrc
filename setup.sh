@@ -97,7 +97,6 @@ make_vimrc() {
         /bin/rm -f $HOME/.vimrc
     fi
     echo "source $vim_fullpath/vimrc" > $HOME/.vimrc
-    echo "colorscheme jellybeans" >> $HOME/.vimrc
     color_print "Make vimrc finished"
 }
 
@@ -217,6 +216,7 @@ install() {
 update() {
     cd $vim_fullpath
     git pull
+    git submodule init
     git submodule update
     color_print "Update finished!"
     cd $vim_pwd
