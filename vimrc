@@ -205,6 +205,7 @@ noremap <F6> :set invlist<CR>:set list?<CR>
 "使用F7更新Taghighlight
 fun! UpdateCtagsAndFileTypes()
 "    !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
+    echo "Create ctags and Taghighlight"
     UpdateTypesFile
     echo "UpdateTypesFile OK!"
 endfunction
