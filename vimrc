@@ -62,6 +62,7 @@ if has("gui_running")
     set mouse=a
     set guioptions-=r
     set guioptions-=L
+    set guicursor+=a:blinkon0 "光标不闪烁
 endif
 
 "代码缩进设置
