@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2017.01.23
+" Last change:	2017.02.15
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -1028,6 +1028,10 @@ let g:SignatureMap = {
     let g:ac_smooth_scroll_visualmode_key_mappings = 1
     nmap <silent> <C-d> <Plug>(ac-smooth-scroll-c-d)
     nmap <silent> <C-u> <Plug>(ac-smooth-scroll-c-u)
+
+"vim-cpp-enhanced-highlight
+    let g:cpp_class_scope_highlight = 1
+
 
 "自定义命令
 command! Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
