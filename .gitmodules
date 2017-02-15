@@ -1,9 +1,6 @@
 [submodule "bundle/vim-pathogen"]
 	path = bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen
-[submodule "bundle/STL-Syntax"]
-	path = bundle/STL-Syntax
-	url = https://github.com/Mizuchi/STL-Syntax
 [submodule "bundle/ack.vim"]
 	path = bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim
