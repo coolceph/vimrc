@@ -240,7 +240,6 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
 
 "快速退出vim
     nnoremap <C-c> :qall!<CR>
-    nnoremap <Leader>q :qall!<CR>
 
 "搜索相关的设置
     set showmatch  " show matching brackets/parenthesis
@@ -1032,6 +1031,25 @@ let g:SignatureMap = {
 "vim-cpp-enhanced-highlight
     let g:cpp_class_scope_highlight = 1
 
+"Toggle quickfix
+    function! s:GetBufferList()
+        redir =>buflist
+        silent! ls
+        redir END
+        return buflist
+    endfunction
+
+    function! ToggleQuickfixList()
+        for bufnum in map(filter(split(s:GetBufferList(), '\n'), 'v:val =~ "Quickfix List"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
+            if bufwinnr(bufnum) != -1
+                cclose
+                return
+            endif
+        endfor
+        copen
+    endfunction
+
+    nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
 
 "自定义命令
 command! Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
