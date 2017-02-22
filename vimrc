@@ -460,7 +460,7 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     nnoremap <silent> [unite]s :<C-u>Unite -quick-match buffer<cr>
 
 "Ack选项
-    let g:ack_default_options = " -s -H --nocolor --nogroup --column --ignore-file=is:tags --ignore-file=ext:taghl"
+    let g:ack_default_options = " -s -H --nocolor --nogroup --column --ignore-file=is:tags --ignore-file=ext:taghl --ignore-file=ext:out"
 
 "Tagbar配置
     let g:tagbar_width=26
