@@ -248,7 +248,6 @@ while getopts ":iubln" opts; do
             ;;
         u)
             logo
-            require
             update
             ;;
         b)
