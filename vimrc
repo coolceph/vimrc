@@ -459,6 +459,10 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     nnoremap <silent> [unite]m :<C-u>Unite -auto-resize -buffer-name=mappings mapping<cr>
     nnoremap <silent> [unite]s :<C-u>Unite -quick-match buffer<cr>
 
+"CtrlP
+    "借用unite的键绑定Tags搜索
+    nnoremap <silent> [unite]t :CtrlPTag<cr>
+
 "Ack选项
     let g:ack_default_options = " -s -H --nocolor --nogroup --column --ignore-file=is:tags --ignore-file=ext:taghl --ignore-file=ext:out"
 
@@ -926,8 +930,8 @@ let g:SignatureMap = {
 
     let g:yankring_history_dir="~/.cache/yankring_dir//"
     let g:yankring_max_history=512
-    " let g:yankring_replace_n_pkey='<C-K>'
-    " let g:yankring_replace_n_nkey='<C-J>'
+    let g:yankring_replace_n_pkey='<C-K>'
+    let g:yankring_replace_n_nkey='<C-J>'
 
 " incsearch.vim x fuzzy x vim-easymotion
     "insearch.vim
