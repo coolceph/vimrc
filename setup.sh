@@ -51,12 +51,23 @@ logo() {
 require() {
     color_print "Checking requirements for vimrc..."
     color_print "Checking vim version..."
-    vim_version=`vim --version|head -n 1|awk '{print $5}'|cut -c 1,3`
+    vim_exec="vim"
+    if [ `uname` == "Darwin" ]; then
+        echo "OS_TYPE is Darwin"
+        if [ `command -v mvim` ]; then
+            vim_exec="mvim"
+            echo "MacVim installed, use mvim for requirements"
+        else
+            vim_exec="vim"
+            echo "Use vim for requirements"
+        fi
+    fi
+    vim_version=`$vim_exec --version|head -n 1|awk '{print $5}'|cut -c 1,3`
     if [ ${vim_version} -lt 74 ]
     then
         die "Your vim's version is too low! Please download higher version(7.4+) from http://www.vim.org/download.php"
     fi
-    vim --version | grep +lua || die "Your vim does not have +lua"
+    $vim_exec --version | grep +lua || die "Your vim does not have +lua"
     color_print "Checking if git exists..."
     which git || die "No git installed!\nPlease install git from http://git-scm.com/downloads/"
     color_print "Check if ctags exists..."
@@ -248,6 +259,7 @@ while getopts ":iubln" opts; do
             ;;
         u)
             logo
+            require
             update
             ;;
         b)
