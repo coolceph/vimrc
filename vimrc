@@ -930,8 +930,8 @@ let g:SignatureMap = {
 
     let g:yankring_history_dir="~/.cache/yankring_dir//"
     let g:yankring_max_history=512
-    let g:yankring_replace_n_pkey='<C-K>'
-    let g:yankring_replace_n_nkey='<C-J>'
+    "let g:yankring_replace_n_pkey='<C-K>'
+    "let g:yankring_replace_n_nkey='<C-J>'
 
 " incsearch.vim x fuzzy x vim-easymotion
     "insearch.vim
