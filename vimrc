@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2017.04.06
+" Last change:	2017.04.19
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
