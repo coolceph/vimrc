@@ -29,7 +29,7 @@
 " | F7       | 更新ctags文件       |
 " | F8       | 打开undotree        |
 " | F9       | 进入MultiCursor模式 |
-" | F10      | 打开YankRin剪贴板   |
+" | F10      | 打开YankRing剪贴板   |
 " | F12      | 鼠标模式切换        |
 " | <Ctrl+c> | 快速推出VIM(:qall!) |
 " +----------+---------------------+
@@ -930,8 +930,8 @@ let g:SignatureMap = {
 
     let g:yankring_history_dir="~/.cache/yankring_dir//"
     let g:yankring_max_history=512
-    "let g:yankring_replace_n_pkey='<C-K>'
-    "let g:yankring_replace_n_nkey='<C-J>'
+    let g:yankring_replace_n_pkey='<C-K>'
+    let g:yankring_replace_n_nkey='<C-J>'
 
 " incsearch.vim x fuzzy x vim-easymotion
     "insearch.vim
