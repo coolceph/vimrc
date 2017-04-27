@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2017.04.19
+" Last change:	2017.04.27
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -930,8 +930,8 @@ let g:SignatureMap = {
 
     let g:yankring_history_dir="~/.cache/yankring_dir//"
     let g:yankring_max_history=512
-    let g:yankring_replace_n_pkey='<C-K>'
-    let g:yankring_replace_n_nkey='<C-J>'
+    let g:yankring_replace_n_pkey = '<leader>['
+    let g:yankring_replace_n_nkey = '<leader>]'
 
 " incsearch.vim x fuzzy x vim-easymotion
     "insearch.vim
