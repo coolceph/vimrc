@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2017.04.27
+" Last change:	2017.05.02
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -635,7 +635,7 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
 "Fugitive配置
     nnoremap <Leader>gs :Gstatus<CR>
     nnoremap <Leader>gr :Gremove<CR>
-    nnoremap <Leader>gl :Glog<CR>
+    "nnoremap <Leader>gl :Glog<CR>
     nnoremap <Leader>gb :Gblame<CR>
     nnoremap <Leader>gm :Gmove
     nnoremap <Leader>gp :Ggrep
@@ -971,8 +971,8 @@ let g:SignatureMap = {
     "fuzzy search + easymotion
     noremap <silent><expr> <Space>z incsearch#go(<SID>config_easyfuzzymotion())
 
-"vim-extradite 查看gitlog
-    nnoremap <Leader>gl :Extradite<CR>
+"gv.vim 查看gitlog
+    nnoremap <Leader>gl :GV<CR>
 
 "vim-plist
     let g:plist_display_format = 'xml'
