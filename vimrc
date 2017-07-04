@@ -471,94 +471,6 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     let g:tagbar_autofocus = 1
     noremap <silent> <F4> :TagbarToggle<CR>
 
-" Neocomplete (need LUA)
-   " Disable AutoComplPop.
-    let g:acp_enableAtStartup = 0
-    " Use neocomplete.
-    let g:neocomplete#enable_at_startup = 1
-    " Use smartcase.
-    let g:neocomplete#enable_smart_case = 1
-    " Set minimum syntax keyword length.
-    let g:neocomplete#sources#syntax#min_keyword_length = 3
-    let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-
-    let g:neocomplete#sources#tags#cache_limit_size = 4194304
-
-    " Define dictionary.
-    let g:neocomplete#sources#dictionary#dictionaries = {
-        \ 'default' : '',
-        \ 'vimshell' : $HOME.'/.vimshell_hist',
-        \ 'scheme' : $HOME.'/.gosh_completions'
-            \ }
-
-    " Define keyword.
-    if !exists('g:neocomplete#keyword_patterns')
-        let g:neocomplete#keyword_patterns = {}
-    endif
-    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-    " Plugin key-mappings.
-    inoremap <expr><C-g>     neocomplete#undo_completion()
-    inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-    " Recommended key-mappings.
-    " <CR>: close popup and save indent.
-    inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-    function! s:my_cr_function()
-      " return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-      " For no inserting <CR> key.
-      return pumvisible() ? "\<C-y>" : "\<CR>"
-    endfunction
-    " <TAB>: completion.
-    " inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-    " <C-h>, <BS>: close popup and delete backword char.
-    inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-    inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-    " Close popup by <Space>.
-    " inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
-
-    " AutoComplPop like behavior.
-    let g:neocomplete#enable_auto_select = 1
-
-    " Enable omni completion.
-    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-    " Enable heavy omni completion.
-    if !exists('g:neocomplete#sources#omni#input_patterns')
-      let g:neocomplete#sources#omni#input_patterns = {}
-    endif
-    let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-    " let g:neocomplete#sources#omni#input_patterns.c   = '[^.[:digit:] *\t]\%(\.\|->\)'
-    " let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
-    " For perlomni.vim setting.
-    " https://github.com/c9s/perlomni.vim
-    let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-
-" vim-clang (work with neocomplete)
-    "vim-clang supports relative include path in .clang configuration file.
-    " disable auto completion for vim-clang
-    let g:clang_auto = 0
-    " default 'longest' can not work with neocomplete
-    let g:clang_c_completeopt = 'menuone'
-    let g:clang_cpp_completeopt = 'menuone'
-    let g:clang_debug = 0
-    let g:clang_exec = 'clang'
-    let g:clang_c_options = '-std=gnu11'
-    let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
-    if !exists('g:neocomplete#force_omni_input_patterns')
-            let g:neocomplete#force_omni_input_patterns = {}
-    endif
-    " for c and c++
-    let g:neocomplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-    let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-
-    map <silent> <Leader>x <Esc>:ClangCloseWindow<CR>
-
 "NerdTree配置
     map <F3> :NERDTreeToggle<CR>
 
@@ -568,34 +480,6 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     let NERDTreeQuitOnOpen=0 "the Nerdtree window will be close after a file is opend.
     let NERDTreeShowHidden=1
     let NERDTreeKeepTreeInNewTab=1
-
-"rainbow_parentheses括号匹配着色插件配置
-    " nnoremap <leader>R :RainbowParenthesesToggle<cr>
-    " let g:rbpt_colorpairs = [
-    "     \ ['brown',       'RoyalBlue3'],
-    "     \ ['Darkblue',    'SeaGreen3'],
-    "     \ ['darkgray',    'DarkOrchid3'],
-    "     \ ['darkgreen',   'firebrick3'],
-    "     \ ['darkcyan',    'RoyalBlue3'],
-    "     \ ['darkred',     'SeaGreen3'],
-    "     \ ['darkmagenta', 'DarkOrchid3'],
-    "     \ ['brown',       'firebrick3'],
-    "     \ ['gray',        'RoyalBlue3'],
-    "     \ ['black',       'SeaGreen3'],
-    "     \ ['darkmagenta', 'DarkOrchid3'],
-    "     \ ['Darkblue',    'firebrick3'],
-    "     \ ['darkgreen',   'RoyalBlue3'],
-    "     \ ['darkcyan',    'SeaGreen3'],
-    "     \ ['darkred',     'DarkOrchid3'],
-    "     \ ['red',         'firebrick3'],
-    "     \ ]
-    " let g:rbpt_max = 16
-    " let g:rbpt_loadcmd_toggle = 0
-
-    " au VimEnter * RainbowParenthesesToggle
-    " au Syntax * RainbowParenthesesLoadRound
-    " au Syntax * RainbowParenthesesLoadSquare
-    " au Syntax * RainbowParenthesesLoadBraces
 
 "rainbow配置
     let g:rainbow_conf = {

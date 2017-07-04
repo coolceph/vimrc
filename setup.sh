@@ -246,6 +246,7 @@ if [ $# -ne 1 ]; then
     check_lang
     install
     make_vimproc
+    make_youcompleteme
     make_phpctags
     make_vimrc
     help
@@ -260,6 +261,7 @@ while getopts ":iubln" opts; do
             check_lang
             install
             make_vimproc
+            make_youcompleteme
             make_phpctags
             make_vimrc
             ;;
@@ -278,6 +280,7 @@ while getopts ":iubln" opts; do
             check_term
             check_lang
             make_vimproc
+            make_youcompleteme
             make_phpctags
             make_vimrc
             ;;
@@ -286,6 +289,7 @@ while getopts ":iubln" opts; do
             check_term
             check_lang
             make_vimproc
+            make_youcompleteme
             make_phpctags
             make_vimrc
             close_powerline_fonts

@@ -109,9 +109,6 @@
 [submodule "bundle/vim-template"]
 	path = bundle/vim-template
 	url = https://github.com/aperezdc/vim-template
-[submodule "bundle/vim-clang"]
-	path = bundle/vim-clang
-	url = https://github.com/justmao945/vim-clang
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/vim-syntastic/syntastic
