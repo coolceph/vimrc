@@ -111,6 +111,13 @@ make_vimrc() {
     color_print "Make vimrc finished"
 }
 
+make_youcompleteme() {
+    cd $vim_fullpath/bundle/YouCompleteMe/
+    ./install.py
+    cd $vim_pwd
+    color_print "Make YouCompleteMe finished"
+}
+
 close_powerline_fonts() {
     echo "let g:airline_powerline_fonts = 0" >> $HOME/.vimrc
     color_print "Close powerline fonts"
@@ -213,8 +220,7 @@ install() {
     git clone https://github.com/coolceph/vimrc $vim_fullpath;
     if [ $? -eq 0 ]; then
         cd $vim_fullpath
-        git submodule init
-        git submodule update
+        git submodule update --init --recursive
         cd $vim_pwd
         color_print "All plugins init finished!"
     else
