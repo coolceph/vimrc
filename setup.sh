@@ -118,6 +118,15 @@ make_youcompleteme() {
     color_print "Make YouCompleteMe finished"
 }
 
+#Dependency on Mac install guide:
+#    brew install cmake go node mono rust
+make_youcompleteme_all() {
+    cd $vim_fullpath/bundle/YouCompleteMe/
+    ./install.py --all
+    cd $vim_pwd
+    color_print "Make YouCompleteMe finished"
+}
+
 close_powerline_fonts() {
     echo "let g:airline_powerline_fonts = 0" >> $HOME/.vimrc
     color_print "Close powerline fonts"
@@ -252,7 +261,7 @@ if [ $# -ne 1 ]; then
     help
 fi
 
-while getopts ":iubln" opts; do
+while getopts ":iublna" opts; do
     case $opts in
         i)
             logo
@@ -290,6 +299,16 @@ while getopts ":iubln" opts; do
             check_lang
             make_vimproc
             make_youcompleteme
+            make_phpctags
+            make_vimrc
+            close_powerline_fonts
+            ;;
+        a)
+            logo
+            check_term
+            check_lang
+            make_vimproc
+            make_youcompleteme_all
             make_phpctags
             make_vimrc
             close_powerline_fonts
