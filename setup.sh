@@ -311,7 +311,6 @@ while getopts ":iublna" opts; do
             make_youcompleteme_all
             make_phpctags
             make_vimrc
-            close_powerline_fonts
             ;;
         :)
             help;;

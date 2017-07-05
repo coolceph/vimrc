@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2017.05.02
+" Last change:	2017.07.05
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -115,7 +115,7 @@ set history=1024
 set number                                       " 显示行号
 set autoread                                     " 文件在Vim之外修改过，自动重新读入
 set showbreak=↪                                  " 显示换行符
-set completeopt=longest,menuone                  " 更好的insert模式自动完成
+set completeopt=longest,menu                     " 更好的insert模式自动完成
 set modeline                                     " 允许被编辑的文件以注释的形式设置Vim选项
 set hidden                                       " switching buffers without saving
 set ruler                                        " show the cursor position all the time
@@ -374,15 +374,6 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     "let g:airline_symbols.readonly = ''
     "let g:airline_symbols.linenr = ''
 
-    " old vim-powerline symbols
-    "let g:airline_left_sep = '⮀'
-    "let g:airline_left_alt_sep = '⮁'
-    "let g:airline_right_sep = '⮂'
-    "let g:airline_right_alt_sep = '⮃'
-    "let g:airline_symbols.branch = '⭠'
-    "let g:airline_symbols.readonly = '⭤'
-    "let g:airline_symbols.linenr = '⭡'
-
 "Unite 聚合搜索
     call unite#filters#matcher_default#use(['matcher_fuzzy'])
     call unite#filters#sorter_default#use(['sorter_rank'])
@@ -572,24 +563,13 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
         \ 'ctagsargs' : '-sort -silent'
     \ }
 
-"neosnippet
-    " Plugin key-mappings.
-    imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-    smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-    xmap <C-k>     <Plug>(neosnippet_expand_target)
+"YouCompleteMe
+    nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-    " SuperTab like snippets behavior.
-    imap <expr><TAB>
-     \ pumvisible() ? "\<C-n>" :
-     \ neosnippet#expandable_or_jumpable() ?
-     \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-    smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-    " For conceal markers.
-    if has('conceal')
-      set conceallevel=2 concealcursor=niv
-    endif
+"UltiSnips(Compatible with YouCompleteMe)
+    let g:UltiSnipsExpandTrigger="<c-k>"
+    let g:UltiSnipsJumpForwardTrigger="<c-k>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 
 "vim-signature
 let g:SignatureMap = {
@@ -669,28 +649,6 @@ let g:SignatureMap = {
     endif
 
 "vim-multiple-cursors
-    "
-    "Other plugins may trigger on keypresses when in insert mode. These plugins
-    "generally provide a means to toggle their active state. These hooks allow the
-    "user to provide functions in their .vimrc to do this when
-    "multiple-cursor-mode is entered.
-    "With this locking and unlocking we prevent neocomplete to trigger it's
-    "function calls until we are finished with multiple cursors editing.
-
-    " Called once right before you start selecting multiple cursors
-    function! Multiple_cursors_before()
-      if exists(':NeoCompleteLock')==2
-        exe 'NeoCompleteLock'
-      endif
-    endfunction
-
-    " Called once only when the multiple selection is canceled (default <Esc>)
-    function! Multiple_cursors_after()
-      if exists(':NeoCompleteUnlock')==2
-        exe 'NeoCompleteUnlock'
-      endif
-    endfunction
-
     "If you don't like the plugin taking over your favorite key bindings, you
     "can turn off the default with
     let g:multi_cursor_use_default_mapping=0
