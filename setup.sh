@@ -67,7 +67,7 @@ require() {
     then
         die "Your vim's version is too low! Please download higher version(7.4+) from http://www.vim.org/download.php"
     fi
-    $vim_exec --version | grep +lua || die "Your vim does not have +lua"
+    $vim_exec --version | grep +python || die "Your vim does not have +python"
     color_print "Checking if git exists..."
     which git || die "No git installed!\nPlease install git from http://git-scm.com/downloads/"
     color_print "Check if ctags exists..."
