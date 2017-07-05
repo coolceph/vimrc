@@ -16,12 +16,6 @@
 [submodule "bundle/neomru.vim"]
 	path = bundle/neomru.vim
 	url = https://github.com/Shougo/neomru.vim
-[submodule "bundle/neosnippet-snippets"]
-	path = bundle/neosnippet-snippets
-	url = https://github.com/Shougo/neosnippet-snippets
-[submodule "bundle/neosnippet.vim"]
-	path = bundle/neosnippet.vim
-	url = https://github.com/Shougo/neosnippet.vim
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter
