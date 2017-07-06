@@ -8,11 +8,11 @@ Enjoy it.
 
 # Requirements
 
-* Vim/MacVim 7.4+ compiled with if_lua. If :echo has("lua") returns 1, then you're done; otherwise, Mac OSX see below.
+* Vim/MacVim 7.4.1578 or newer with Python 2 or Python 3 support. If :echo has("python") returns 1, then you're done; otherwise, Mac OSX see below.
 
 ```
-brew install vim --with-lua
-brew install macvim --with-lua
+brew install vim
+brew install macvim
 ```
 
 * Ctags
@@ -101,7 +101,7 @@ The leader key is ','.
 
 [jellybeans.vim]
 
-[neocomplete.vim]
+[YouCompleteMe]
 
 [neomru.vim]
 
@@ -113,7 +113,7 @@ The leader key is ','.
 
 [nerdtree]
 
-[rainbow_parentheses.vim]
+[rainbow]
 
 [tabular]
 
@@ -153,7 +153,7 @@ The leader key is ','.
 
 [vim-expand-region]
 
-[vim-trailing-whitespace]
+[vim-better-whitespace]
 
 [vim-surround]
 
@@ -169,7 +169,7 @@ The leader key is ','.
 
 [vim-clang]
 
-[vim-extradite]
+[gv.vim]
 
 [incsearch.vim]
 
@@ -199,13 +199,13 @@ The leader key is ','.
 [ack.vim]:https://github.com/mileszs/ack.vim
 [ag.vim]:https://github.com/rking/ag.vim
 [jellybeans.vim]:https://github.com/nanotech/jellybeans.vim
-[neocomplete.vim]:https://github.com/Shougo/neocomplete.vim
+[YouCompleteMe]:https://github.com/Valloric/YouCompleteMe
 [neomru.vim]:https://github.com/Shougo/neomru.vim
 [neosnippet-snippets]:https://github.com/Shougo/neosnippet-snippets
 [neosnippet.vim]:https://github.com/Shougo/neosnippet.vim
 [nerdcommenter]:https://github.com/scrooloose/nerdcommenter
 [nerdtree]:https://github.com/scrooloose/nerdtree
-[rainbow_parentheses.vim]:https://github.com/kien/rainbow_parentheses.vim
+[rainbow]:https://github.com/luochen1990/rainbow
 [tabular]:https://github.com/godlygeek/tabular
 [tagbar]:https://github.com/majutsushi/tagbar
 [tagbar-phpctags.vim]:https://github.com/vim-php/tagbar-phpctags.vim
@@ -225,7 +225,7 @@ The leader key is ','.
 [vimproc.vim]:https://github.com/Shougo/vimproc.vim.git
 [vimshell.vim]:https://github.com/Shougo/vimshell.vim
 [vim-expand-region]://github.com/terryma/vim-expand-region
-[vim-trailing-whitespace]:https://github.com/bronson/vim-trailing-whitespace
+[vim-better-whitespace]:https://github.com/ntpeters/vim-better-whitespace
 [vim-surround]:https://github.com/tpope/vim-surround
 [vim-repeat]://github.com/tpope/vim-repeat
 [a.vim]:https://github.com/vim-scripts/a.vim
@@ -234,7 +234,7 @@ The leader key is ','.
 [syntastic]:https://github.com/scrooloose/syntastic
 [rust.vim]:https://github.com/rust-lang/rust.vim
 [vim-clang]:https://github.com/justmao945/vim-clang
-[vim-extradite]:https://github.com/ketor/vim-extradite
+[gv.vim]:https://github.com/junegunn/gv.vim
 [incsearch.vim]:https://github.com/haya14busa/incsearch.vim
 [incsearch-easymotion.vim]:https://github.com/haya14busa/incsearch-easymotion.vim
 [incsearch-fuzzy.vim]:https://github.com/haya14busa/incsearch-fuzzy.vim
