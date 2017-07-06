@@ -600,6 +600,9 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
     autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
+    " 回车键选中补全项
+    inoremap <expr> <CR>       pumvisible() ? '<C-y>' : '\<CR>'
+
 "UltiSnips(Compatible with YouCompleteMe)
     let g:UltiSnipsExpandTrigger="<c-k>"
     let g:UltiSnipsJumpForwardTrigger="<c-k>"
@@ -635,11 +638,6 @@ let g:SignatureMap = {
         \ 'ListLocalMarks'     :  "ms",
         \ 'ListLocalMarkers'   :  "m?"
         \ }
-
-"vim-commentary
-    "use <BackSpace> to comment/uncomment a line
-    nmap <BS> gcc
-    vmap <BS> gc
 
 "easymotion
     let g:EasyMotion_do_mapping = 0 " Disable default mappings
