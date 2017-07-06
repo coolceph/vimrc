@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2017.07.05
+" Last change:	2017.07.06
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -604,6 +604,12 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     let g:UltiSnipsExpandTrigger="<c-k>"
     let g:UltiSnipsJumpForwardTrigger="<c-k>"
     let g:UltiSnipsJumpBackwardTrigger="<c-j>"
+
+"YCM-Generator
+    "Usage in VIM:
+    "      :YcmGenerateConfig to generate .ycm_extra_conf.py in work dir.
+    "Usage in shell:
+    "      ~/.vim/bundle/YCM-Generator/config_gen.py PROJECT_DIR
 
 "vim-signature
 let g:SignatureMap = {
