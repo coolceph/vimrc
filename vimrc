@@ -565,6 +565,7 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
 
 "YouCompleteMe
     nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+    let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 "UltiSnips(Compatible with YouCompleteMe)
     let g:UltiSnipsExpandTrigger="<c-k>"
