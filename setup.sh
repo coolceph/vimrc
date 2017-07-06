@@ -242,8 +242,7 @@ install() {
 update() {
     cd $vim_fullpath
     git pull
-    git submodule init
-    git submodule update
+    git submodule update --init --recursive
     color_print "Update finished!"
     cd $vim_pwd
 }
