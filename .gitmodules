@@ -185,3 +185,6 @@
 	path = bundle/YCM-Generator
 	url = https://github.com/rdnetto/YCM-Generator
 	branch = stable
+[submodule "bundle/vim-snippets"]
+	path = bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets
