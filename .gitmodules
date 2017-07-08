@@ -184,4 +184,4 @@
 [submodule "bundle/YCM-Generator"]
 	path = bundle/YCM-Generator
 	url = https://github.com/rdnetto/YCM-Generator
-    branch = stable
+	branch = stable

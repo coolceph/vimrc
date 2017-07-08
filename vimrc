@@ -600,8 +600,8 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
     autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
-    " 回车键选中补全项
-    inoremap <expr> <CR>       pumvisible() ? '<C-y>' : '\<CR>'
+    " 回车键选中补全项(有冲突，关闭此设置）
+    "inoremap <expr> <CR>       pumvisible() ? '<C-y>' : '\<CR>'
 
 "UltiSnips(Compatible with YouCompleteMe)
     let g:UltiSnipsExpandTrigger="<c-k>"
