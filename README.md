@@ -93,45 +93,87 @@ The leader key is ','.
 
 # Plugins used in CoolCeph vimrc
 
-[STL-Syntax]
+[YCM-Generator]
+
+[YankRing.vim]
+
+[YouCompleteMe]
+
+[a.vim]
 
 [ack.vim]
 
 [ag.vim]
 
+[better-indent-support-for-php-with-html]
+
+[csv.vim]
+
+[ctrlp.vim]
+
+[fzf.vim]
+
+[fzf]
+
+[gv.vim]
+
+[hexmode]
+
+[incsearch-easymotion.vim]
+
+[incsearch-fuzzy.vim]
+
+[incsearch.vim]
+
+[indentLine]
+
 [jellybeans.vim]
 
-[YouCompleteMe]
+[molokai]
 
 [neomru.vim]
 
-[neosnippet-snippets]
-
-[neosnippet.vim]
-
 [nerdcommenter]
+
+[nerdtree-git-plugin]
 
 [nerdtree]
 
 [rainbow]
 
-[tabular]
+[rust.vim]
 
-[tagbar]
+[syntastic]
+
+[tabular]
 
 [tagbar-phpctags.vim]
 
-[taghighlight]
+[tagbar]
+
+[taghighlight-automirror]
+
+[tern_for_vim]
+
+[ultisnips]
 
 [undotree]
 
 [unite.vim]
 
-[vim-airline]
-
 [vim-airline-themes]
 
+[vim-airline]
+
+[vim-better-whitespace]
+
+[vim-cpp-enhanced-highlight]
+
 [vim-easymotion]
+
+[vim-exchange]
+
+[vim-expand-region]
 
 [vim-fugitive]
 
@@ -139,112 +181,105 @@ The leader key is ','.
 
 [vim-go]
 
-[vim-multiple-cursors]
-
-[vim-pathogen]
-
-[vim-signature]
-
-[vim-togglenumber]
-
-[vimproc.vim]
-
-[vimshell.vim]
-
-[vim-expand-region]
-
-[vim-better-whitespace]
-
-[vim-surround]
-
-[vim-repeat]
-
-[a.vim]
-
-[indentLine]
-
-[syntastic]
-
-[rust.vim]
-
-[vim-clang]
-
-[gv.vim]
-
-[incsearch.vim]
-
-[incsearch-fuzzy.vim]
-
-[incsearch-easymotion.vim]
-
-[YankRing.vim]
-
-[hexmode]
-
-[vim-pasta]
-
-[vim-operator-user]
-
-[vim-plist]
+[vim-indexed-search]
 
 [vim-json]
 
-[vim-exchange]
+[vim-multiple-cursors]
 
-[hexmode]
+[vim-operator-user]
+
+[vim-pasta]
+
+[vim-pathogen]
+
+[vim-plist]
+
+[vim-repeat]
+
+[vim-signature]
+
+[vim-snippets]
+
+[vim-surround]
 
 [vim-table-mode]
 
-[STL-Syntax]:https://github.com/Mizuchi/STL-Syntax
+[vim-template]
+
+[vim-tmux-navigator]
+
+[vim-togglemouse]
+
+[vim-togglenumber]
+
+[vim-visual-star-search]
+
+[vimproc.vim.git]
+
+[vimshell.vim]
+
+
+[YCM-Generator]:https://github.com/rdnetto/YCM-Generator
+[YankRing.vim]:https://github.com/vim-scripts/YankRing.vim
+[YouCompleteMe]:https://github.com/Valloric/YouCompleteMe
+[a.vim]:https://github.com/vim-scripts/a.vim
 [ack.vim]:https://github.com/mileszs/ack.vim
 [ag.vim]:https://github.com/rking/ag.vim
+[better-indent-support-for-php-with-html]:https://github.com/captbaritone/better-indent-support-for-php-with-html
+[csv.vim]:https://github.com/chrisbra/csv.vim
+[ctrlp.vim]:https://github.com/ctrlpvim/ctrlp.vim
+[fzf.vim]:https://github.com/junegunn/fzf.vim
+[fzf]:https://github.com/junegunn/fzf
+[gv.vim]:https://github.com/junegunn/gv.vim
+[hexmode]:https://github.com/fidian/hexmode
+[incsearch-easymotion.vim]:https://github.com/haya14busa/incsearch-easymotion.vim
+[incsearch-fuzzy.vim]:https://github.com/haya14busa/incsearch-fuzzy.vim
+[incsearch.vim]:https://github.com/haya14busa/incsearch.vim
+[indentLine]:https://github.com/Yggdroot/indentLine
 [jellybeans.vim]:https://github.com/nanotech/jellybeans.vim
-[YouCompleteMe]:https://github.com/Valloric/YouCompleteMe
+[molokai]:https://github.com/tomasr/molokai
 [neomru.vim]:https://github.com/Shougo/neomru.vim
-[neosnippet-snippets]:https://github.com/Shougo/neosnippet-snippets
-[neosnippet.vim]:https://github.com/Shougo/neosnippet.vim
 [nerdcommenter]:https://github.com/scrooloose/nerdcommenter
+[nerdtree-git-plugin]:https://github.com/Xuyuanp/nerdtree-git-plugin
 [nerdtree]:https://github.com/scrooloose/nerdtree
 [rainbow]:https://github.com/luochen1990/rainbow
+[rust.vim]:https://github.com/rust-lang/rust.vim
+[syntastic]:https://github.com/vim-syntastic/syntastic
 [tabular]:https://github.com/godlygeek/tabular
-[tagbar]:https://github.com/majutsushi/tagbar
 [tagbar-phpctags.vim]:https://github.com/vim-php/tagbar-phpctags.vim
-[taghighlight]:https://github.com/abudden/taghighlight-automirror
+[tagbar]:https://github.com/majutsushi/tagbar
+[taghighlight-automirror]:https://github.com/abudden/taghighlight-automirror
+[tern_for_vim]:https://github.com/ternjs/tern_for_vim
+[ultisnips]:https://github.com/SirVer/ultisnips
 [undotree]:https://github.com/mbbill/undotree
 [unite.vim]:https://github.com/Shougo/unite.vim
-[vim-airline]:https://github.com/bling/vim-airline
 [vim-airline-themes]:https://github.com/vim-airline/vim-airline-themes
+[vim-airline]:https://github.com/vim-airline/vim-airline
+[vim-better-whitespace]:https://github.com/ntpeters/vim-better-whitespace
+[vim-cpp-enhanced-highlight]:https://github.com/octol/vim-cpp-enhanced-highlight
 [vim-easymotion]:https://github.com/easymotion/vim-easymotion
+[vim-exchange]:https://github.com/tommcdo/vim-exchange
+[vim-expand-region]:https://github.com/terryma/vim-expand-region
 [vim-fugitive]:https://github.com/tpope/vim-fugitive
 [vim-gitgutter]:https://github.com/airblade/vim-gitgutter
 [vim-go]:https://github.com/fatih/vim-go
-[vim-multiple-cursors]:https://github.com/terryma/vim-multiple-cursors
-[vim-pathogen]:https://github.com/tpope/vim-pathogen
-[vim-signature]:https://github.com/kshenoy/vim-signature
-[vim-togglenumber]:https://github.com/tkhoa2711/vim-togglenumber
-[vimproc.vim]:https://github.com/Shougo/vimproc.vim.git
-[vimshell.vim]:https://github.com/Shougo/vimshell.vim
-[vim-expand-region]://github.com/terryma/vim-expand-region
-[vim-better-whitespace]:https://github.com/ntpeters/vim-better-whitespace
-[vim-surround]:https://github.com/tpope/vim-surround
-[vim-repeat]://github.com/tpope/vim-repeat
-[a.vim]:https://github.com/vim-scripts/a.vim
-[indentLine]:https://github.com/Yggdroot/indentLine
-[powerline_fonts]:https://github.com/powerline/fonts
-[syntastic]:https://github.com/scrooloose/syntastic
-[rust.vim]:https://github.com/rust-lang/rust.vim
-[vim-clang]:https://github.com/justmao945/vim-clang
-[gv.vim]:https://github.com/junegunn/gv.vim
-[incsearch.vim]:https://github.com/haya14busa/incsearch.vim
-[incsearch-easymotion.vim]:https://github.com/haya14busa/incsearch-easymotion.vim
-[incsearch-fuzzy.vim]:https://github.com/haya14busa/incsearch-fuzzy.vim
-[YankRing.vim]:https://github.com/vim-scripts/YankRing.vim
-[hexmode]:https://github.com/fidian/hexmode
-[vim-pasta]:https://github.com/sickill/vim-pasta
-[vim-operator-user]:https://github.com/kana/vim-operator-user
-[vim-plist]:https://github.com/darfink/vim-plist
+[vim-indexed-search]:https://github.com/henrik/vim-indexed-search
 [vim-json]:https://github.com/elzr/vim-json
-[vim-exchange]:https://github.com/tommcdo/vim-exchange
-[hexmode]:https://github.com/fidian/hexmode
+[vim-multiple-cursors]:https://github.com/terryma/vim-multiple-cursors
+[vim-operator-user]:https://github.com/kana/vim-operator-user
+[vim-pasta]:https://github.com/sickill/vim-pasta
+[vim-pathogen]:https://github.com/tpope/vim-pathogen
+[vim-plist]:https://github.com/darfink/vim-plist
+[vim-repeat]:https://github.com/tpope/vim-repeat
+[vim-signature]:https://github.com/kshenoy/vim-signature
+[vim-snippets]:https://github.com/honza/vim-snippets
+[vim-surround]:https://github.com/tpope/vim-surround
 [vim-table-mode]:https://github.com/dhruvasagar/vim-table-mode
-
+[vim-template]:https://github.com/aperezdc/vim-template
+[vim-tmux-navigator]:https://github.com/christoomey/vim-tmux-navigator
+[vim-togglemouse]:https://github.com/nvie/vim-togglemouse
+[vim-togglenumber]:https://github.com/tkhoa2711/vim-togglenumber
+[vim-visual-star-search]:https://github.com/bronson/vim-visual-star-search
+[vimproc.vim.git]:https://github.com/Shougo/vimproc.vim.git
+[vimshell.vim]:https://github.com/Shougo/vimshell.vim
