@@ -203,15 +203,13 @@ noremap <F5> :ToggleNumber<CR>
 "使用F6开关list字符
 noremap <F6> :set invlist<CR>:set list?<CR>
 
-"使用F7更新Taghighlight
-fun! UpdateCtagsAndFileTypes()
-"    !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
-    echo "Create ctags and Taghighlight"
-    UpdateTypesFile
-    echo "UpdateTypesFile OK!"
+"使用F7更新ctags
+fun! UpdateCtags()
+    !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
+    echo "Create ctags OK"
 endfunction
 
-noremap <F7> :call UpdateCtagsAndFileTypes()<CR>
+noremap <F7> :call UpdateCtags()<CR>
 
 "鼠标模式切换
 fun! ToggleMouse()

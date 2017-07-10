@@ -28,9 +28,6 @@
 [submodule "bundle/tagbar-phpctags.vim"]
 	path = bundle/tagbar-phpctags.vim
 	url = https://github.com/vim-php/tagbar-phpctags.vim
-[submodule "bundle/taghighlight"]
-	path = bundle/taghighlight
-	url = https://github.com/abudden/taghighlight-automirror
 [submodule "bundle/undotree"]
 	path = bundle/undotree
 	url = https://github.com/mbbill/undotree
