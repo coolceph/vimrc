@@ -22,9 +22,6 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
-[submodule "bundle/tagbar-phpctags.vim"]
-	path = bundle/tagbar-phpctags.vim
-	url = https://github.com/vim-php/tagbar-phpctags.vim
 [submodule "bundle/undotree"]
 	path = bundle/undotree
 	url = https://github.com/mbbill/undotree
