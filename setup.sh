@@ -86,13 +86,6 @@ help() {
     exit 0
 }
 
-make_vimproc() {
-    cd $vim_fullpath/bundle/vimproc.vim/
-    make
-    cd $vim_pwd
-    color_print "Make vimproc.vim finished"
-}
-
 make_phpctags() {
     cd $vim_fullpath/bundle/tagbar-phpctags.vim/
     make
@@ -253,7 +246,6 @@ if [ $# -ne 1 ]; then
     check_term
     check_lang
     install
-    make_vimproc
     make_youcompleteme
     make_phpctags
     make_vimrc
@@ -268,7 +260,6 @@ while getopts ":iublna" opts; do
             check_term
             check_lang
             install
-            make_vimproc
             make_youcompleteme
             make_phpctags
             make_vimrc
@@ -287,7 +278,6 @@ while getopts ":iublna" opts; do
             require
             check_term
             check_lang
-            make_vimproc
             make_youcompleteme
             make_phpctags
             make_vimrc
@@ -296,7 +286,6 @@ while getopts ":iublna" opts; do
             logo
             check_term
             check_lang
-            make_vimproc
             make_youcompleteme
             make_phpctags
             make_vimrc
@@ -306,7 +295,6 @@ while getopts ":iublna" opts; do
             logo
             check_term
             check_lang
-            make_vimproc
             make_youcompleteme_all
             make_phpctags
             make_vimrc
