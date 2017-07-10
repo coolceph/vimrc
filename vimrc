@@ -374,85 +374,11 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     "let g:airline_symbols.readonly = ''
     "let g:airline_symbols.linenr = ''
 
-"Unite 聚合搜索
-    call unite#filters#matcher_default#use(['matcher_fuzzy'])
-    call unite#filters#sorter_default#use(['sorter_rank'])
-    call unite#set_profile('files', 'context.smartcase', 1)
-
-    let g:unite_data_directory='~/.cache/unite'
-    let g:unite_enable_start_insert=1
-    let g:unite_source_history_yank_enable=1
-    let g:unite_source_rec_max_cache_files=5000
-
-    let g:unite_source_grep_max_candidates = 200
-
-    if executable('ag')
-        " Use ag (the silver searcher)
-        " https://github.com/ggreer/the_silver_searcher
-        let g:unite_source_grep_command = 'ag'
-        let g:unite_source_grep_default_opts =
-        \ '-i --vimgrep --hidden --ignore ' .
-        \ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
-        let g:unite_source_grep_recursive_opt = ''
-    elseif executable('ack')
-        " Use ack
-        " http://beyondgrep.com/
-        let g:unite_source_grep_command = 'ack-grep'
-        let g:unite_source_grep_default_opts =
-        \ '-i --no-heading --no-color -k -H'
-        let g:unite_source_grep_recursive_opt = ''
-    elseif executable('ack-grep')
-        " Use ack
-        " http://beyondgrep.com/
-        let g:unite_source_grep_command = 'ack-grep'
-        let g:unite_source_grep_default_opts =
-        \ '-i --no-heading --no-color -k -H'
-        let g:unite_source_grep_recursive_opt = ''
-    elseif executable('hw')
-        " Use hw (highway)
-        " https://github.com/tkengo/highway
-        let g:unite_source_grep_command = 'hw'
-        let g:unite_source_grep_default_opts = '--no-group --no-color'
-        let g:unite_source_grep_recursive_opt = ''
-    elseif executable('pt')
-        " Use pt (the platinum searcher)
-        " https://github.com/monochromegane/the_platinum_searcher
-        let g:unite_source_grep_command = 'pt'
-        let g:unite_source_grep_default_opts = '--nogroup --nocolor'
-        let g:unite_source_grep_recursive_opt = ''
-    elseif executable('jvgrep')
-        " Use jvgrep
-        " https://github.com/mattn/jvgrep
-        let g:unite_source_grep_command = 'jvgrep'
-        let g:unite_source_grep_default_opts =
-        \ '-i --exclude ''\.(git|svn|hg|bzr)'''
-        let g:unite_source_grep_recursive_opt = '-R'
-    endif
-
-    function! s:unite_settings()
-        nmap <buffer> Q <plug>(unite_exit)
-        nmap <buffer> <esc> <plug>(unite_exit)
-        imap <buffer> <esc> <plug>(unite_exit)
-        imap <buffer> <C-j>   <Plug>(unite_select_next_line)
-        imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
-    endfunction
-    autocmd FileType unite call s:unite_settings()
-
-    nmap <space> [unite]
-    nnoremap [unite] <nop>
-
-    nnoremap <silent> [unite]<space> :<C-u>Unite -toggle -auto-resize -buffer-name=mixed file_mru file_rec/async buffer bookmark<cr><c-u>
-    nnoremap <silent> [unite]f :<C-u>Unite -toggle -auto-resize -buffer-name=files file_rec/async<cr><c-u>
-    nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/yank<cr>
-    nnoremap <silent> [unite]l :<C-u>Unite -auto-resize -buffer-name=line line<cr>
-    nnoremap <silent> [unite]b :<C-u>Unite -auto-resize -buffer-name=buffers buffer<cr>
-    nnoremap <silent> [unite]/ :<C-u>Unite -no-quit -buffer-name=search grep:.<cr>
-    nnoremap <silent> [unite]m :<C-u>Unite -auto-resize -buffer-name=mappings mapping<cr>
-    nnoremap <silent> [unite]s :<C-u>Unite -quick-match buffer<cr>
-
 "CtrlP
-    "借用unite的键绑定Tags搜索
-    nnoremap <silent> [unite]t :CtrlPTag<cr>
+    nnoremap <silent> <space><space> :CtrlPMixed<cr>
+    nnoremap <silent> <space>f :CtrlP<cr>
+    nnoremap <silent> <space>b :CtrlPBuffer<cr>
+    nnoremap <silent> <space>t :CtrlPTag<cr>
 
 "Ack选项
     let g:ack_default_options = " -s -H --nocolor --nogroup --column --ignore-file=is:tags --ignore-file=ext:taghl --ignore-file=ext:out"

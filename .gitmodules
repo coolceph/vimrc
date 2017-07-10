@@ -34,9 +34,6 @@
 [submodule "bundle/undotree"]
 	path = bundle/undotree
 	url = https://github.com/mbbill/undotree
-[submodule "bundle/unite.vim"]
-	path = bundle/unite.vim
-	url = https://github.com/Shougo/unite.vim
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline
