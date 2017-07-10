@@ -13,9 +13,6 @@
 [submodule "bundle/jellybeans.vim"]
 	path = bundle/jellybeans.vim
 	url = https://github.com/nanotech/jellybeans.vim
-[submodule "bundle/neomru.vim"]
-	path = bundle/neomru.vim
-	url = https://github.com/Shougo/neomru.vim
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter
@@ -55,9 +52,6 @@
 [submodule "bundle/vim-togglenumber"]
 	path = bundle/vim-togglenumber
 	url = https://github.com/tkhoa2711/vim-togglenumber
-[submodule "bundle/vimproc.vim"]
-	path = bundle/vimproc.vim
-	url = https://github.com/Shougo/vimproc.vim.git
 [submodule "bundle/vim-gitgutter"]
 	path = bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
@@ -67,9 +61,6 @@
 [submodule "bundle/vim-airline-themes"]
 	path = bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
-[submodule "bundle/vimshell.vim"]
-	path = bundle/vimshell.vim
-	url = https://github.com/Shougo/vimshell.vim
 [submodule "bundle/vim-multiple-cursors"]
 	path = bundle/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors
