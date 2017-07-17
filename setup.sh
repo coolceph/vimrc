@@ -94,6 +94,7 @@ make_vimrc() {
         /bin/rm -f $HOME/.vimrc
     fi
     echo "source $vim_fullpath/vimrc" > $HOME/.vimrc
+    echo "colorscheme jellybeans" >> $HOME/.vimrc
     color_print "Make vimrc finished"
 }
 
@@ -111,11 +112,6 @@ make_youcompleteme_all() {
     ./install.py --all
     cd $vim_pwd
     color_print "Make YouCompleteMe finished"
-}
-
-close_powerline_fonts() {
-    echo "let g:airline_powerline_fonts = 0" >> $HOME/.vimrc
-    color_print "Close powerline fonts"
 }
 
 backup_vimrc() {
@@ -274,11 +270,7 @@ while getopts ":iublna" opts; do
             ;;
         n)
             logo
-            check_term
-            check_lang
-            make_youcompleteme
             make_vimrc
-            close_powerline_fonts
             ;;
         a)
             logo

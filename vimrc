@@ -326,8 +326,8 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
     execute pathogen#infect('bundle/{}', '~/.vim/bundle/{}')
 
-"jellybeans配色方案配置
-    colorscheme jellybeans
+"colorscheme配色方案配置
+    "Config of colorscheme is in $HOME/.vimrc
 
 " Airline ------------------------------
     let g:airline_powerline_fonts = 1
