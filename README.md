@@ -100,16 +100,33 @@ The leader key is ','.
 
     To solve this problem, we suggest you download MacVim from [http://macvim-dev.github.io/macvim/]
 
-    And if you use python3, this MacVim going to have some new problem of python3.
 
-    To solve this problem, we suggest you just use MacVim with python2.7. You should add this config in your ~/.vimrc file:
+    But after install from [http://macvim-dev.github.io/macvim/], if you also installed python3 on your Mac OS, this MacVim is going to have some new problem of python3.
+
+    To solve this problem, if you want use MacVim with python2.7, just add this config in your ~/.vimrc file:
 
     ```
     if has('gui_macvim')
-        let $PYTHONHOME="/usr/local/Frameworks/Python.framework/Versions/Current"
+        let $PYTHONHOME="/usr/local/Frameworks/Python.framework/Versions/2.7"
     endif
     ```
 
+    Or if you want use MacVim with python3.6:
+
+    1.Compile YouCompleteMe using python3:
+
+    ```
+    cd ~/.vim/bundle/YouCompleteMe
+    python3 ./install.py --all
+    ```
+
+    2.Add this config in your ~/.vimrc file:
+
+    ```
+    if has('gui_macvim')
+        let $PYTHONHOME="/usr/local/Frameworks/Python.framework/Versions/3.6"
+    endif
+    ```
 
 # Plugins used in CoolCeph vimrc
 
