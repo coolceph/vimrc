@@ -39,7 +39,7 @@ bash -c "$( curl https://raw.githubusercontent.com/coolceph/vimrc/master/setup.s
 | F9             | Enter multi-cursor-mode                             |
 | F10            | Enter Rankring clipboard                            |
 | F12            | Mouse mode switch (mouse=a/-a)                      |
-| SpaceSpace     | Activate Unite Search Plugin                        |
+| SpaceSpace     | Activate CtrlP Mixed Search                         |
 | Ctrl+h/j/k/l   | Switch between windows.                             |
 | Ctrl+c         | Completely quit vim without saving                  |
 
@@ -47,13 +47,14 @@ The leader key is ','.
 
 # Quick Commands
 
-| Cmd     | Function                   |
-| ------- | -------------------------- |
-| Ctags   | Genrate ctags for pwd      |
-| Gotags  | Genrate gotags for pwd     |
-| Hex/Asc | Swtich between Asc and Hex |
-| Hexmode | Toggle Hex/Asc mode        |
-| Cswp    | Clear swp files            |
+| Cmd     | Function                     |
+| ------- | ---------------------------- |
+| Ctags   | Genrate ctags for pwd        |
+| Gotags  | Genrate gotags for pwd       |
+| Cscope  | Genrate cscope files for pwd |
+| Hex/Asc | Swtich between Asc and Hex   |
+| Hexmode | Toggle Hex/Asc mode          |
+| Cswp    | Clear swp files              |
 
 # FAQ
 
@@ -166,19 +167,13 @@ The leader key is ','.
 
 [tabular]
 
-[tagbar-phpctags.vim]
-
 [tagbar]
-
-[taghighlight-automirror]
 
 [tern_for_vim]
 
 [ultisnips]
 
 [undotree]
-
-[unite.vim]
 
 [vim-airline-themes]
 
@@ -234,10 +229,6 @@ The leader key is ','.
 
 [vim-visual-star-search]
 
-[vimproc.vim.git]
-
-[vimshell.vim]
-
 
 [YCM-Generator]:https://github.com/rdnetto/YCM-Generator
 [YankRing.vim]:https://github.com/vim-scripts/YankRing.vim
@@ -266,13 +257,10 @@ The leader key is ','.
 [rust.vim]:https://github.com/rust-lang/rust.vim
 [syntastic]:https://github.com/vim-syntastic/syntastic
 [tabular]:https://github.com/godlygeek/tabular
-[tagbar-phpctags.vim]:https://github.com/vim-php/tagbar-phpctags.vim
 [tagbar]:https://github.com/majutsushi/tagbar
-[taghighlight-automirror]:https://github.com/abudden/taghighlight-automirror
 [tern_for_vim]:https://github.com/ternjs/tern_for_vim
 [ultisnips]:https://github.com/SirVer/ultisnips
 [undotree]:https://github.com/mbbill/undotree
-[unite.vim]:https://github.com/Shougo/unite.vim
 [vim-airline-themes]:https://github.com/vim-airline/vim-airline-themes
 [vim-airline]:https://github.com/vim-airline/vim-airline
 [vim-better-whitespace]:https://github.com/ntpeters/vim-better-whitespace
@@ -300,6 +288,4 @@ The leader key is ','.
 [vim-togglemouse]:https://github.com/nvie/vim-togglemouse
 [vim-togglenumber]:https://github.com/tkhoa2711/vim-togglenumber
 [vim-visual-star-search]:https://github.com/bronson/vim-visual-star-search
-[vimproc.vim.git]:https://github.com/Shougo/vimproc.vim.git
-[vimshell.vim]:https://github.com/Shougo/vimshell.vim
 [http://macvim-dev.github.io/macvim/]:http://macvim-dev.github.io/macvim/
