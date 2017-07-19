@@ -91,6 +91,25 @@ The leader key is ','.
 
     2) Your terminal util like iterm is also needed to set for xterm-256color too. You need set it yourself too.
 
+- *MacVim Caught deadly signal SEGV*
+
+    If you install macvim from brew, when you running mvim, you may seee "Caught deadly signal SEGV".
+
+    The reason is brew macvim use the wrong python.
+
+    To solve this problem, we suggest you download MacVim from [http://macvim-dev.github.io/macvim/]
+
+    And if you use python3, this MacVim going to have some new problem of python3.
+
+    To solve this problem, we suggest you just use MacVim with python2.7. You should add this config in your ~/.vimrc file:
+
+    ```
+    if has('gui_macvim')
+        let $PYTHONHOME="/usr/local/Frameworks/Python.framework/Versions/Current"
+    endif
+    ```
+
+
 # Plugins used in CoolCeph vimrc
 
 [YCM-Generator]
@@ -283,3 +302,4 @@ The leader key is ','.
 [vim-visual-star-search]:https://github.com/bronson/vim-visual-star-search
 [vimproc.vim.git]:https://github.com/Shougo/vimproc.vim.git
 [vimshell.vim]:https://github.com/Shougo/vimshell.vim
+[http://macvim-dev.github.io/macvim/]:http://macvim-dev.github.io/macvim/
