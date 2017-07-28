@@ -70,10 +70,6 @@ require() {
     $vim_exec --version | grep +python || die "Your vim does not have +python"
     color_print "Checking if git exists..."
     which git || die "No git installed!\nPlease install git from http://git-scm.com/downloads/"
-    color_print "Check if ctags exists..."
-    which ctags || warn "No ctags installed!\nPlease install ctags form http://ctags.sourceforge.net/ after vimrc intallation!"
-    color_print "Check if clang exists..."
-    which clang || warn "No clang installed!\nPlease install ctags form http://clang.llvm.org/ after vimrc intallation!"
 }
 
 help() {
@@ -96,22 +92,6 @@ make_vimrc() {
     echo "source $vim_fullpath/vimrc" > $HOME/.vimrc
     echo "colorscheme jellybeans" >> $HOME/.vimrc
     color_print "Make vimrc finished"
-}
-
-make_youcompleteme() {
-    cd $vim_fullpath/bundle/YouCompleteMe/
-    ./install.py
-    cd $vim_pwd
-    color_print "Make YouCompleteMe finished"
-}
-
-#Dependency on Mac install guide:
-#    brew install cmake go node mono rust
-make_youcompleteme_all() {
-    cd $vim_fullpath/bundle/YouCompleteMe/
-    ./install.py --all
-    cd $vim_pwd
-    color_print "Make YouCompleteMe finished"
 }
 
 backup_vimrc() {
@@ -235,12 +215,11 @@ if [ $# -ne 1 ]; then
     check_term
     check_lang
     install
-    make_youcompleteme
     make_vimrc
     help
 fi
 
-while getopts ":iublna" opts; do
+while getopts ":iubln" opts; do
     case $opts in
         i)
             logo
@@ -248,7 +227,6 @@ while getopts ":iublna" opts; do
             check_term
             check_lang
             install
-            make_youcompleteme
             make_vimrc
             ;;
         u)
@@ -265,18 +243,10 @@ while getopts ":iublna" opts; do
             require
             check_term
             check_lang
-            make_youcompleteme
             make_vimrc
             ;;
         n)
             logo
-            make_vimrc
-            ;;
-        a)
-            logo
-            check_term
-            check_lang
-            make_youcompleteme_all
             make_vimrc
             ;;
         :)
