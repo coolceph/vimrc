@@ -163,3 +163,9 @@
 [submodule "bundle/vim-snippets"]
 	path = bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets
+[submodule "bundle/neocomplcache.vim"]
+	path = bundle/neocomplcache.vim
+	url = https://github.com/Shougo/neocomplcache.vim
+[submodule "bundle/neocomplcache-ultisnips"]
+	path = bundle/neocomplcache-ultisnips
+	url = https://github.com/JazzCore/neocomplcache-ultisnips
