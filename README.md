@@ -128,6 +128,11 @@ The leader key is ','.
     endif
     ```
 
+    The PYTHONHOME dir is like:
+    ```
+    Headers   Python    Resources bin       include   lib       share
+    ```
+
 # Plugins used in CoolCeph vimrc
 
 [YCM-Generator]
