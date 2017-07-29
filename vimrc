@@ -494,14 +494,10 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     let g:ycm_extra_conf_globlist=['~/.vim/*']
     let g:ycm_collect_identifiers_from_tags_files = 1
     let g:ycm_filetype_blacklist={
-                \ 'vim' : 1,
                 \ 'tagbar' : 1,
                 \ 'qf' : 1,
                 \ 'notes' : 1,
-                \ 'markdown' : 1,
-                \ 'md' : 1,
                 \ 'unite' : 1,
-                \ 'text' : 1,
                 \ 'vimwiki' : 1,
                 \ 'pandoc' : 1,
                 \ 'infolog' : 1,
