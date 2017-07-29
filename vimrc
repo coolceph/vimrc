@@ -641,24 +641,17 @@ let g:SignatureMap = {
     endif
 
 "vim-multiple-cursors
-    "Other plugins may trigger on keypresses when in insert mode. These plugins
-    "generally provide a means to toggle their active state. These hooks allow the
-    "user to provide functions in their .vimrc to do this when
-    "multiple-cursor-mode is entered.
-    "With this locking and unlocking we prevent neocomplete to trigger it's
-    "function calls until we are finished with multiple cursors editing.
-    "
     " Called once right before you start selecting multiple cursors
     function! Multiple_cursors_before()
-      if exists(':NeoComplcacheUnLock')==2
-        exe 'NeoComplcacheUnLock'
+      if exists(':NeoComplCacheLock')==2
+        exe 'NeoComplCacheLock'
       endif
     endfunction
 
     " Called once only when the multiple selection is canceled (default <Esc>)
     function! Multiple_cursors_after()
-      if exists(':NeoComplcacheUnLock')==2
-        exe 'NeoComplcacheUnLock'
+      if exists(':NeoComplCacheUnlock')==2
+        exe 'NeoComplCacheUnlock'
       endif
     endfunction
 
