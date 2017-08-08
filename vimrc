@@ -29,7 +29,7 @@
 " | F7       | 更新ctags文件       |
 " | F8       | 打开undotree        |
 " | F9       | 进入MultiCursor模式 |
-" | F10      | 打开YankRing剪贴板   |
+" | F10      | 打开YankRing剪贴板  |
 " | F12      | 鼠标模式切换        |
 " | <Ctrl+c> | 快速推出VIM(:qall!) |
 " +----------+---------------------+
