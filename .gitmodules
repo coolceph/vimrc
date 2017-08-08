@@ -171,4 +171,4 @@
 	url = https://github.com/JazzCore/neocomplcache-ultisnips
 [submodule "bundle/vim-youdao-translater"]
 	path = bundle/vim-youdao-translater
-	url = https://github.com/ianva/vim-youdao-translater
+	url = https://github.com/ketor/vim-youdao-translater
