@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2017.07.18
+" Last change:	2017.08.08
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -504,7 +504,7 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
                 \ 'objc' : 1,
                 \ 'mail' : 1
                 \}
-    nnoremap <silent> <Leader>yd :YcmCompleter GetDoc<CR>
+    nnoremap <silent> <Leader>yc :YcmCompleter GetDoc<CR>
     nnoremap <silent> <Leader>yf :YcmCompleter FixIt<CR>
     nnoremap <silent> <Leader>yg :YcmCompleter GoTo<CR>
     nnoremap <silent> <Leader>yi :YcmCompleter GoToInclude<CR>
@@ -894,6 +894,13 @@ let g:SignatureMap = {
 
     " [Commands] --expect expression for directly executing the command
     let g:fzf_commands_expect = 'alt-enter,ctrl-x'
+
+"Youdao Translate
+    "vnoremap <silent> <C-T> :<C-u>Ydv<CR>
+    "nnoremap <silent> <C-T> :<C-u>Ydc<CR>
+    "noremap <leader>yd :<C-u>Yde<CR>
+    nnoremap <leader>yd :<C-u>Ydc<CR>
+    vnoremap <leader>yd :<C-u>Ydv<CR>
 
 "自定义命令
 command! Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .

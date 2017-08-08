@@ -170,3 +170,6 @@
 [submodule "bundle/vim-snippets"]
 	path = bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets
+[submodule "bundle/vim-youdao-translater"]
+	path = bundle/vim-youdao-translater
+	url = https://github.com/ianva/vim-youdao-translater
