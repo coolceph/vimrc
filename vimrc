@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2017.07.18
+" Last change:	2017.08.08
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -29,7 +29,7 @@
 " | F7       | 更新ctags文件       |
 " | F8       | 打开undotree        |
 " | F9       | 进入MultiCursor模式 |
-" | F10      | 打开YankRing剪贴板   |
+" | F10      | 打开YankRing剪贴板  |
 " | F12      | 鼠标模式切换        |
 " | <Ctrl+c> | 快速推出VIM(:qall!) |
 " +----------+---------------------+
@@ -942,6 +942,13 @@ let g:SignatureMap = {
 
     " [Commands] --expect expression for directly executing the command
     let g:fzf_commands_expect = 'alt-enter,ctrl-x'
+
+"Youdao Translate
+    "vnoremap <silent> <C-T> :<C-u>Ydv<CR>
+    "nnoremap <silent> <C-T> :<C-u>Ydc<CR>
+    "noremap <leader>yd :<C-u>Yde<CR>
+    nnoremap <leader>yd :<C-u>Ydc<CR>
+    vnoremap <leader>yd :<C-u>Ydv<CR>
 
 "自定义命令
 command! Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
