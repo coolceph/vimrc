@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2017.08.08
+" Last change:	2017.08.15
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -895,12 +895,13 @@ let g:SignatureMap = {
     " [Commands] --expect expression for directly executing the command
     let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
-"Youdao Translate
-    "vnoremap <silent> <C-T> :<C-u>Ydv<CR>
-    "nnoremap <silent> <C-T> :<C-u>Ydc<CR>
-    "noremap <leader>yd :<C-u>Yde<CR>
+"Youdao Translate(dict is better)
     nnoremap <leader>yd :<C-u>Ydc<CR>
     vnoremap <leader>yd :<C-u>Ydv<CR>
+
+"Baidu Translate(translation is better)
+    nnoremap <leader>bd :<C-u>Bdc<CR>
+    vnoremap <leader>bd :<C-u>Bdv<CR>
 
 "自定义命令
 command! Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .

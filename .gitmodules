@@ -173,3 +173,6 @@
 [submodule "bundle/vim-youdao-translater"]
 	path = bundle/vim-youdao-translater
 	url = https://github.com/ketor/vim-youdao-translater
+[submodule "bundle/vim-baidu-translator"]
+	path = bundle/vim-baidu-translator
+	url = https://github.com/ketor/vim-baidu-translator
