@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2017.08.15
+" Last change:	2017.08.25
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -63,6 +63,11 @@ if has("gui_running")
     set guioptions-=r
     set guioptions-=L
     set guicursor+=a:blinkon0 "光标不闪烁
+endif
+
+"当有termguicolors特性时开启GUI配色
+if has("termguicolors")
+    set termguicolors
 endif
 
 "代码缩进设置
