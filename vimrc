@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2017.08.25
+" Last change:	2017.08.26
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -822,7 +822,7 @@ let g:SignatureMap = {
     endfunction
 
     "fuzzy search + easymotion
-    noremap <silent><expr> <Space>z incsearch#go(<SID>config_easyfuzzymotion())
+    "noremap <silent><expr> <Space>z incsearch#go(<SID>config_easyfuzzymotion())
 
 "gv.vim 查看gitlog
     nnoremap <Leader>gl :GV<CR>
@@ -947,6 +947,11 @@ let g:SignatureMap = {
 
     " [Commands] --expect expression for directly executing the command
     let g:fzf_commands_expect = 'alt-enter,ctrl-x'
+
+    " Add prefix to the commands, :Files -> :FzfFiles
+    let g:fzf_command_prefix = 'Fzf'
+
+    nnoremap <silent> <space>z :FZF<cr>
 
 "Youdao Translate(dict is better)
     nnoremap <leader>yd :<C-u>Ydc<CR>
