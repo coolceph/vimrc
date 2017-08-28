@@ -573,31 +573,6 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     "Usage in shell:
     "      ~/.vim/bundle/YCM-Generator/config_gen.py PROJECT_DIR
 
-"vim-signature
-let g:SignatureMap = {
-        \ 'Leader'             :  "m",
-        \ 'PlaceNextMark'      :  "m,",
-        \ 'ToggleMarkAtLine'   :  "m.",
-        \ 'PurgeMarksAtLine'   :  "m-",
-        \ 'DeleteMark'         :  "dm",
-        \ 'PurgeMarks'         :  "m<Space>",
-        \ 'PurgeMarkers'       :  "m<BS>",
-        \ 'GotoNextLineAlpha'  :  "']",
-        \ 'GotoPrevLineAlpha'  :  "'[",
-        \ 'GotoNextSpotAlpha'  :  "`]",
-        \ 'GotoPrevSpotAlpha'  :  "`[",
-        \ 'GotoNextLineByPos'  :  "]'",
-        \ 'GotoPrevLineByPos'  :  "['",
-        \ 'GotoNextSpotByPos'  :  "mn",
-        \ 'GotoPrevSpotByPos'  :  "mp",
-        \ 'GotoNextMarker'     :  "[+",
-        \ 'GotoPrevMarker'     :  "[-",
-        \ 'GotoNextMarkerAny'  :  "]=",
-        \ 'GotoPrevMarkerAny'  :  "[=",
-        \ 'ListLocalMarks'     :  "ms",
-        \ 'ListLocalMarkers'   :  "m?"
-        \ }
-
 "easymotion
     let g:EasyMotion_do_mapping = 0 " Disable default mappings
     let g:EasyMotion_smartcase  = 1 " Turn on case insensitive feature
@@ -691,6 +666,9 @@ let g:SignatureMap = {
 "vim-expand-region
     "Press '+' to expand the visual selection and '_' to shrink it.
 
+"vim-exchange
+    "Press 'X' to exchange between block in visual mode
+
 "vim-better-whitespace
     "need this hack code to make everything OK now
     autocmd VimEnter * DisableWhitespace
@@ -729,10 +707,6 @@ let g:SignatureMap = {
     "为了实现同名文件可以同时存在swapfile，先写死
     set directory=~/.cache/swap_dir//
     set backupdir=~/.cache/swap_dir//
-
-"tagbar-phpctags
-    let g:tagbar_phpctags_bin='~/.vim/bundle/tagbar-phpctags.vim/bin/phpctags'
-    let g:tagbar_phpctags_memory_limit = '128M'
 
 " YankRing 剪贴板增量，支持256个最近剪贴
     function! s:get_yankring_dir() "{{{
