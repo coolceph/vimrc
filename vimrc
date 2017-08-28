@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2017.08.26
+" Last change:	2017.08.28
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -302,6 +302,7 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
 
 " 使用系统剪贴板复制粘帖(仅用于Mac)
     map <leader>y "+y
+    map <leader>yy "+y
     map <leader>p "+p
 
 " command mode, ctrl-a to head， ctrl-e to tail
