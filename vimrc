@@ -76,7 +76,7 @@ set tabstop=4     "编辑时一个TAB字符占多少个空格的位置
 set softtabstop=4 "方便在开启了et后使用退格（backspace）键，每次退格将删除X个空格
 set shiftwidth=4  "使用每层缩进的空格数
 set expandtab     "是否将输入的TAB自动展开成空格。开启后要输入TAB，需要Ctrl-V<TAB>
-set updatetime=250
+" set updatetime=250
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -824,6 +824,10 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     let g:fzf_command_prefix = 'Fzf'
 
     nnoremap <silent> <space>z :FZF<cr>
+
+"vim-gitgutter
+    let g:gitgutter_realtime = 0
+    let g:gitgutter_eager = 0
 
 "自定义命令
 command! Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
