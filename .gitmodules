@@ -7,15 +7,9 @@
 [submodule "bundle/ag.vim"]
 	path = bundle/ag.vim
 	url = https://github.com/rking/ag.vim
-[submodule "bundle/csv.vim"]
-	path = bundle/csv.vim
-	url = https://github.com/chrisbra/csv.vim
 [submodule "bundle/jellybeans.vim"]
 	path = bundle/jellybeans.vim
 	url = https://github.com/nanotech/jellybeans.vim
-[submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
@@ -37,12 +31,6 @@
 [submodule "bundle/vim-go"]
 	path = bundle/vim-go
 	url = https://github.com/fatih/vim-go
-[submodule "bundle/vim-indexed-search"]
-	path = bundle/vim-indexed-search
-	url = https://github.com/henrik/vim-indexed-search
-[submodule "bundle/vim-signature"]
-	path = bundle/vim-signature
-	url = https://github.com/kshenoy/vim-signature
 [submodule "bundle/vim-togglemouse"]
 	path = bundle/vim-togglemouse
 	url = https://github.com/nvie/vim-togglemouse
@@ -82,36 +70,12 @@
 [submodule "bundle/vim-visual-star-search"]
 	path = bundle/vim-visual-star-search
 	url = https://github.com/bronson/vim-visual-star-search
-[submodule "bundle/vim-template"]
-	path = bundle/vim-template
-	url = https://github.com/aperezdc/vim-template
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic
-[submodule "bundle/rust.vim"]
-	path = bundle/rust.vim
-	url = https://github.com/rust-lang/rust.vim
-[submodule "bundle/vim-pasta"]
-	path = bundle/vim-pasta
-	url = https://github.com/sickill/vim-pasta
 [submodule "bundle/hexmode"]
 	path = bundle/hexmode
 	url = https://github.com/fidian/hexmode
 [submodule "bundle/YankRing.vim"]
 	path = bundle/YankRing.vim
 	url = https://github.com/vim-scripts/YankRing.vim
-[submodule "bundle/vim-operator-user"]
-	path = bundle/vim-operator-user
-	url = https://github.com/kana/vim-operator-user
-[submodule "bundle/incsearch.vim"]
-	path = bundle/incsearch.vim
-	url = https://github.com/haya14busa/incsearch.vim
-[submodule "bundle/incsearch-easymotion.vim"]
-	path = bundle/incsearch-easymotion.vim
-	url = https://github.com/haya14busa/incsearch-easymotion.vim
-[submodule "bundle/incsearch-fuzzy.vim"]
-	path = bundle/incsearch-fuzzy.vim
-	url = https://github.com/haya14busa/incsearch-fuzzy.vim
 [submodule "bundle/vim-plist"]
 	path = bundle/vim-plist
 	url = https://github.com/darfink/vim-plist
@@ -121,18 +85,12 @@
 [submodule "bundle/vim-exchange"]
 	path = bundle/vim-exchange
 	url = https://github.com/tommcdo/vim-exchange
-[submodule "bundle/better-indent-support-for-php-with-html"]
-	path = bundle/better-indent-support-for-php-with-html
-	url = https://github.com/captbaritone/better-indent-support-for-php-with-html
 [submodule "bundle/molokai"]
 	path = bundle/molokai
 	url = https://github.com/tomasr/molokai
 [submodule "bundle/nerdtree-git-plugin"]
 	path = bundle/nerdtree-git-plugin
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin
-[submodule "bundle/vim-table-mode"]
-	path = bundle/vim-table-mode
-	url = https://github.com/dhruvasagar/vim-table-mode
 [submodule "bundle/rainbow"]
 	path = bundle/rainbow
 	url = https://github.com/luochen1990/rainbow
