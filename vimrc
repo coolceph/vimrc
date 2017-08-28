@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2017.08.28
+" Last change:	2017.08.29
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -302,7 +302,6 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
 
 " 使用系统剪贴板复制粘帖(仅用于Mac)
     map <leader>y "+y
-    map <leader>yy "+y
     map <leader>p "+p
 
 " command mode, ctrl-a to head， ctrl-e to tail
@@ -735,34 +734,6 @@ let g:SignatureMap = {
     let g:tagbar_phpctags_bin='~/.vim/bundle/tagbar-phpctags.vim/bin/phpctags'
     let g:tagbar_phpctags_memory_limit = '128M'
 
-"Syntastic
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
-
-    " let g:syntastic_always_populate_loc_list = 0
-    " let g:syntastic_auto_loc_list = 0
-    let g:syntastic_check_on_open = 0
-    let g:syntastic_check_on_wq = 0
-    let g:syntastic_loc_list_height = 5
-
-    "set error or warning signs
-    let g:syntastic_error_symbol = '✗'
-    let g:syntastic_warning_symbol = '⚠'
-    "whether to show balloons
-    let g:syntastic_enable_balloons = 1
-
-    " let g:syntastic_enable_highlighting=1
-    " let g:syntastic_python_checkers=['pyflakes'] " 使用pyflakes,速度比pylint快
-    " let g:syntastic_javascript_checkers = ['jsl', 'jshint']
-    " let g:syntastic_html_checkers=['tidy', 'jshint']"
-
-    "fix lag working with vim-go
-    let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-    let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-
-    nnoremap <Leader>s :SyntasticCheck<CR>:Errors<CR>
-
 " YankRing 剪贴板增量，支持256个最近剪贴
     function! s:get_yankring_dir() "{{{
         let s:yankring_dir=
@@ -786,44 +757,6 @@ let g:SignatureMap = {
     let g:yankring_max_history=512
     let g:yankring_replace_n_pkey = '<leader>['
     let g:yankring_replace_n_nkey = '<leader>]'
-
-" incsearch.vim x fuzzy x vim-easymotion
-    "insearch.vim
-    map /  <Plug>(incsearch-forward)
-    map ?  <Plug>(incsearch-backward)
-    map g/ <Plug>(incsearch-stay)
-
-    "insearch with no hlsearch
-    let g:incsearch#auto_nohlsearch = 1
-    map n  <Plug>(incsearch-nohl-n)
-    map N  <Plug>(incsearch-nohl-N)
-    map *  <Plug>(incsearch-nohl-*)
-    map #  <Plug>(incsearch-nohl-#)
-    map g* <Plug>(incsearch-nohl-g*)
-    map g# <Plug>(incsearch-nohl-g#)
-
-    "incsearch + easymotion
-    " map z/ <Plug>(incsearch-easymotion-/)
-    " map z? <Plug>(incsearch-easymotion-?)
-    " map zg/ <Plug>(incsearch-easymotion-stay)
-
-    "fuzzy search
-    map z/ <Plug>(incsearch-fuzzy-/)
-    map z? <Plug>(incsearch-fuzzy-?)
-    map zg/ <Plug>(incsearch-fuzzy-stay)
-
-    function! s:config_easyfuzzymotion(...) abort
-      return extend(copy({
-      \   'converters': [incsearch#config#fuzzy#converter()],
-      \   'modules': [incsearch#config#easymotion#module()],
-      \   'keymap': {"\<CR>": '<Over>(easymotion)'},
-      \   'is_expr': 0,
-      \   'is_stay': 1
-      \ }), get(a:, 1, {}))
-    endfunction
-
-    "fuzzy search + easymotion
-    "noremap <silent><expr> <Space>z incsearch#go(<SID>config_easyfuzzymotion())
 
 "gv.vim 查看gitlog
     nnoremap <Leader>gl :GV<CR>
@@ -953,14 +886,6 @@ let g:SignatureMap = {
     let g:fzf_command_prefix = 'Fzf'
 
     nnoremap <silent> <space>z :FZF<cr>
-
-"Youdao Translate(dict is better)
-    nnoremap <leader>yd :<C-u>Ydc<CR>
-    vnoremap <leader>yd :<C-u>Ydv<CR>
-
-"Baidu Translate(translation is better)
-    nnoremap <leader>bd :<C-u>Bdc<CR>
-    vnoremap <leader>bd :<C-u>Bdv<CR>
 
 "自定义命令
 command! Ctags !ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
