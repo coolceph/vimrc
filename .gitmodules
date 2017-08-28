@@ -31,9 +31,6 @@
 [submodule "bundle/vim-go"]
 	path = bundle/vim-go
 	url = https://github.com/fatih/vim-go
-[submodule "bundle/vim-togglemouse"]
-	path = bundle/vim-togglemouse
-	url = https://github.com/nvie/vim-togglemouse
 [submodule "bundle/vim-togglenumber"]
 	path = bundle/vim-togglenumber
 	url = https://github.com/tkhoa2711/vim-togglenumber
