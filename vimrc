@@ -202,8 +202,20 @@ endfunction
 noremap <F2> :call TogglePasteMode()<CR>
 inoremap <F2> <ESC>:call TogglePasteMode()<CR>i
 
+" toggle between no number, absolute number and relative number
+function! ToggleNumber()
+    if !&number && !&relativenumber
+        set number
+    elseif !&relativenumber
+        set relativenumber
+    else
+        set nonumber
+        set norelativenumber
+    endif
+endfunc
+
 "使用F5切换行号模式
-noremap <F5> :ToggleNumber<CR>
+noremap <F5> :call ToggleNumber()<CR>
 
 "使用F6开关list字符
 noremap <F6> :set invlist<CR>:set list?<CR>
