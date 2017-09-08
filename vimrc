@@ -588,6 +588,8 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
     let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
     let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+    let g:neocomplcache_force_omni_patterns.cc = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+    let g:neocomplcache_force_omni_patterns.go = '[^.[:digit:] *\t]\.\w*'
 
     " For perlomni.vim setting.
     " https://github.com/c9s/perlomni.vim
