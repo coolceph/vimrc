@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2017.08.29
+" Last change:	2017.09.17
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -388,31 +388,6 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     "let g:airline_symbols.branch = ''
     "let g:airline_symbols.readonly = ''
     "let g:airline_symbols.linenr = ''
-
-"CtrlP
-    nnoremap <silent> <space><space> :CtrlPMixed<cr>
-    nnoremap <silent> <space>f :CtrlP<cr>
-    nnoremap <silent> <space>b :CtrlPBuffer<cr>
-    nnoremap <silent> <space>t :CtrlPTag<cr>
-
-    " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-    if executable('ag')
-        " Use Ag over Grep
-        set grepprg=ag\ --nogroup\ --nocolor
-
-        " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-        " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-        let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-            \ --ignore .git
-            \ --ignore .svn
-            \ --ignore .hg
-            \ --ignore .DS_Store
-            \ --ignore "**/*.pyc"
-            \ -g ""'
-
-        " ag is fast enough that CtrlP doesn't need to cache
-        let g:ctrlp_use_caching = 0
-    endif
 
 "Ack选项
     let g:ack_default_options = " -s -H --nocolor --nogroup --column --ignore-file=is:tags --ignore-file=ext:taghl --ignore-file=ext:out"
@@ -893,6 +868,14 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     let g:fzf_command_prefix = 'Fzf'
 
     nnoremap <silent> <space>z :FZF<cr>
+    nnoremap <silent> <space><space> :FZF<cr>
+
+    nnoremap <silent> <space>t :FzfTags<cr>
+    nnoremap <silent> <space>f :FzfFiles<cr>
+    nnoremap <silent> <space>b :FzfBuffers<cr>
+    nnoremap <silent> <space>w :FzfWindows<cr>
+    nnoremap <silent> <space>c :FzfCommits<cr>
+    nnoremap <silent> <space>l :FzfLines<cr>
 
 "vim-gitgutter
     let g:gitgutter_realtime = 0

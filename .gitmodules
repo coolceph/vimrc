@@ -100,9 +100,6 @@
 [submodule "bundle/fzf"]
 	path = bundle/fzf
 	url = https://github.com/junegunn/fzf
-[submodule "bundle/ctrlp.vim"]
-	path = bundle/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim
 [submodule "bundle/gv.vim"]
 	path = bundle/gv.vim
 	url = https://github.com/junegunn/gv.vim
