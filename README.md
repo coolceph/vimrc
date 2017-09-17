@@ -8,14 +8,28 @@ Enjoy it.
 
 # Requirements
 
-* Vim/MacVim 7.4.1578 or newer with Python 2 or Python 3 support. If :echo has("python") returns 1, then you're done; otherwise, Mac OSX see below.
+* Mac use terminal vim:
 
 ```
+brew install cmake go node mono rust
 brew install vim
-brew install macvim
 ```
 
-* Ctags
+* Use MacVim:
+
+```
+brew install cmake go node mono rust
+```
+
+Download macvim from [https://github.com/macvim-dev/macvim/releases/latest] and install it to /Applications .
+
+Do not install macvim from brew.
+
+* Linux user:
+
+Linux users who do not use YouCompleteMe could use wip-neocomplcache branch, this branch only depend on vim and has no python/lua requirement.
+
+And vim 7.4.1578+ is required.
 
 # Install
 
@@ -91,6 +105,14 @@ The leader key is ','.
     1) run ~/.vim/install.sh, it will set TERM to xterm-256color for bash/zsh. If you use other shells, you need to set TERM yourself.
 
     2) Your terminal util like iterm is also needed to set for xterm-256color too. You need set it yourself too.
+
+- *Install all YouCompleteMe dependencies*
+
+    If you use Mac OS and brew:
+
+    ```
+    brew install cmake go node mono rust
+    ```
 
 - *MacVim Caught deadly signal SEGV*
 
