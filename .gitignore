@@ -1,0 +1,47 @@
+#tags
+tags
+*.taghl
+cscope.files
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Interpret File
+*.pyc
+*.class
+
+# Mac tmpfile
+*.DS_Store
+
+# vim-clang
+.clang
+
+# nodejs
+package-lock.json
+
