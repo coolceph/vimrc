@@ -10,7 +10,7 @@
 "|------------------------|
 "
 " Maintainer:	coolceph <https://github.com/coolceph/vimrc>
-" Last change:	2017.09.17
+" Last change:	2017.10.09
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -301,13 +301,13 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
             echo "Code Edit Mode"
         endif
     endfunction
-    nnoremap <Leader>jk :call ToggleCodeViewMode()<CR>
+    command! CodeReview :call ToggleCodeViewMode()
 
 " set text wrapping toggles
     nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
 
 " find merge conflict markers
-    nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+    nmap <silent> <leader>c <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
 " 在命令行里面, 用%%表示当前文件路径
     cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
@@ -352,7 +352,7 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     let g:airline_theme = 'powerlineish'
     let g:airline#extensions#whitespace#enabled = 0
     let g:airline#extensions#whitespace#symbol = '!'
-    let g:airline#extensions#syntastic#enabled = 1
+    let g:airline#extensions#syntastic#enabled = 0
     let g:airline#extensions#branch#enabled = 1
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -513,27 +513,30 @@ inoremap <F12> <Esc>:call ToggleMouse()<CR>a
     "      ~/.vim/bundle/YCM-Generator/config_gen.py PROJECT_DIR
 
 "easymotion
-    let g:EasyMotion_do_mapping = 0 " Disable default mappings
     let g:EasyMotion_smartcase  = 1 " Turn on case insensitive feature
-    let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 
-    " Move to anywhere of current line
-    map <Leader>l <Plug>(easymotion-lineanywhere)
-
-    " Move to line
-    map <Leader>L <Plug>(easymotion-bd-jk)
-
-    " Move to word
-    map  <Leader>w <Plug>(easymotion-bd-w)
-
-    " <Leader>f{char} to move to {char}
-    map  <Leader>f <Plug>(easymotion-bd-f)
-
-    " <Leader>f{char}{char} to move to {char}{char}
-    map  <Leader>F <Plug>(easymotion-bd-f2)
-
-    " Repeat last motion!
-    map <Leader><leader>, <Plug>(easymotion-repeat)
+    " Note: The default leader has been changed to <Leader><Leader> to avoid
+    "       conflicts with other plugins you may have installed
+    " Default Mapping      | Details
+    " ---------------------|----------------------------------------------
+    " <Leader>f{char}      | Find {char} to the right. See |f|.
+    " <Leader>F{char}      | Find {char} to the left. See |F|.
+    " <Leader>t{char}      | Till before the {char} to the right. See |t|.
+    " <Leader>T{char}      | Till after the {char} to the left. See |T|.
+    " <Leader>w            | Beginning of word forward. See |w|.
+    " <Leader>W            | Beginning of WORD forward. See |W|.
+    " <Leader>b            | Beginning of word backward. See |b|.
+    " <Leader>B            | Beginning of WORD backward. See |B|.
+    " <Leader>e            | End of word forward. See |e|.
+    " <Leader>E            | End of WORD forward. See |E|.
+    " <Leader>ge           | End of word backward. See |ge|.
+    " <Leader>gE           | End of WORD backward. See |gE|.
+    " <Leader>j            | Line downward. See |j|.
+    " <Leader>k            | Line upward. See |k|.
+    " <Leader>n            | Jump to latest "/" or "?" forward. See |n|.
+    " <Leader>N            | Jump to latest "/" or "?" backward. See |N|.
+    " <Leader>s            | Find(Search) {char} forward and backward.
+    "                      | See |f| and |F|.
 
 "undotree
     function! s:get_undotree_dir() "{{{
