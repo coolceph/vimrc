@@ -58,7 +58,7 @@ endif
 "在Powerline字体关闭时，可以任意选择等宽字体
 "GUI模式开启鼠标支持，关闭左右的scrollbar
 if has("gui_running")
-    set guifont=SF\ Mono\ for\ Powerline:h12
+    set guifont=SFMono\ Nerd\ Font:h12
     set mouse=a
     set guioptions-=r
     set guioptions-=L
